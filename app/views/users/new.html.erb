@@ -1,20 +1,9 @@
 <% provide(:title, "Sign up") %>
 <h1>ユーザー登録</h1>
 
-
-<% if @user.errors.any? %>
-<% logger.debug @user.errors.count %>
-    <div id="error_explanation">
-        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-        <ul>
-        <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-        </ul>
-    </div>
+<% @user.errors.full_messages.each do |message| %>
+<li><%= message %></li>
 <% end %>
-
 
 <%= form_with(model: @user, local: true) do |form| %>
 
