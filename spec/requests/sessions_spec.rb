@@ -40,7 +40,8 @@ RSpec.describe "Sessions", type: :request do
 
       it "適切なエラーメッセージが表示される" do
         expect(flash[:danger]).to be_present
-      end
+      end      
     end
   end
+    
 end
