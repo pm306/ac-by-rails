@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :require_no_login, only: [:new]
+
   def new
   end
 
@@ -14,8 +16,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out if logged_in?
-    flash.now[:session] = "ログアウトしました。"
+    reset_session
+    flash[:notice] = "ログアウトしました。"
     redirect_to login_url
   end
 

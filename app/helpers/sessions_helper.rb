@@ -20,4 +20,19 @@ module SessionsHelper
       session.delete(:user_id)
       @current_user = nil
     end
+
+      # ユーザがログインしていなければログインページにリダイレクト
+  def require_login
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to login_url
+    end
   end
+
+  # ユーザがログインしていればホームページにリダイレクト
+  def require_no_login
+    if logged_in?
+      redirect_to root_url
+    end
+  end
+end
