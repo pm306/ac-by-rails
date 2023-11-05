@@ -8,4 +8,21 @@ RSpec.describe "Users", type: :request do
     end
   end
 
+  describe "POST /signup" do
+    context "リクエストに有効なパラメータがある" do
+      example "新規ユーザーが作成される" do
+        expect {
+          post users_path, params: { user: { name: "userman", email: "user@example.com", password: "password" } }
+        }.to change(User, :count).by(1)
+        end
+      end
+
+    context "リクエストに無効なパラメータがある" do
+      example "新規ユーザーが作成されない" do
+        expect {
+          post users_path, params: { user: { name: "", email: "user@example.com", password: "password" } }
+        }.not_to change(User, :count)
+      end
+    end
+  end
 end

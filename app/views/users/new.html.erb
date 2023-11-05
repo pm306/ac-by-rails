@@ -15,7 +15,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :"名前(最大16文字)" %>
     <%= form.text_field :name, id: :user_name %>
   </div>
 
@@ -24,7 +24,7 @@
     <%= form.email_field :email, id: :user_email %>
   </div>
 
-  <div class="field">
+  <div class="パスワード">
     <%= form.label :password %>
     <%= form.password_field :password, id: :user_password %>
   </div>
