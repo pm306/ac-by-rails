@@ -7,4 +7,16 @@
 <h1>オートコーディネータ</h1>
 <p>自動で服を選んでくれるアプリケーションです。</p>
 <p>このページはRuby on railsの学習のために作られています</p>
+
+<%= form_with(scope: :session, url: sessions_path, local: true) do |form| %>
+  <%= form.label :email %>
+  <%= form.email_field :email %>
+
+  <%= form.label :"パスワード" %>
+  <%= form.password_field :password %>
+
+  <%= form.submit "ログイン" %>
+<% end %>
+
+
 <%= link_to "ユーザー登録", signup_path %>
