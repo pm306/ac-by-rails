@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :require_no_login, only: [:new]
+  before_action :require_no_login, only: [:new, create]
 
   def new
   end
