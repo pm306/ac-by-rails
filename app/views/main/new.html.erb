@@ -1,3 +1,3 @@
 <h1>★オートコーディネータ★</h1>
-<p>ようこそ、●●さん。</p>
+<p>ようこそ、 <%= current_user.name %> さん。</p>
 <%= button_to "ログアウト", logout_path, :method=> :delete %>
