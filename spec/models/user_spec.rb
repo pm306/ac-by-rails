@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
   describe "validations" do
     before do
       # 事前にユーザーを1つ作成しておきます
-      FactoryBot.create(:user, email: 'test@example.com')
+      FactoryBot.create(:user)
     end
 
     # 有効なユーザーの属性

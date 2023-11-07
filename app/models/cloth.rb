@@ -1,4 +1,5 @@
 class Cloth < ApplicationRecord
+    #TODO: 最後に選択してからn日経てば再選択可能になるか、というカラム
     belongs_to :user
     belongs_to :cloth_type, primary_key: :type_name, foreign_key: :type_name
   

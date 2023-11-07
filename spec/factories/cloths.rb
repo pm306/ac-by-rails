@@ -1,9 +1,8 @@
 FactoryBot.define do
   factory :cloth do
-    user_id { 1 }
-    description { "MyText" }
+    association :user
+    description { "this is test description" }
     last_worn_on { "2023-11-06" }
-    type_name { "MyString" }
-    category { 1 }
+    association :cloth_type
   end
 end
