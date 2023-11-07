@@ -1,33 +1,39 @@
 require 'rails_helper'
 
 RSpec.feature "ページ遷移のテスト", type: :feature do
+    context "ログインが必要な場合" do
+        before do
+            user = FactoryBot.create(:user, name: "mahiro", email: 'oyama306@onimai.com', password: 'password')
+            visit login_path
+            fill_in 'session[email]', with: 'oyama306@onimai.com'
+            fill_in 'session[password]', with: 'password'
+            click_button 'ログイン'
+        end
 
-    let(:user) {FactoryBot.create(:user) }
+        scenario "メインページ→クローゼットに遷移する" do     
+            visit root_path
+            click_link "クローゼットへ"
+            expect(current_path).to eq(closet_path)
+        end
 
-    scenario "ログイン→ユーザー登録に遷移する" do
-        visit login_path
-        click_link "ユーザー登録"
-        expect(current_path).to eq(signup_path)
-    end
-
-    scenario "ユーザー登録→ログインに遷移する" do
-        visit signup_path
-        click_link "戻る"
-        expect(current_path).to eq(login_path)
+        scenario "クローゼット→メインページに遷移する" do
+            visit closet_path
+            click_link "戻る"
+            expect(current_path).to eq(root_path)
+        end
     end
     
-    # ログイン処理が必要なので単体テストには向いてないかもしれない
-    # 統合テストとして実装するべき？
-    # scenario "メインページ→クローゼットに遷移する" do
-        
-    #     visit root_path
-    #     click_link "クローゼットへ"
-    #     expect(current_path).to eq(closet_path)
-    # end
+    context "非ログインである場合" do
+        scenario "ログイン→ユーザー登録に遷移する" do
+            visit login_path
+            click_link "ユーザー登録"
+            expect(current_path).to eq(signup_path)
+        end
 
-    # scenario "クローゼット→メインページに遷移する" do
-    #     visit closet_path
-    #     click_link "戻る"
-    #     expect(current_path).to eq(root_path)
-    # end
+        scenario "ユーザー登録→ログインに遷移する" do
+            visit signup_path
+            click_link "戻る"
+            expect(current_path).to eq(login_path)
+        end
+    end
 end
