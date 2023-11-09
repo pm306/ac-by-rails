@@ -2,6 +2,16 @@
 <h1>画像を登録します</h1>
 <%= debug(@cloth.inspect)%>
 
+
+<!---画像表示テスト--->
+
+<% if @cloth.image.attached? %>
+  <%= image_tag @cloth.image, class: 'cloth-image' %>
+<% else %>
+  <p>画像はまだアップロードされていません。</p>
+<% end %>
+
+
 <% flash.each do |message_type, message| %>
 <div class="flash-<%= message_type %>"><%= message %></div>
 <% end %>
