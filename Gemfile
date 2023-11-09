@@ -72,3 +72,4 @@ group :development, :test do
   gem 'rails-controller-testing'
 end
 gem "dartsass-rails", "~> 0.5.0"
+gem "jsbundling-rails"
