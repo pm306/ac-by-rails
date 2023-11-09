@@ -1,6 +1,12 @@
+<% provide(:title, "Add cloth") %>
 <h1>画像を登録します</h1>
 <%= debug(@cloth.inspect)%>
-<%= form_with(model: @cloth, url: clothes_path, local: true) do |form| %>
+
+<% flash.each do |message_type, message| %>
+<div class="flash-<%= message_type %>"><%= message %></div>
+<% end %>
+
+<%= form_with(model: @cloth, url: create_cloth_path, local: true) do |form| %>
   <% if @cloth.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@cloth.errors.count, "error") %> prohibited this cloth from being saved:</h2>
