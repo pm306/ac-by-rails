@@ -24,8 +24,8 @@ RSpec.describe Cloth, type: :model do
       expect(cloth).not_to be_valid
     end
 
-    example "type_nameが空なら無効である" do
-      cloth.type_name = nil
+    example "cloth_type_idが空なら無効である" do
+      cloth.cloth_type_id = nil
       expect(cloth).not_to be_valid
     end
 

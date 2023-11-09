@@ -14,7 +14,7 @@ class ClothesController < ApplicationController
     @cloth.last_worn_on = Date.parse('2000-01-01')
     if @cloth.save
       flash[:success] = "服が登録されました"
-      redirect_to closet_add_path
+      redirect_to closet_add_url
     else
       flash.now[:error] = "服の登録に失敗しました"
       render :new

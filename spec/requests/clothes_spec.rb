@@ -2,9 +2,23 @@ require 'rails_helper'
 
 RSpec.describe "Clothes", type: :request do
   describe "GET /index" do
-    it "returns http success" do
-      get closet_path
-      expect(response).to have_http_status(:success)
+    context "ログインしていない" do
+      example "ログインしていないとloginページにリダイレクトする" do
+        get closet_path
+        expect(response).to redirect_to(login_url)
+      end
+    end
+
+    context "ログインしている" do
+      before do
+        user = FactoryBot.create(:user)
+        post login_path, params: { session: { name: user.name, email: user.email, password: user.password } }
+      end
+
+      example "returns http success" do
+        get closet_path
+        expect(response).to have_http_status(:success)
+      end
     end
   end
 
@@ -16,9 +30,23 @@ RSpec.describe "Clothes", type: :request do
   end
 
   describe "GET /new" do
-    example "returns http success" do
-      get closet_add_path
-      expect(response).to have_http_status(:success)
+    context "ログインしていない" do
+      example "ログインしていないとloginページにリダイレクトする" do
+        get closet_add_path
+        expect(response).to redirect_to(login_url)
+      end
+    end
+
+    context "ログインしている" do
+      before do
+        user = FactoryBot.create(:user)
+        post login_path, params: { session: { name: user.name, email: user.email, password: user.password } }
+      end
+
+      example "returns http success" do
+        get closet_add_path
+        expect(response).to have_http_status(:success)
+      end
     end
   end
 
