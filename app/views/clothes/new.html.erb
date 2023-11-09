@@ -2,15 +2,35 @@
 <h1>画像を登録します</h1>
 <%= debug(@cloth.inspect)%>
 
+<div id="image-preview" style="display:none;">
+  <img src="" class="cloth-image" style="max-width: 500px; max-height: 500px;" />
+</div>
 
-<!---画像表示テスト--->
-
-<% if @cloth.image.attached? %>
-  <%= image_tag @cloth.image, class: 'cloth-image' %>
-<% else %>
-  <p>画像はまだアップロードされていません。</p>
-<% end %>
-
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // input要素を見つけます
+    var input = document.querySelector('input[type=file]');
+    
+    // input要素が変更された時のイベントリスナーを追加します
+    input.addEventListener('change', function(e) {
+      // 選択されたファイルを取得します
+      var file = e.target.files[0];
+      var reader = new FileReader();
+      
+      // ファイルが読み込まれたときのイベントリスナーを追加します
+      reader.onload = function(e) {
+        // 読み込まれたファイルのデータをsrc属性として画像にセットします
+        var img = document.querySelector('#image-preview img');
+        img.src = e.target.result;
+        // 画像を表示状態にします
+        document.getElementById('image-preview').style.display = 'block';
+      };
+      
+      // ファイルを読み込みます
+      reader.readAsDataURL(file);
+    });
+  });
+</script>
 
 <% flash.each do |message_type, message| %>
 <div class="flash-<%= message_type %>"><%= message %></div>
