@@ -8,9 +8,16 @@ RSpec.describe "Clothes", type: :request do
     end
   end
 
-  describe "GET /new" do
+  describe "GET /show" do
     it "returns http success" do
       get closet_detail_path
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe "GET /new" do
+    example "returns http success" do
+      get closet_add_path
       expect(response).to have_http_status(:success)
     end
   end

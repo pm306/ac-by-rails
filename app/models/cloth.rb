@@ -1,14 +1,13 @@
 class Cloth < ApplicationRecord
     #TODO: 最後に選択してからn日経てば再選択可能になるか、というカラム
     belongs_to :user
-    belongs_to :cloth_type, primary_key: :type_name, foreign_key: :type_name
+    belongs_to :cloth_type
   
     has_one_attached :image
 
     validates :user_id, presence: true
     validates :last_worn_on, presence: true
     validate :last_worn_on_is_date?
-    validates :type_name, presence: true
   
     # 必要な他のバリデーションを追加
     # TODO:画像ファイルの制限, type_nameがcloth_typeのnameに存在するか

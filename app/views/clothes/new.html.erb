@@ -1,2 +1,34 @@
-<h1>Clothes#new</h1>
-<p>Find me in app/views/clothes/new.html.erb</p>
+<h1>画像を登録します</h1>
+<%= debug(@cloth.inspect)%>
+<%= form_with(model: @cloth, url: clothes_path, local: true) do |form| %>
+  <% if @cloth.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cloth.errors.count, "error") %> prohibited this cloth from being saved:</h2>
+
+      <ul>
+      <% @cloth.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :image, '画像アップロード' %>
+    <%= form.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cloth_type_id, '服の種類' %>
+    <%= form.collection_select :cloth_type_id, ClothType.all, :id, :type_name, prompt: '選択してください' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, '説明' %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit '登録する' %>
+  </div>
+<% end %>

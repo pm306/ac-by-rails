@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "ページ遷移のテスト", type: :feature do
-    context "ログインが必要な場合" do
+    context "ログインが必要ケース" do
         before do
             user = FactoryBot.create(:user, name: "mahiro", email: 'oyama306@onimai.com', password: 'password')
             visit login_path
@@ -21,9 +21,22 @@ RSpec.feature "ページ遷移のテスト", type: :feature do
             click_link "戻る"
             expect(current_path).to eq(root_path)
         end
+
+        scenario "クローゼットから服追加ページに遷移する" do
+            visit closet_path
+            click_link "服を追加する"
+            expect(current_path).to eq(closet_add_path)
+        end
+
+        scenario "服追加ページからクローゼットに遷移する" do
+            visit closet_add_path
+            click_link "戻る"
+            expect(current_path).to eq(closet_path)
+        end
+        
     end
     
-    context "非ログインである場合" do
+    context "非ログインであるべきケース" do
         scenario "ログイン→ユーザー登録に遷移する" do
             visit login_path
             click_link "ユーザー登録"
