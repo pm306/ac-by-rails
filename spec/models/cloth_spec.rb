@@ -29,7 +29,10 @@ RSpec.describe Cloth, type: :model do
       expect(cloth).not_to be_valid
     end
 
-    #TODO: 画像ファイルに関するテストの追加
+    example "画像が登録されていなければ無効である" do
+      cloth.image.purge
+      expect(cloth.image).not_to be_attached
+    end
   end
 
   describe "アソシエーション" do
@@ -46,6 +49,5 @@ RSpec.describe Cloth, type: :model do
     example "last_worn_onがdate型であるか調べる" do
       expect(cloth.last_worn_on).to be_a(Date)
     end
-
   end
 end
