@@ -47,14 +47,14 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_09_134401) do
     t.index ["type_name"], name: "index_cloth_types_on_type_name", unique: true
   end
 
-  create_table "cloths", force: :cascade do |t|
+  create_table "clothes", force: :cascade do |t|
     t.integer "user_id", null: false
     t.text "description"
     t.date "last_worn_on", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "cloth_type_id"
-    t.index ["user_id"], name: "index_cloths_on_user_id"
+    t.index ["user_id"], name: "index_clothes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

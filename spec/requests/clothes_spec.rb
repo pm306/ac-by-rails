@@ -23,11 +23,33 @@ RSpec.describe "Clothes", type: :request do
   end
 
   describe "GET /show" do
-    it "returns http success" do
-      get closet_detail_path
-      expect(response).to have_http_status(:success)
+    before do
+      user = FactoryBot.create(:user)
+      post login_path, params: { session: { name: user.name, email: user.email, password: user.password } }
+      cloth = FactoryBot.create(:cloth)
+    end
+
+    context "ログインしていない" do
+      example "ログインしていないとloginページにリダイレクトする" do
+        get cloth_path(cloth)
+        expect(response).to redirect_to(login_url)
+      end
+    end
+
+    context "ログインしている" do
+      example "returns http success" do
+        get cloth_path(cloth)
+        expect(response).to have_http_status(:success)
+      end
     end
   end
+
+  # describe "GET /show" do
+  #   it "returns http success" do
+  #     get cloth_path(cloth)
+  #     expect(response).to have_http_status(:success)
+  #   end
+  # end
 
   describe "GET /new" do
     context "ログインしていない" do

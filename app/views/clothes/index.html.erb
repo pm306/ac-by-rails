@@ -16,7 +16,7 @@
 
 <% @cloths.each do |cloth| %>
   <% if cloth.image.attached? %>
-    <%=link_to (image_tag cloth.image, width: "200", height: "200"), closet_detail_path(cloth) %>
+    <%=link_to (image_tag cloth.image, width: "200", height: "200"), cloth_path(cloth) %>
   <% end %>
 <% end %>
 
