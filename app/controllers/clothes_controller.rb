@@ -2,6 +2,7 @@ class ClothesController < ApplicationController
   before_action :require_login, only: [:index, :new, :create]
 
   def index
+    @cloths = current_user.cloths
   end
 
   def new
