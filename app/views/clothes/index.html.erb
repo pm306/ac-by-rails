@@ -16,7 +16,7 @@
 
 <% @cloths.each do |cloth| %>
   <% if cloth.image.attached? %>
-    <%= image_tag cloth.image, width: "200", height: "200" %>
+    <%=link_to (image_tag cloth.image, width: "200", height: "200"), closet_detail_path(cloth) %>
   <% end %>
 <% end %>
 
@@ -35,8 +35,6 @@
     });
   });
 </script>
-
-
 
 <%= link_to "服を追加する", closet_add_path %>
 

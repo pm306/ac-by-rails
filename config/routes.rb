@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get '/closet',        to: 'clothes#index',    as: 'closet'
   get '/closet/add',    to: 'clothes#new',      as: 'closet_add'
   post '/closet/add',   to: 'clothes#create',   as: 'create_cloth'
-  get '/closet/detail', to: 'clothes#show',     as: 'closet_detail'
+  get '/closet/detail/:id', to: 'clothes#show', as: 'closet_detail'
   get '/index',         to: 'main#new',         as: 'index'
   get '/signup',        to: 'users#new',        as: 'signup'
   get '/login',         to: 'sessions#new',     as: 'login'

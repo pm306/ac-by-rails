@@ -29,6 +29,8 @@ class ClothesController < ApplicationController
   end
 
   def show
+    Rails.logger.info "params[:id]: #{params[:id]}"
+    @cloth = Cloth.find(params[:id])
   end
 
   private
