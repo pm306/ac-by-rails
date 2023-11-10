@@ -2,7 +2,13 @@ class ClothesController < ApplicationController
   before_action :require_login, only: [:index, :new, :create]
 
   def index
-    @cloths = current_user.cloths
+    base_query = current_user.cloths
+
+    if params[:types].present?
+      @cloths = base_query.where(cloth_type_id: params[:types])
+    else
+      @cloths = Cloth.none
+    end
   end
 
   def new
