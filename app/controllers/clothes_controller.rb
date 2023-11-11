@@ -33,6 +33,12 @@ class ClothesController < ApplicationController
     @cloth = Cloth.find(params[:id])
   end
 
+  def destroy
+    @cloth = Cloth.find(params[:id])
+    @cloth.destroy
+    redirect_to closet_path, notice: "服が削除されました"
+  end
+
   private
   def cloth_params
     params.require(:cloth).permit(:image, :cloth_type_id, :description)

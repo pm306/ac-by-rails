@@ -3,4 +3,6 @@
 <%= image_tag @cloth.image if @cloth.image.attached? %>
 <p><%= @cloth.description %></p>
 
+<%= button_to "服を削除する", cloth_path(@cloth), method: :delete, data:{ confirm: "本当に削除しますか？"} %>
+
 <%= link_to "戻る", closet_path%>

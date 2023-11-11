@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete '/logout',     to: 'sessions#destroy', as: 'logout'
 
   resources :users, only:[:new, :create] #usersヘルパーが利用可能になる
-  resources :clothes, path: 'clothes', as: 'clothes'
+  resources :clothes
 
   # Defines the root path route ("/")
   root "main#new" 
