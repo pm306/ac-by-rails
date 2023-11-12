@@ -5,7 +5,7 @@
 <%= form_with url: clothes_path, method: :get do %>
   <% ClothType.all.each do |type| %>
     <%= check_box_tag "types[]", type.id %>
-    <%= label_tag "types_#{type.id}", type.type_name %><br>
+    <%= label_tag "types_#{type.id}", type.name %><br>
   <% end %>
 
   <%= submit_tag "絞り込む" %>
