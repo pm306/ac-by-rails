@@ -1,4 +1,6 @@
 class OutfitSelectionRule < ApplicationRecord
-    validates :priority, presence: true
-    validates :priority, uniqueness: { scope: [:min_temperature_lower_bound, :min_temperature_upper_bound, :max_temperature_lower_bound, :max_temperature_upper_bound] }
+  has_many :cloth_group_selections, dependent: :destroy
+
+  validates :name,     presence: true, uniqueness: true
+  validates :priority, presence: true
 end

@@ -12,7 +12,6 @@ cloth_groups = [
   { name: "アウター"},
   { name: "ボトムス（薄）"},
   { name: "ボトムス（厚）"},
-  { name: "ボトムス（兼用）"},
 ]
 
 cloth_groups.each do |group|
@@ -49,4 +48,51 @@ cloths.each do |cloth_data|
   image_path = cloth_data[:image_path]
   cloth.image.attach(io: File.open(image_path), filename: File.basename(image_path), content_type: 'image/png')
   cloth.save!
+end
+
+# 服装選択ルールの作成（既存のルールがない場合のみ）
+
+# 夏用ルール
+summer_rule = OutfitSelectionRule.find_or_create_by(name: '夏用') do |rule|
+  rule.description = ''
+  rule.priority = 1
+  rule.min_temperature_lower_bound = 20
+end
+
+# 冬用ルール
+winter_rule = OutfitSelectionRule.find_or_create_by(name: '冬用') do |rule|
+  rule.description = ''
+  rule.priority = 2
+  rule.max_temperature_upper_bound = 15
+end
+
+# その他のルール
+other_rule = OutfitSelectionRule.find_or_create_by(name: 'その他') do |rule|
+  rule.description = 'いずれのルールにもマッチしなかった時に選ばれる'
+  rule.priority = 50
+end
+
+# ClothGroupSelectionの作成（既存の選択肢がない場合のみ）
+
+# 夏用ルールでグループ1と6を選択
+[ClothGroup.find_by(name: "半袖（外）"), ClothGroup.find_by(name: "ボトムス（厚）")].each do |group|
+  ClothGroupSelection.find_or_create_by(outfit_selection_rule: summer_rule, cloth_group: group) do |selection|
+    selection.selection_count = 1
+  end
+end
+
+# 冬用ルールでグループ2, 3, 4, 5, 7を選択
+["半袖（内）", "長袖（薄）", "長袖（厚）", "アウター", "ボトムス（厚）"].each do |group_name|
+  group = ClothGroup.find_by(name: group_name)
+  ClothGroupSelection.find_or_create_by(outfit_selection_rule: winter_rule, cloth_group: group) do |selection|
+    selection.selection_count = 1
+  end
+end
+
+# その他のルールでグループ1, 3, 6を選択
+["半袖（外）", "長袖（薄）", "ボトムス（厚）"].each do |group_name|
+  group = ClothGroup.find_by(name: group_name)
+  ClothGroupSelection.find_or_create_by(outfit_selection_rule: other_rule, cloth_group: group) do |selection|
+    selection.selection_count = 1
+  end
 end
