@@ -75,7 +75,7 @@ end
 # ClothGroupSelectionの作成（既存の選択肢がない場合のみ）
 
 # 夏用ルールでグループ1と6を選択
-[ClothGroup.find_by(name: "半袖（外）"), ClothGroup.find_by(name: "ボトムス（厚）")].each do |group|
+[ClothGroup.find_by(name: "半袖（外）"), ClothGroup.find_by(name: "ボトムス（薄）")].each do |group|
   ClothGroupSelection.find_or_create_by(outfit_selection_rule: summer_rule, cloth_group: group) do |selection|
     selection.selection_count = 1
   end

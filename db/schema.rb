@@ -70,7 +70,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_12_100348) do
     t.integer "user_id", null: false
     t.text "description"
     t.date "last_worn_on", null: false
-    t.integer "category", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "cloth_type_id"

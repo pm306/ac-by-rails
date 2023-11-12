@@ -3,21 +3,36 @@
 <h1>★オートコーディネータ★</h1>
 <p>ようこそ、 <%= current_user.name %> さん。</p>
 
-<%= form_with url: index_recommend_path, method: :post do |form| %>
+<% flash.each do |message_type, message| %>
+<div class="flash-<%= message_type %>"><%= message %></div>
+<% end %>
+
+<%= form_with url: outfits_path, method: :post do |form| %>
   <div>
     <%= form.label :max_temperature, '最高気温' %>
-    <%= form.number_field :max_temperature, step: 0.1 %>
+    <%= form.number_field :max_temperature %>
   </div>
 
   <div>
     <%= form.label :min_temperature, '最低気温' %>
-    <%= form.number_field :min_temperature, step: 0.1 %>
+    <%= form.number_field :min_temperature %>
   </div>
 
   <div>
     <%= form.submit '服を選ぶ' %>
   </div>
 <% end %>
+
+<% if @selected_clothes.present? %>
+  <div style="display: flex; flex-wrap: wrap;">
+    <% @selected_clothes.each do |cloth| %>
+      <div style="margin: 10px;">
+        <%= image_tag cloth.image, style: 'max-width: 200px; max-height: 200px;' if cloth.image.attached? %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
 
 <%= button_to "ログアウト", logout_path, :method=> :delete %>
 <p></p>
