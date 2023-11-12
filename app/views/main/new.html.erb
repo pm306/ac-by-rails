@@ -2,6 +2,23 @@
 
 <h1>★オートコーディネータ★</h1>
 <p>ようこそ、 <%= current_user.name %> さん。</p>
+
+<%= form_with url: index_recommend_path, method: :post do |form| %>
+  <div>
+    <%= form.label :max_temperature, '最高気温' %>
+    <%= form.number_field :max_temperature, step: 0.1 %>
+  </div>
+
+  <div>
+    <%= form.label :min_temperature, '最低気温' %>
+    <%= form.number_field :min_temperature, step: 0.1 %>
+  </div>
+
+  <div>
+    <%= form.submit '服を選ぶ' %>
+  </div>
+<% end %>
+
 <%= button_to "ログアウト", logout_path, :method=> :delete %>
 <p></p>
 <%= link_to "クローゼットへ", closet_path %>

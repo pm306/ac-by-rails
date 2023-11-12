@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/closet/add',    to: 'clothes#new',      as: 'closet_add'
   post '/closet/add',   to: 'clothes#create',   as: 'create_cloth'
   get '/index',         to: 'main#new',         as: 'index'
+  post '/index',        to: 'main#recommend',   as: 'index_recommend'
   get '/signup',        to: 'users#new',        as: 'signup'
   get '/login',         to: 'sessions#new',     as: 'login'
   post '/login',        to: 'sessions#create',  as: 'sessions'
