@@ -32,7 +32,7 @@
 
   <div class="field">
     <%= form.label :cloth_type_id, '服の種類' %>
-    <%= form.collection_select :cloth_type_id, ClothType.all, :id, :type_name, prompt: '選択してください' %>
+    <%= form.collection_select :cloth_type_id, ClothType.all, :id, :name, prompt: '選択してください' %>
   </div>
 
   <div class="field">
