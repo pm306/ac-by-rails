@@ -18,6 +18,7 @@ class MainController < ApplicationController
     rule_id = find_appropriate_rule_id(max_temperature, min_temperature)
     @selections = find_cloth_group_selections(rule_id)
     @selected_clothes = select_clothes(@selections)
+    #redirect_to root_path
     render :new
   end
 
@@ -25,6 +26,8 @@ class MainController < ApplicationController
 
   def find_appropriate_rule_id(max_temp, min_temp)
     OutfitSelectionRule.where('min_temperature_lower_bound IS NULL OR min_temperature_lower_bound <= ?', min_temp)
+                       .where('min_temperature_upper_bound IS NULL OR min_temperature_upper_bound >= ?', min_temp)
+                       .where('max_temperature_lower_bound IS NULL OR max_temperature_lower_bound <= ?', max_temp)
                        .where('max_temperature_upper_bound IS NULL OR max_temperature_upper_bound >= ?', max_temp)
                        .order(priority: :asc)
                        .limit(1)
