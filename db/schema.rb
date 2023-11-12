@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_09_134401) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_12_082744) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,22 +39,44 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_09_134401) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "cloth_types", force: :cascade do |t|
-    t.string "type_name", null: false
-    t.integer "category"
+  create_table "cloth_groups", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["type_name"], name: "index_cloth_types_on_type_name", unique: true
+    t.index ["name"], name: "index_cloth_groups_on_name", unique: true
+  end
+
+  create_table "cloth_types", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "cloth_group_id"
+    t.index ["cloth_group_id"], name: "index_cloth_types_on_cloth_group_id"
+    t.index ["name"], name: "index_cloth_types_on_name", unique: true
   end
 
   create_table "clothes", force: :cascade do |t|
     t.integer "user_id", null: false
     t.text "description"
     t.date "last_worn_on", null: false
+    t.integer "category", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "cloth_type_id"
     t.index ["user_id"], name: "index_clothes_on_user_id"
+  end
+
+  create_table "outfit_selection_rules", force: :cascade do |t|
+    t.integer "min_temperature_lower_bound"
+    t.integer "min_temperature_upper_bound"
+    t.integer "max_temperature_lower_bound"
+    t.integer "max_temperature_upper_bound"
+    t.integer "priority", null: false
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -68,4 +90,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_09_134401) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "cloth_types", "cloth_groups"
 end
