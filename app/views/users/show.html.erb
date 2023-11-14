@@ -1,0 +1,15 @@
+<h1>ユーザープロフィール</h1>
+
+<div>
+  <strong>ユーザー名：</strong><%= @user.name %>
+</div>
+
+<div>
+  <strong>メールアドレス：</strong><%= @user.email %>
+</div>
+
+<div>
+  <strong>パスワード：</strong>********
+</div>
+
+<%= link_to "編集", edit_user_path %>

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/login',        to: 'sessions#create',  as: 'sessions'
   delete '/logout',     to: 'sessions#destroy', as: 'logout'
 
-  resources :users, only:[:new, :create] #usersヘルパーが利用可能になる
+  resources :users, only:[:new, :create, :show, :edit, :update]
   resources :clothes
 
   # Defines the root path route ("/")

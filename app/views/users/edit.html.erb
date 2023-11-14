@@ -1,0 +1,37 @@
+<h1>ユーザー編集</h1>
+
+<% flash.each do |message_type, message| %>
+<div class="flash-<%= message_type %>"><%= message %></div>
+<% end %>
+
+<%= form_with(model: @user, url: user_path(@user), local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_password %>
+    <%= form.password_field :current_password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Update" %>
+  </div>
+<% end %>
+
+
+<%= button_to "削除(ハリボテ)", edit_user_path %>
+
+<%= link_to "プロフィールに戻る", user_path()%>
