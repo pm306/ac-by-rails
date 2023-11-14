@@ -23,14 +23,15 @@
   </div>
 <% end %>
 
-<% if @selected_clothes.present? %>
+<% if session[:selected_clothes_ids].present? %>
   <div style="display: flex; flex-wrap: wrap;">
-    <% @selected_clothes.each do |cloth| %>
+    <% Cloth.where(id: session[:selected_clothes_ids]).each do |cloth| %>
       <div style="margin: 10px;">
         <%= image_tag cloth.image, style: 'max-width: 200px; max-height: 200px;' if cloth.image.attached? %>
       </div>
     <% end %>
   </div>
+  <% session.delete(:selected_clothes_ids) %>
 <% end %>
 
 

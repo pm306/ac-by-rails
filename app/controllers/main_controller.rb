@@ -17,9 +17,8 @@ class MainController < ApplicationController
 
     rule_id = find_appropriate_rule_id(max_temperature, min_temperature)
     @selections = find_cloth_group_selections(rule_id)
-    @selected_clothes = select_clothes(@selections)
-    #redirect_to root_path
-    render :new
+    session[:selected_clothes_ids] = select_clothes(@selections)
+    redirect_to root_url
   end
 
   private
@@ -50,7 +49,7 @@ class MainController < ApplicationController
     selections.map do |selection|
       cloth_group = ClothGroup.find_by(name: selection[:cloth_group])
       cloth_type_ids = ClothType.where(cloth_group_id: cloth_group.id).pluck(:id)
-      Cloth.where(cloth_type_id: cloth_type_ids).sample(selection[:selection_count])
+      Cloth.where(cloth_type_id: cloth_type_ids).sample(selection[:selection_count]).pluck(:id)
     end.flatten
   end
 
