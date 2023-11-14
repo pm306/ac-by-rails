@@ -1,6 +1,5 @@
 <% provide(:title, "Add cloth") %>
 <h1>画像を登録します</h1>
-<%= debug(@cloth.inspect)%>
 
 <%= javascript_include_tag 'preview_cloth_image' %>
 
@@ -8,9 +7,7 @@
   <img src="" class="cloth-image" style="max-width: 500px; max-height: 500px;" />
 </div>
 
-<% flash.each do |message_type, message| %>
-<div class="flash-<%= message_type %>"><%= message %></div>
-<% end %>
+<%= render 'layouts/flash_messages' %>
 
 <%= form_with(model: @cloth, url: create_cloth_path, local: true) do |form| %>
   <% if @cloth.errors.any? %>

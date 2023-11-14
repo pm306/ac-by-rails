@@ -1,8 +1,6 @@
 <% provide(:title, "Log in") %>
 
-<% flash.each do |message_type, message| %>
-<div class="flash-<%= message_type %>"><%= message %></div>
-<% end %>
+<%= render 'layouts/flash_messages' %>
 
 <h1>オートコーディネータ</h1>
 <p>自動で服を選んでくれるアプリケーションです。</p>

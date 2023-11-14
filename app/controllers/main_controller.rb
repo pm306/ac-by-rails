@@ -6,6 +6,8 @@ class MainController < ApplicationController
   end
 
   def select_outfit
+    @user = current_user
+    
     max_temperature = params[:max_temperature]
     min_temperature = params[:min_temperature]
   

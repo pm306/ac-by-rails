@@ -3,9 +3,7 @@
 <h1>★オートコーディネータ★</h1>
 <p>ようこそ、 <%= current_user.name %> さん。</p>
 
-<% flash.each do |message_type, message| %>
-<div class="flash-<%= message_type %>"><%= message %></div>
-<% end %>
+<%= render 'layouts/flash_messages' %>
 
 <%= form_with url: outfits_path, method: :post do |form| %>
   <div>
@@ -38,4 +36,4 @@
 <%= button_to "ログアウト", logout_path, :method=> :delete %>
 <p></p>
 <%= link_to "クローゼットへ", closet_path %>
-<%=link_to "ユーザーデータ", user_path(@user)%>
+<%= link_to "ユーザーデータ", user_path(@user)%>
