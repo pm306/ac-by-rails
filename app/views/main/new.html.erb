@@ -5,19 +5,19 @@
 <p>ようこそ、 <%= current_user.name %> さん。</p>
 
 <%= form_with url: outfits_path, method: :post do |form| %>
-  <div>
-    <%= form.label :max_temperature, '最高気温' %>
-    <%= form.number_field :max_temperature %>
-  </div>
+    <li>
+      <%= form.label :max_temperature, '最高気温' %>
+      <%= form.number_field :max_temperature %>
+    </li>
 
-  <div>
-    <%= form.label :min_temperature, '最低気温' %>
-    <%= form.number_field :min_temperature %>
-  </div>
+    <li>
+      <%= form.label :min_temperature, '最低気温' %>
+      <%= form.number_field :min_temperature %>
+    </li>
 
-  <div>
-    <%= form.submit '服を選ぶ' %>
-  </div>
+    <li>
+      <%= form.submit '服を選ぶ' %>
+    </li>
 <% end %>
 
 <% if session[:selected_clothes_ids].present? %>
