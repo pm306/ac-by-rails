@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post '/outfits',       to: 'main#select_outfit'
   get '/signup',        to: 'users#new',        as: 'signup'
   get '/login',         to: 'sessions#new',     as: 'login'
-  post '/login',        to: 'sessions#create',  as: 'sessions'
+  post '/login',        to: 'sessions#create',  as: 'create_login'
   delete '/logout',     to: 'sessions#destroy', as: 'logout'
 
   resources :users, only:[:new, :create, :show, :edit, :update]
