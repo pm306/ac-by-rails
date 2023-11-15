@@ -31,7 +31,7 @@ body {
 $flash-types: (
   error: rgb(255, 50, 50),
   success: green,
-  notice: blue
+  notice: green,
 );
 
 @each $type, $color in $flash-types {

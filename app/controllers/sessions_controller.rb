@@ -7,17 +7,18 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
+      flash[:success] = "ログインに成功しました"
       log_in user
-      redirect_to index_path
+      redirect_to root_url
     else
-      flash.now[:error] = "無効なメールアドレスかパスワードです"
+      flash[:error] = "無効なメールアドレスかパスワードです"
       render :new
     end
   end
 
   def destroy
     reset_session
-    flash[:notice] = "ログアウトしました。"
+    flash[:notice] = "ログアウトしました"
     redirect_to login_url
   end
 

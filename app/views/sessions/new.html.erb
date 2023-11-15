@@ -7,7 +7,8 @@
 <%= image_tag "sites/kid_kigae_boy.png", class: "image-login", alt: "着替え" %>
 
 <p>その日に着る服を自動で選んでくれます。</p>
-<p>※このアプリはRuby on railsの学習のために作られています</p>
+<p>なお、ランダム選択なので着合わせがダサくなることもあります。</p>
+
 
 <%= form_with(scope: :session, 
               url: create_login_path, 
@@ -30,3 +31,5 @@
 
 <p></p>
 <%= link_to "ユーザー登録", signup_path, class: "link" %>
+
+<p>※このアプリはRuby on railsの学習のために作られています</p>

@@ -1,9 +1,8 @@
-<% provide(:title, "Auto Coordinator") %>
+<% provide(:title, "home") %>
+<%= render 'layouts/flash_messages' %>
 
 <h1>★オートコーディネータ★</h1>
 <p>ようこそ、 <%= current_user.name %> さん。</p>
-
-<%= render 'layouts/flash_messages' %>
 
 <%= form_with url: outfits_path, method: :post do |form| %>
   <div>
