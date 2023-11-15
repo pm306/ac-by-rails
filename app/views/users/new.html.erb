@@ -1,31 +1,33 @@
 <% provide(:title, "Sign up") %>
-<h1>ユーザー登録</h1>
+<h1>新規ユーザー登録</h1>
 
-<% @user.errors.full_messages.each do |message| %>
-<li><%= message %></li>
+<%= render 'layouts/flash_messages' %>
+
+<%= image_tag "sites/book_watoji.png", class: "image-signup", alt: "着替え" %>
+
+<%= form_with(model: @user, 
+              local: true,
+              html: { class: "form-container" }) do |form| %>
+
+  <ul>
+    <li>
+      <%= form.label :name, "ユーザー名" %>
+      <%= form.text_field :name %>
+    </li>
+    <li>
+      <%= form.label :email, "メールアドレス" %>
+      <%= form.email_field :email %>
+    </li>
+    <li>
+      <%= form.label :password, "パスワード" %>
+      <%= form.password_field :password %>
+    </li>
+    <li>
+      <%= form.submit "登録" %>
+    </li>
+  </ul>
 <% end %>
 
-<%= form_with(model: @user, local: true) do |form| %>
+<p>ユーザー名は16文字以下、パスワードは8文字以上16文字以下（未実装）</p>
 
-  <div class="field">
-    <%= form.label :"名前" %>
-    <%= form.text_field :name, id: :user_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.email_field :email, id: :user_email %>
-  </div>
-
-  <div class="password">
-    <%= form.label :"パスワード" %>
-    <%= form.password_field :password, id: :user_password %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "登録" %>
-  </div>
-<% end %>
-
-<%= link_to "戻る", login_path %>
-
+<%= link_to image_tag("sites/navigationj_back.png", class: "image-back-link"), login_path %>

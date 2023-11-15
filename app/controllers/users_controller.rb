@@ -6,12 +6,29 @@ class UsersController < ApplicationController
   end
 
   def create
+    if params[:user][:name].empty?
+      flash[:error] = "ユーザー名が空です"
+      return redirect_to signup_url
+    end
+
+    if params[:user][:email].empty?
+      flash[:error] = "メールアドレスが空です"
+      return redirect_to signup_url
+    end
+    
+    if params[:user][:password].empty?
+      flash[:error] = "パスワードが空です"
+      return redirect_to signup_url
+    end
+
     @user = User.new(user_create_params)
+
     if @user.save
       flash[:success] = "ユーザー登録に成功しました！"
-      redirect_to login_path
+      redirect_to login_url
     else
-      render :new
+      flash[:error] = "ユーザー登録に失敗しました"
+      redirect_to signup_url
     end
   end
 
@@ -55,7 +72,6 @@ class UsersController < ApplicationController
   private
 
   def user_create_params
-    # Strong Parametersを使用して安全にパラメータをフィルタリングする
     params.require(:user).permit(:name, :email, :password)
   end
 

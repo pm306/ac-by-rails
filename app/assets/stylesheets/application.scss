@@ -15,9 +15,7 @@ body {
         margin-right: 10px;
         float: left;
       }
-    
-      input[type="email"],
-      input[type="password"] {
+      input {
         width: 180px;
         height: 20px;
       }
@@ -27,6 +25,22 @@ body {
         height: 25px;
       }
     }
+  }
+}
+
+$flash-types: (
+  error: rgb(255, 50, 50),
+  success: green,
+  notice: blue
+);
+
+@each $type, $color in $flash-types {
+  .flash-#{$type} {
+    background-color: $color;
+    color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    max-width: 500px;
   }
 }
 
@@ -41,4 +55,12 @@ body {
 
 .image-login {
   @include image-size(300px);
+}
+
+.image-signup {
+  @include image-size(200px);
+}
+
+.image-back-link {
+  @include image-size(130px, 70px);
 }

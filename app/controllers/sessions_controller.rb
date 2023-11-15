@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to index_path
     else
-      flash.now[:danger] = "無効なメールアドレスかパスワードです"
+      flash.now[:error] = "無効なメールアドレスかパスワードです"
       render :new
     end
   end
