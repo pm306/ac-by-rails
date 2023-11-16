@@ -23,8 +23,8 @@ class ClothesController < ApplicationController
       flash[:success] = "服が登録されました"
       redirect_to closet_add_url
     else
-      flash.now[:error] = "服の登録に失敗しました"
-      render :new
+      flash[:error] = "服の登録に失敗しました"
+      redirect_to closet_add_url
     end
   end
 

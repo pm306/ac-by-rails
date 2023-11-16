@@ -1,5 +1,5 @@
 <% provide(:title, "Add cloth") %>
-<h1>新しく服を登録します</h1>
+<h1>服の登録</h1>
 
 <%= javascript_include_tag 'preview_cloth_image' %>
 
@@ -9,37 +9,29 @@
 
 <%= render 'layouts/flash_messages' %>
 
-<%= form_with(model: @cloth, url: create_cloth_path, local: true) do |form| %>
-  <% if @cloth.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@cloth.errors.count, "error") %> prohibited this cloth from being saved:</h2>
+<%= form_with(model: @cloth, 
+              url: create_cloth_path, 
+              local: true,
+              html: { class: "form-container" }) do |form| %>
 
-      <ul>
-      <% @cloth.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :image, '画像アップロード' %>
-    <%= form.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cloth_type_id, '服の種類' %>
-    <%= form.collection_select :cloth_type_id, ClothType.all, :id, :name, prompt: '選択してください' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description, '説明' %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit '登録する' %>
-  </div>
+    <ul> 
+      <li>
+        <%= form.label :image, '画像アップロード', class:"cloth-add" %>
+        <%= form.file_field :image, class:"image-upload", accept: 'image/jpeg,image/gif,image/png' %>
+      </li>
+      <li>
+        <%= form.label :cloth_type_id, '服の種類', class:"cloth-add" %>
+        <%= form.collection_select :cloth_type_id, ClothType.all, :id, :name,
+            { prompt: '選択してください' }, { class: "select-type" } %>
+      </li>
+      <li>
+        <%= form.label :description, '説明', class:"cloth-add" %>
+        <%= form.text_area :description, class:"add-cloth-description" %>
+      </li>
+      <li>
+        <%= form.submit '登録する' %>
+      </li>
+    </ul>
 <% end %>
 
-<%= link_to "戻る", closet_path %>
+<%= link_to image_tag("sites/navigationj_back.png", class: "image-back-link"), closet_path %>

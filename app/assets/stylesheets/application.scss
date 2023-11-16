@@ -31,18 +31,34 @@ li {
         &.label-user-edit {
           width: 220px;
         }
+        &.cloth-add {
+          width: 150px;
+        }
       }
       input {
         width: 180px;
         height: 20px;
+      }
+      input[type="file"] {
+        width: auto;
+        height: auto;
+        margin: 0;
       }
       input[type="submit"] {
         font-weight: bold;
         width: 100px;
         height: 25px;
       }
+      .select-type {
+        font-size:1.2em; 
+      }
+      .add-cloth-description {
+        font-size:1.7em;
+        width:300px;
+      }
     }
   }
+  
 }
 
 .closet-link-container {
