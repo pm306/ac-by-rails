@@ -11,8 +11,7 @@
 
 <%= form_with(url: clothes_path, 
               method: :get,
-              html: { class: "checkbox-container" }) do %>
-  
+              html: { class: "checkbox-container" }) do %> 
   <% ClothType.all.each_with_index do |type, index| %>
     <div class="checkbox-item">
       <%= check_box_tag "types[]", type.id, class: "cloth-type-checkbox" %>
@@ -20,17 +19,12 @@
     </div>
     <%= '<br>'.html_safe if (index + 1) % 4 == 0 %> <!-- 4つごとに改行 -->
   <% end %>
-  <div>
-    <%= submit_tag "絞り込む" %>
+  <div class="check-button">
+    <%= submit_tag "表示", class:"cloth-filter-button" %>
+    <%= button_tag 'すべて選択', type: 'button', id: 'select-all', class: "check-all-button" %>
+    <%= button_tag 'チェックを外す', type: 'button', id: 'deselect-all', class: "check-all-button" %>
   </div>
 <% end %>
-
-<div>
-<button type="button" id="select-all">すべて選択</button>
-</div>
-<div>
-<button type="button" id="deselect-all">チェックを外す</button>
-</div>
 
 <% @cloths.each do |cloth| %>
   <% if cloth.image.attached? %>
