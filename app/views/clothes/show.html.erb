@@ -1,8 +1,12 @@
-<h1>服の詳細ページだよ</h1>
+<% provide(:title, "Detail") %>
+<h1>服の詳細ページ</h1>
 
-<%= image_tag @cloth.image if @cloth.image.attached? %>
-<p><%= @cloth.description %></p>
+<div>
+  <%= link_to image_tag("sites/navigationj_back.png", class:"image-back-link"),closet_path %>
+</div>
+
+<%= image_tag @cloth.image, class:"image-cloth-detail" if @cloth.image.attached? %>
+
+<p class="show-description"><%= @cloth.description %></p>
 
 <%= button_to "服を削除する", cloth_path(@cloth), method: :delete, data:{ confirm: "本当に削除しますか？"} %>
-
-<%= link_to "戻る", closet_path%>

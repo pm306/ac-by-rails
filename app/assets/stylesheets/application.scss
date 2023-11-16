@@ -7,6 +7,11 @@ body {
   background-color: beige;
 }
 
+.show-description {
+  font-size: 200%;
+  font-weight: bold;
+}
+
 li {
   list-style: none;
 }
@@ -150,4 +155,9 @@ $flash-types: (
 
 .image-profile {
   @include image-size(200px, 200px);
+}
+
+.image-cloth-detail {
+  max-width: 1000px;
+  max-height: 1000px;
 }
