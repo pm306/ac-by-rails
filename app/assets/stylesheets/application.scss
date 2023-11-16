@@ -71,6 +71,19 @@ li {
   }
 }
 
+.checkbox-item {
+  display: inline-block;
+  font-size: 1.3em;
+  margin-bottom: 5px;
+  .cloth-type-checkbox {
+    transform: scale(1.3);
+  }
+  .cloth-type-label {
+    display: inline-block;
+    width: 140px;
+  }
+}
+
 $flash-types: (
   error: rgb(255, 50, 50),
   success: green,
@@ -93,6 +106,13 @@ $flash-types: (
 
 .edit-link {
   margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 1.2em;
+}
+
+.add-cloth-link {
+  font-weight: bold;
+  margin-top: 20px;
   margin-bottom: 30px;
   font-size: 1.2em;
 }

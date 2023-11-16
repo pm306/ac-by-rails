@@ -1,18 +1,36 @@
-<h1>クローゼット</h1>
-<p>登録した服を管理するページです</p>
-<p>服の画像をクリックすると詳細画面を表示できます。(予定)</p>
+<% provide(:title, "Closet") %>
+<%= javascript_include_tag 'show_clothes' %>
 
-<%= form_with url: clothes_path, method: :get do %>
-  <% ClothType.all.each do |type| %>
-    <%= check_box_tag "types[]", type.id %>
-    <%= label_tag "types_#{type.id}", type.name %><br>
+<h1>クローゼット(衣服管理ページ)</h1>
+<p>服を登録したり、登録した服を表示することができます。</p>
+<p>服の画像をクリックすると詳細画面を表示できます。</p>
+
+<div class="add-cloth-link">
+<%= link_to "●服を追加する", closet_add_path %>
+</div>
+
+<%= form_with(url: clothes_path, 
+              method: :get,
+              html: { class: "checkbox-container" }) do %>
+  
+  <% ClothType.all.each_with_index do |type, index| %>
+    <div class="checkbox-item">
+      <%= check_box_tag "types[]", type.id, class: "cloth-type-checkbox" %>
+      <%= label_tag "types_#{type.id}", type.name, class: "cloth-type-label" %>
+    </div>
+    <%= '<br>'.html_safe if (index + 1) % 4 == 0 %> <!-- 4つごとに改行 -->
   <% end %>
-
-  <%= submit_tag "絞り込む" %>
+  <div>
+    <%= submit_tag "絞り込む" %>
+  </div>
 <% end %>
 
+<div>
 <button type="button" id="select-all">すべて選択</button>
+</div>
+<div>
 <button type="button" id="deselect-all">チェックを外す</button>
+</div>
 
 <% @cloths.each do |cloth| %>
   <% if cloth.image.attached? %>
@@ -20,22 +38,6 @@
   <% end %>
 <% end %>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('select-all').addEventListener('click', function () {
-      document.querySelectorAll('input[type="checkbox"][name="types[]"]').forEach(function (checkbox) {
-        checkbox.checked = true;
-      });
-    });
-
-    document.getElementById('deselect-all').addEventListener('click', function () {
-      document.querySelectorAll('input[type="checkbox"][name="types[]"]').forEach(function (checkbox) {
-        checkbox.checked = false;
-      });
-    });
-  });
-</script>
-
-<%= link_to "服を追加する", closet_add_path %>
-
-<%= link_to "戻る", root_path %>
+<div>
+<%= link_to image_tag("sites/navigationj_back.png", class:"image-back-link"), root_path %>
+</div>
