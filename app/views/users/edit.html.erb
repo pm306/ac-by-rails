@@ -1,35 +1,37 @@
-<h1>ユーザー編集</h1>
-
+<% provide(:title, "Edit user") %>
 <%= render 'layouts/flash_messages' %>
+<h1>ユーザー情報の編集</h1>
+<p>ユーザー名を変更する場合は、パスワードの入力は不要です。</p>
+<p>パスワードを変更する場合は、現在のパスワードと変更後のパスワードを入力してください。</p>
 
-<%= form_with(model: @user, url: user_path(@user), local: true) do |form| %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :current_password %>
-    <%= form.password_field :current_password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Update" %>
-  </div>
+<%= form_with(model: @user, 
+              url: user_path(@user), 
+              local: true,
+              html: { class: "form-container" }) do |form| %>
+  <ul>
+    <li>
+      <%= form.label :name, "ユーザー名", class:"label-user-edit" %>
+      <%= form.text_field :name %>
+    </li>
+    <li>
+      <%= form.label :current_password, "現在のパスワード", class:"label-user-edit" %>
+      <%= form.password_field :current_password %>
+    </li>
+    <li>
+      <%= form.label :password, "変更後のパスワード", class:"label-user-edit" %>
+      <%= form.password_field :password %>
+    </li>
+    <li>
+      <%= form.label :password_confirmation, "変更後のパスワード（確認）", class:"label-user-edit" %>
+      <%= form.password_field :password_confirmation %>
+    </li>
+    <li>
+    <%= form.submit "更新" %>
+    </li>
+  </ul>
 <% end %>
 
 
-<%= button_to "削除(ハリボテ)", edit_user_path %>
+<%= button_to "ユーザーを削除する(ハリボテ)", edit_user_path %>
 
-<%= link_to "プロフィールに戻る", user_path()%>
+<%= link_to image_tag("sites/navigationj_back", class:"image-back-link"), root_path %>

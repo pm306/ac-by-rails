@@ -22,6 +22,10 @@ li {
         width: 120px;
         margin-right: 10px;
         float: left;
+
+        &.label-user-edit {
+          width: 220px;
+        }
       }
       input {
         width: 180px;
