@@ -48,6 +48,25 @@ li {
   }
 }
 
+.user-profile-container {
+  align-items: left;
+  ul {
+    padding-left: 0;
+    li {
+      display: flex;
+      align-items: center;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      font-weight: bold;
+
+      strong {
+        min-width: 150px;
+        margin-right: 10px;
+      }      
+    }
+  }
+}
+
 $flash-types: (
   error: rgb(255, 50, 50),
   success: green,
@@ -68,6 +87,12 @@ $flash-types: (
   font-weight: bold;
 }
 
+.edit-link {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 1.2em;
+}
+
 .image-login {
   @include image-size(300px);
 }
@@ -82,4 +107,8 @@ $flash-types: (
 
 .image-closet {
   @include image-size(150px, 160px);
+}
+
+.image-profile {
+  @include image-size(200px, 200px);
 }

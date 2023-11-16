@@ -1,15 +1,28 @@
+<% provide(:title, "profile") %>
 <h1>ユーザープロフィール</h1>
 
 <div>
-  <strong>ユーザー名：</strong><%= @user.name %>
+  <%= image_tag("sites/document_data_bunseki.png", class:'image-profile')%>
+</div>
+
+<div class="user-profile-container">
+  <ul>
+    <li>
+      <strong>ユーザー名：</strong><%= @user.name %>
+    </li>
+    <li>
+      <strong>メールアドレス：</strong><%= @user.email %>
+    </li>
+    <li>
+      <strong>パスワード：</strong>********
+    </li>
+  </ul>
+</div>
+
+<div class="edit-link">
+  <%= link_to "プロフィールを編集", edit_user_path %>
 </div>
 
 <div>
-  <strong>メールアドレス：</strong><%= @user.email %>
+<%= link_to image_tag('sites/navigationj_back', class: 'image-back-link'), root_path %>
 </div>
-
-<div>
-  <strong>パスワード：</strong>********
-</div>
-
-<%= link_to "編集", edit_user_path %>
