@@ -1,5 +1,14 @@
+@mixin image-size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
 body {
   background-color: beige;
+}
+
+li {
+  list-style: none;
 }
 
 .form-container {
@@ -7,7 +16,6 @@ body {
   ul {
     padding-left: 0px;
     li {
-      list-style: none;
       margin-bottom: 10px;
       label {
         font-weight: bold;
@@ -23,6 +31,18 @@ body {
         font-weight: bold;
         width: 100px;
         height: 25px;
+      }
+    }
+  }
+}
+
+.closet-link-container {
+  align-items: left;
+  ul {
+    padding-left: 0;
+    li {
+      &:first-child {
+        font-weight: bold;
       }
     }
   }
@@ -48,11 +68,6 @@ $flash-types: (
   font-weight: bold;
 }
 
-@mixin image-size($width, $height: $width) {
-  width: $width;
-  height: $height;
-}
-
 .image-login {
   @include image-size(300px);
 }
@@ -63,4 +78,8 @@ $flash-types: (
 
 .image-back-link {
   @include image-size(130px, 70px);
+}
+
+.image-closet {
+  @include image-size(150px, 160px);
 }

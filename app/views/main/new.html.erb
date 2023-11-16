@@ -1,10 +1,15 @@
 <% provide(:title, "home") %>
 <%= render 'layouts/flash_messages' %>
 
-<h1>★オートコーディネータ★</h1>
-<p>ようこそ、 <%= current_user.name %> さん。</p>
+<p>ようこそ、<strong><%= link_to @user.name, user_path(@user) %></strong> さん。</p>
 
-<%= form_with url: outfits_path, method: :post do |form| %>
+<h1>★オートコーディネータ★</h1>
+<p>最高気温、最低気温を入力して「服を選ぶ」ボタンをクリックしてください。</p>
+
+<%= form_with( url: outfits_path, 
+              method: :post,
+              html: { class: "form-container" }) do |form| %>
+  <ul>
     <li>
       <%= form.label :max_temperature, '最高気温' %>
       <%= form.number_field :max_temperature %>
@@ -14,10 +19,10 @@
       <%= form.label :min_temperature, '最低気温' %>
       <%= form.number_field :min_temperature %>
     </li>
-
     <li>
       <%= form.submit '服を選ぶ' %>
     </li>
+  </ul>
 <% end %>
 
 <% if session[:selected_clothes_ids].present? %>
@@ -31,8 +36,13 @@
   <% session.delete(:selected_clothes_ids) %>
 <% end %>
 
+<div class="closet-link-container">
+  <ul>
+    <li>▼服を管理する▼</li>
+    <li>
+      <%= link_to image_tag("sites/closet.png", class:"image-closet"), closet_path %>
+    </li>
+  </ul>
+</div>
 
 <%= button_to "ログアウト", logout_path, :method=> :delete %>
-<p></p>
-<%= link_to "クローゼットへ", closet_path %>
-<%= link_to "ユーザーデータ", user_path(@user)%>
