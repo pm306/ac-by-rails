@@ -14,7 +14,7 @@ class MainController < ApplicationController
     # 数値であることを確認
     unless valid_number?(max_temperature) && valid_number?(min_temperature)
       flash[:error] = "数値を入力してください。"
-      render :new
+      redirect_to root_url
       return
     end
 
