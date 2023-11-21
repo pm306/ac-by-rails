@@ -24,10 +24,11 @@ end
 cloth_types = [
   { name: "Tシャツ",    cloth_group_id: 1 },
   { name: "長袖シャツ", cloth_group_id: 3 },
-  { name: "パーカー",   cloth_group_id: 4 },
+  { name: "長袖（厚）",   cloth_group_id: 4 },
   { name: "ジーンズ(薄)",   cloth_group_id: 6 },
   { name: "ジーンズ(厚)", cloth_group_id: 7},
   { name: "アウター",   cloth_group_id: 5 },
+  { name: "Yシャツ(半袖)", cloth_group_id: 1},
   # 他の種類を追加...
 ]
 
@@ -35,13 +36,41 @@ cloth_types.each do |type|
   ClothType.find_or_create_by(type)
 end
 
+init_date = Date.parse('2000-01-01')
+
 cloths = [
-  { user_id: user.id, cloth_type_id: 1, description: "Tシャツの説明",   last_worn_on: Date.parse('2000-01-01'), image_path: Rails.root.join("app/assets/images/seeds/tshirt.png") },
-  { user_id: user.id, cloth_type_id: 2, description: "長袖シャツの説明",last_worn_on: Date.parse('2000-01-01'), image_path: Rails.root.join("app/assets/images/seeds/longsleeve.png") },
-  { user_id: user.id, cloth_type_id: 3, description: "パーカーの説明",  last_worn_on: Date.parse('2000-01-01'), image_path: Rails.root.join("app/assets/images/seeds/hoodie.png") },
-  { user_id: user.id, cloth_type_id: 4, description: "ジーンズの説明",  last_worn_on: Date.parse('2000-01-01'), image_path: Rails.root.join("app/assets/images/seeds/jeans.png") },
-  { user_id: user.id, cloth_type_id: 5, description: "ジーンズ2の説明", last_worn_on: Date.parse('2000-01-01'), image_path: Rails.root.join("app/assets/images/seeds/jeans2.png") },
-  { user_id: user.id, cloth_type_id: 6, description: "アウターの説明",  last_worn_on: Date.parse('2000-01-01'), image_path: Rails.root.join("app/assets/images/seeds/outer.png") },
+  { user_id: user.id, cloth_type_id: 1, description: "橙色のTシャツ",   
+    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/tshirt.png") },
+  { user_id: user.id, cloth_type_id: 1, description: "白色のT？シャツ",   
+    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/siro_t.png") },
+  { user_id: user.id, cloth_type_id: 1, description: "緑の柄付きTシャツ",   
+    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/midori_t.png") },
+  { user_id: user.id, cloth_type_id: 7, description: "アロハシャツ",   
+    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/aroha_y.png") },
+  { user_id: user.id, cloth_type_id: 7, description: "Yシャツ",   
+    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/ysyatu.png") },    
+  { user_id: user.id, cloth_type_id: 2, description: "長袖シャツ",
+    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/longsleeve.png") },
+  { user_id: user.id, cloth_type_id: 2, description: "長袖シャツ2",
+    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/nagasyatu.png") },
+  { user_id: user.id, cloth_type_id: 3, description: "パーカーの説明",  
+    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/hoodie.png") },
+  { user_id: user.id, cloth_type_id: 3, description: "パーカー2",  
+    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/paka.png") },
+  { user_id: user.id, cloth_type_id: 3, description: "トレーナー",  
+    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/atunaga.png") },
+  { user_id: user.id, cloth_type_id: 3, description: "トレーナー2",  
+    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/atunaga2.png") },
+  { user_id: user.id, cloth_type_id: 4, description: "ジーンズの説明",  
+    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/jeans.png") },
+  { user_id: user.id, cloth_type_id: 5, description: "ジーンズ2の説明", 
+    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/jeans2.png") },
+  { user_id: user.id, cloth_type_id: 6, description: "アウター",  
+    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/outer.png") },
+  { user_id: user.id, cloth_type_id: 6, description: "カーキ色のアウター",  
+    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/sotoyou.png") },
+  { user_id: user.id, cloth_type_id: 6, description: "ジャケット",  
+    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/outer2.png") },
 ]
 
 cloths.each do |cloth_data|
