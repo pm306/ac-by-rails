@@ -1,24 +1,16 @@
-# README
+# 概要
+railsでリファクタリングした自作アプリです
+最低限の記述しかしていません。後で書きます
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 環境
 
-Things you may want to cover:
 
-* Ruby version
+# 使い方
 
-* System dependencies
+1. このディレクトリをダウンロードする
+2. フォルダのルートディレクトリに移動する
+3. `rails dartsass:build` を実行する(sassのプリコンパイル)
+4. `rails server` を実行する
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# データを初期化したくなったら
+`rails db:reset` で初期化できます
