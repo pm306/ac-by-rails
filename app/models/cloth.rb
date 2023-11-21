@@ -8,15 +8,6 @@ class Cloth < ApplicationRecord
     validates :user_id, presence: true
     validates :last_worn_on, presence: true
     validate :last_worn_on_is_date?
-  
-    # 必要な他のバリデーションを追加
-    # TODO:画像ファイルの制限, type_nameがcloth_typeのnameに存在するか
-
-    # def category_matches_type
-    #     if cloth_type && category != cloth_type.category
-    #       errors.add(:category, "must be #{cloth_type.category} for #{cloth_type.name}")
-    #     end
-    # end
 
     private
     def last_worn_on_is_date?

@@ -6,8 +6,12 @@
 <p>服を登録したり、登録した服を表示することができます。</p>
 <p>服の画像をクリックすると詳細画面を表示できます。</p>
 
-<div class="add-cloth-link">
-<%= link_to "●服を追加する", closet_add_path %>
+<div class="closet-link">
+  <%= link_to "●服を追加する", closet_add_path %>
+</div>
+
+<div class="closet-link">
+  <%= link_to "●服の分類を確認する", cloth_types_path %>
 </div>
 
 <%= form_with(url: clothes_path, 

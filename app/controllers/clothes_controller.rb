@@ -1,5 +1,5 @@
 class ClothesController < ApplicationController
-  before_action :require_login, only: [:index, :new, :create]
+  before_action :require_login, only: [:index, :new, :create, :show, :destroy]
 
   def index
     base_query = current_user.cloths
@@ -29,7 +29,6 @@ class ClothesController < ApplicationController
   end
 
   def show
-    Rails.logger.info "params[:id]: #{params[:id]}"
     @cloth = Cloth.find(params[:id])
   end
 

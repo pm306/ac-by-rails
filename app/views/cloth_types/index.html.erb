@@ -1,0 +1,27 @@
+<% provide(:title, "cloth types") %>
+
+<h1>服の分類とグループ一覧</h1>
+<p>・服にはそれぞれ分類（Tシャツ、ジーンズなど）が設定できます。</p>
+<p>・分類１つにつき１種類のグループに属しており、服を選択するロジックにはこのグループを使用します。</p>
+<p>例：「Tシャツ」と「半袖Yシャツ」は別の分類ですが、「半袖（外）」という同じグループに属しています。</p>
+
+<table class="cloth_types-view">
+  <thead>
+    <tr>
+      <th>分類名</th>
+      <th>グループ名</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cloth_types.each do |cloth_type| %>
+      <tr>
+        <td><%= cloth_type.name %></td>
+        <td><%= cloth_type.cloth_group.name %></td>
+        <td><%= cloth_type.cloth_group.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= back_link_to(closet_path) %>

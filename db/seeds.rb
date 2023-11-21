@@ -8,13 +8,13 @@ user = User.find_or_create_by(email: "example@guest.com") do |u|
 end
 
 cloth_groups = [
-  { name: "半袖（外）"},
-  { name: "半袖（内）"},
-  { name: "長袖（薄）"},
-  { name: "長袖（厚）"},
-  { name: "アウター"},
-  { name: "ボトムス（薄）"},
-  { name: "ボトムス（厚）"},
+  { name: "半袖（外）", description: "外向けの半袖全般です"},
+  { name: "半袖（内）", description: "インナーとして使う半袖です"},
+  { name: "長袖（薄）", description: "薄手の長袖全般です"},
+  { name: "長袖（厚）", description: "厚手の長袖全般です"},
+  { name: "アウター",   description: "アウター全般です"},
+  { name: "ボトムス（薄）", description: "薄い生地のボトムスです"},
+  { name: "ボトムス（厚）", description: "厚い生地のボトムスです"},
 ]
 
 cloth_groups.each do |group|
@@ -24,11 +24,12 @@ end
 cloth_types = [
   { name: "Tシャツ",    cloth_group_id: 1 },
   { name: "長袖シャツ", cloth_group_id: 3 },
-  { name: "長袖（厚）",   cloth_group_id: 4 },
+  { name: "長袖全般",   cloth_group_id: 4 },
   { name: "ジーンズ(薄)",   cloth_group_id: 6 },
   { name: "ジーンズ(厚)", cloth_group_id: 7},
   { name: "アウター",   cloth_group_id: 5 },
   { name: "Yシャツ(半袖)", cloth_group_id: 1},
+  { name: "インナー（上）", cloth_group_id: 2}
   # 他の種類を追加...
 ]
 
@@ -41,7 +42,7 @@ init_date = Date.parse('2000-01-01')
 cloths = [
   { user_id: user.id, cloth_type_id: 1, description: "橙色のTシャツ",   
     last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/tshirt.png") },
-  { user_id: user.id, cloth_type_id: 2, description: "白色のT？シャツ",   
+  { user_id: user.id, cloth_type_id: 8, description: "白色のT？シャツ",   
     last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/siro_t.png") },
   { user_id: user.id, cloth_type_id: 1, description: "緑の柄付きTシャツ",   
     last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/midori_t.png") },
