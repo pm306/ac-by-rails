@@ -1,8 +1,12 @@
-class MainController < ApplicationController
+class OutfitSelectionRulesController < ApplicationController
   before_action :require_login, only: [:new, :select_outfit]
 
   def new
     # トップページはstatic_pagesに移動した
+  end
+
+  def show
+    
   end
 
   def select_outfit

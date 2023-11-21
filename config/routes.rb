@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/closet',        to: 'clothes#index',    as: 'closet'
   get '/closet/add',    to: 'clothes#new',      as: 'closet_add'
   post '/closet/add',   to: 'clothes#create',   as: 'create_cloth'
-  post '/outfits',      to: 'main#select_outfit'
+  post '/outfits',      to: 'outfit_selection_rules#select_outfit'
   get '/signup',        to: 'users#new',        as: 'signup'
   get '/login',         to: 'sessions#new',     as: 'login'
   post '/login',        to: 'sessions#create',  as: 'create_login'
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :users, only:[:new, :create, :show, :edit, :update]
   resources :clothes
+  resources :outfit_selection_rules
 
   root 'static_pages#home'
 end
