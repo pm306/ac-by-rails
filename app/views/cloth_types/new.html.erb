@@ -1,0 +1,24 @@
+<% provide(:title, "add cloth type") %>
+<%= render 'layouts/flash_messages' %>
+<h1>服の分類を追加する</h1>
+
+<%= form_with(model: @cloth_type, 
+              local: true,
+              html: { class: "form-container" }) do |form| %>
+
+  <ul>
+    <li>
+      <%= form.label :name, "新しい分類名" %>
+      <%= form.text_field :name %>
+    </li>
+    <li>
+      <%= form.label :cloth_group_id, "グループ" %>
+      <%= form.collection_select :cloth_group_id, @cloth_groups, :id, :name, prompt: "グループを選択してください" %>
+    </li>
+    <li>
+      <%= form.submit "登録" %>
+    </li>
+  </ul>
+<% end %>
+
+<%= back_link_to(cloth_types_path) %>
