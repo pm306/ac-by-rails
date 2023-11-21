@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
   get '/closet',        to: 'clothes#index',    as: 'closet'
   get '/closet/add',    to: 'clothes#new',      as: 'closet_add'
   post '/closet/add',   to: 'clothes#create',   as: 'create_cloth'
@@ -12,5 +13,5 @@ Rails.application.routes.draw do
   resources :users, only:[:new, :create, :show, :edit, :update]
   resources :clothes
 
-  root "main#new"
+  root 'static_pages#home'
 end

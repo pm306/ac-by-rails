@@ -2,7 +2,7 @@ class MainController < ApplicationController
   before_action :require_login, only: [:new, :select_outfit]
 
   def new
-    @user = current_user
+    # トップページはstatic_pagesに移動した
   end
 
   def select_outfit
