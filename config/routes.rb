@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :users, only:[:new, :create, :show, :edit, :update]
   resources :clothes
-  resources :outfit_selection_rules, as: 'rules', path: 'rules', only:[:index, :show]
+  resources :outfit_selection_rules, as: 'rules', path: 'rules', only:[:index, :show, :new, :create]
 
   root 'static_pages#home'
 end

@@ -1,1 +1,44 @@
-<h1>ロジック追加ページの予定</h1>
+<% provide(:title, "add rule") %>
+<h1>ロジックを追加する</h1>
+
+<%= form_with(model: @outfit_selection_rule, 
+              local: true,
+              url: rules_path,
+              html: { class: "form-container" }) do |form| %>
+
+  <ul>
+    <li>
+      <%= form.label :name, "ルール名" %>
+      <%= form.text_field :name %>
+    </li>
+    <li>
+      <%= form.label :description, "説明" %>
+      <%= form.text_area :description %>
+    </li>
+    <li>
+      <%= form.label :priority, "優先度" %>
+      <%= form.number_field :priority, value: OutfitSelectionRule::DEFAULT_PRIORITY %>
+    </li>
+    <li>
+      <%= form.label :min_temperature_range, "最低気温" %>
+      <%= form.number_field :min_temperature_lower_bound %>度～
+      <%= form.number_field :min_temperature_upper_bound %>度
+    </li>
+    <li>
+      <%= form.label :max_temperature_range, "最高気温" %>
+      <%= form.number_field :max_temperature_lower_bound %>度～
+      <%= form.number_field :max_temperature_upper_bound %>度
+    </li>
+    <% @cloth_groups.each do |cloth_group| %>
+      <li>
+        <%= form.label "cloth_group_selections_#{cloth_group.id}", cloth_group.name %>
+        <%= form.number_field "cloth_group_selections[#{cloth_group.id}]", value:ClothGroup::DEFAULT_SELECT_NUMBER %>枚
+      </li>
+    <% end %>
+    <li>
+      <%= form.submit "登録" %>
+    </li>
+  </ul>
+<% end %>
+
+<%= link_to image_tag("sites/navigationj_back", class:"image-back-link"), rules_path %>

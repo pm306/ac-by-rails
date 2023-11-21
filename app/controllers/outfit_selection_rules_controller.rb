@@ -1,12 +1,24 @@
 class OutfitSelectionRulesController < ApplicationController
-  before_action :require_login, only: [:index, :new, :show, :select_outfit]
+  before_action :require_login, only: [:index, :new, :create, :show, :select_outfit]
 
   def index
     @outfit_selection_rules = OutfitSelectionRule.all
   end
 
   def new
-    # トップページはstatic_pagesに移動した
+    @outfit_selection_rule = OutfitSelectionRule.new
+    @cloth_groups = ClothGroup.all
+  end
+
+  def create
+    @outfit_selection_rule = OutfitSelectionRule.new(outfit_selection_rule_params)
+    if @outfit_selection_rule.save
+      flash[:success] = "ルールが正常に作成されました。"
+      redirect_to rules_url
+    else
+      flash[:error] = "ルールの登録に失敗しました。"
+      redirect_to rules_url
+    end
   end
 
   def show
@@ -66,5 +78,11 @@ class OutfitSelectionRulesController < ApplicationController
 
   def valid_number?(str)
     true if Float(str) rescue false
+  end
+
+  def outfit_selection_rule_params
+    params.require(:outfit_selection_rule).permit(:name, :description, :priority, 
+      :min_temperature_lower_bound, :min_temperature_upper_bound, 
+      :max_temperature_lower_bound, :max_temperature_upper_bound)
   end
 end
