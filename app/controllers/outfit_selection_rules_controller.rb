@@ -1,5 +1,8 @@
 class OutfitSelectionRulesController < ApplicationController
-  before_action :require_login, only: [:new, :select_outfit]
+  before_action :require_login, only: [:index, :new, :show, :select_outfit]
+
+  def index
+  end
 
   def new
     # トップページはstatic_pagesに移動した
