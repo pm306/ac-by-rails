@@ -12,15 +12,19 @@ class OutfitSelectionRulesController < ApplicationController
 
   def create
     @outfit_selection_rule = OutfitSelectionRule.new(outfit_selection_rule_params.except(:cloth_group_selections))
-    if @outfit_selection_rule.save
+
+    ActiveRecord::Base.transaction do
+      @outfit_selection_rule.save!
       process_cloth_group_selections(@outfit_selection_rule, params[:outfit_selection_rule][:cloth_group_selections] || {})
-      flash[:success] = "ルールが正常に作成されました。"
-      redirect_to rules_url
-    else
+    end
+
+    flash[:success] = "ルールの登録に成功しました。"
+    redirect_to rules_url
+
+    rescue ActiveRecord::RecordInvalid
       #TODO:エラーメッセージで場合分け
       flash[:error] = "ルールの登録に失敗しました。"
       redirect_to new_rule_url
-    end
   end
 
   def show
@@ -92,7 +96,7 @@ class OutfitSelectionRulesController < ApplicationController
   def process_cloth_group_selections(rule, selections_params)
     selections_params.each do |cloth_group_id, selection_count|
       if selection_count.to_i.positive?
-        ClothGroupSelection.create(
+        ClothGroupSelection.create!(
           outfit_selection_rule_id: rule.id,
           cloth_group_id: cloth_group_id,
           selection_count: selection_count
