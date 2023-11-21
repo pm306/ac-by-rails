@@ -2,6 +2,7 @@ class OutfitSelectionRulesController < ApplicationController
   before_action :require_login, only: [:index, :new, :show, :select_outfit]
 
   def index
+    @outfit_selection_rules = OutfitSelectionRule.all
   end
 
   def new

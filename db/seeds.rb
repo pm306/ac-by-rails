@@ -1,8 +1,8 @@
 ActiveStorage::AnalyzeJob.queue_adapter = :inline
 ActiveStorage::PurgeJob.queue_adapter = :inline
 
-user = User.find_or_create_by(email: "oyama306@onimai.com") do |u|
-  u.name = "緒山まひろ"
+user = User.find_or_create_by(email: "example@guest.com") do |u|
+  u.name = "ゲスト太郎"
   u.password = "password"
   u.password_confirmation = "password"
 end

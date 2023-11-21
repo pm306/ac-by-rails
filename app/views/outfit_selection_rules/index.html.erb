@@ -1,1 +1,35 @@
+<% provide(:title, "rules") %>
 <h1>ロジック一覧</h1>
+<p>気温の条件のマッチしたルールのうち、優先度が高い条件で選択します</p>
+<p>ルールごとに選ぶ服は現在表示していません</p>
+
+<% no_limit_text = '制限なし' %>
+
+<table class="rules-view">
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>説明</th>
+      <th>優先度</th>
+      <th>最低気温の最低値</th>
+      <th>最低気温の最高値</th>
+      <th>最高気温の最低値</th>
+      <th>最高気温の最高値</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @outfit_selection_rules.each do |rule| %>
+      <tr>
+        <td><%= rule.name %></td>
+        <td><%= rule.description %></td>
+        <td><%= rule.priority %></td>
+        <td><%= rule.min_temperature_lower_bound || no_limit_text %></td>
+        <td><%= rule.min_temperature_upper_bound || no_limit_text %></td>
+        <td><%= rule.max_temperature_lower_bound || no_limit_text %></td>
+        <td><%= rule.max_temperature_upper_bound || no_limit_text %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to image_tag("sites/navigationj_back", class:"image-back-link"), root_path %>
