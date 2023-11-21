@@ -1,4 +1,40 @@
 <% provide(:title, "rule") %>
-<h1>個別ロジック詳細</h1>
+<h1>ルール<%= @outfit_selection_rule.id %> : <%= @outfit_selection_rule.name %></h1>
+
+<% no_limit_text = '制限なし' %>
+
+<table>
+  <tr>
+    <th>説明</th>
+    <td><%= @outfit_selection_rule.description %></td>
+  </tr>
+  <tr>
+    <th>優先度</th>
+    <td><%= @outfit_selection_rule.priority %></td>
+  </tr>
+  <tr>
+    <th>最低気温の最低値</th>
+    <td><%= @outfit_selection_rule.min_temperature_lower_bound || no_limit_text %></td>
+  </tr>
+  <tr>
+    <th>最低気温の最高値</th>
+    <td><%= @outfit_selection_rule.min_temperature_upper_bound || no_limit_text %></td>
+  </tr>
+  <tr>
+    <th>最高気温の最低値</th>
+    <td><%= @outfit_selection_rule.max_temperature_lower_bound || no_limit_text %></td>
+  </tr>
+  <tr>
+    <th>最高気温の最高値</th>
+    <td><%= @outfit_selection_rule.max_temperature_upper_bound || no_limit_text %></td>
+  </tr>
+  <% @outfit_selection_rule.cloth_group_selections.each do |selection| %>
+  <tr>
+    <th><%= selection.cloth_group.name %></th>
+    <td><%= selection.selection_count %>枚</td>
+  <% end %>
+  </tr>
+</table>
+
 
 <%= link_to image_tag("sites/navigationj_back", class:"image-back-link"), rules_path %>
