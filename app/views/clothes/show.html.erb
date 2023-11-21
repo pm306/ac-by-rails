@@ -2,7 +2,7 @@
 <h1>服の詳細ページ</h1>
 
 <div>
-  <%= link_to image_tag("sites/navigationj_back.png", class:"image-back-link"),closet_path %>
+  <%= back_link_to(closet_path) %>
 </div>
 
 <%= image_tag @cloth.image, class:"image-cloth-detail" if @cloth.image.attached? %>

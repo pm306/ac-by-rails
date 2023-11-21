@@ -1,9 +1,11 @@
 <% provide(:title, "Sign up") %>
-<h1>新規ユーザー登録</h1>
-
 <%= render 'layouts/flash_messages' %>
 
-<%= image_tag "sites/book_watoji.png", class: "image-signup", alt: "着替え" %>
+<h1>新規ユーザー登録</h1>
+
+<div>
+  <%= image_tag "sites/book_watoji.png", class: "image-signup", alt: "着替え" %>
+</div>
 
 <%= form_with(model: @user, 
               local: true,
@@ -30,4 +32,6 @@
 
 <p>ユーザー名は16文字以下、パスワードは8文字以上16文字以下（未実装）</p>
 
-<%= link_to image_tag("sites/navigationj_back.png", class: "image-back-link"), login_path %>
+<div>
+  <%= back_link_to(login_path) %>
+</div>
