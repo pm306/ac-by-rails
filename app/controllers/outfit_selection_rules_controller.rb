@@ -11,13 +11,15 @@ class OutfitSelectionRulesController < ApplicationController
   end
 
   def create
-    @outfit_selection_rule = OutfitSelectionRule.new(outfit_selection_rule_params)
+    @outfit_selection_rule = OutfitSelectionRule.new(outfit_selection_rule_params.except(:cloth_group_selections))
     if @outfit_selection_rule.save
+      process_cloth_group_selections(@outfit_selection_rule, params[:outfit_selection_rule][:cloth_group_selections] || {})
       flash[:success] = "ルールが正常に作成されました。"
       redirect_to rules_url
     else
+      #TODO:エラーメッセージで場合分け
       flash[:error] = "ルールの登録に失敗しました。"
-      redirect_to rules_url
+      redirect_to new_rule_url
     end
   end
 
@@ -83,6 +85,19 @@ class OutfitSelectionRulesController < ApplicationController
   def outfit_selection_rule_params
     params.require(:outfit_selection_rule).permit(:name, :description, :priority, 
       :min_temperature_lower_bound, :min_temperature_upper_bound, 
-      :max_temperature_lower_bound, :max_temperature_upper_bound)
+      :max_temperature_lower_bound, :max_temperature_upper_bound,
+      cloth_group_selections: {})
+  end
+
+  def process_cloth_group_selections(rule, selections_params)
+    selections_params.each do |cloth_group_id, selection_count|
+      if selection_count.to_i.positive?
+        ClothGroupSelection.create(
+          outfit_selection_rule_id: rule.id,
+          cloth_group_id: cloth_group_id,
+          selection_count: selection_count
+        )
+      end
+    end
   end
 end

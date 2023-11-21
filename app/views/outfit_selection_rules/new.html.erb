@@ -1,5 +1,8 @@
 <% provide(:title, "add rule") %>
+<%= render 'layouts/flash_messages' %>
+
 <h1>ロジックを追加する</h1>
+<p>・ルール名は必須です。気温を設定しないと上限／下限なしになります。</p>
 
 <%= form_with(model: @outfit_selection_rule, 
               local: true,
@@ -32,7 +35,7 @@
     <% @cloth_groups.each do |cloth_group| %>
       <li>
         <%= form.label "cloth_group_selections_#{cloth_group.id}", cloth_group.name %>
-        <%= form.number_field "cloth_group_selections[#{cloth_group.id}]", value:ClothGroup::DEFAULT_SELECT_NUMBER %>枚
+        <%= number_field_tag "outfit_selection_rule[cloth_group_selections][#{cloth_group.id}]", nil, value:ClothGroup::DEFAULT_SELECT_NUMBER %>枚
       </li>
     <% end %>
     <li>
