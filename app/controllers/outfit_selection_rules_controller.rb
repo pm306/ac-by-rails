@@ -10,7 +10,7 @@ class OutfitSelectionRulesController < ApplicationController
   end
 
   def show
-    
+    @outfit_selection_rule = OutfitSelectionRule.find(params[:id])
   end
 
   def select_outfit
