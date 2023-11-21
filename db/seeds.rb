@@ -41,7 +41,7 @@ init_date = Date.parse('2000-01-01')
 cloths = [
   { user_id: user.id, cloth_type_id: 1, description: "橙色のTシャツ",   
     last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/tshirt.png") },
-  { user_id: user.id, cloth_type_id: 1, description: "白色のT？シャツ",   
+  { user_id: user.id, cloth_type_id: 2, description: "白色のT？シャツ",   
     last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/siro_t.png") },
   { user_id: user.id, cloth_type_id: 1, description: "緑の柄付きTシャツ",   
     last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/midori_t.png") },
