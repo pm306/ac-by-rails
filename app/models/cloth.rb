@@ -7,6 +7,7 @@ class Cloth < ApplicationRecord
 
     validates :user_id, presence: true
     validates :last_worn_on, presence: true
+    validates :image, presence: true  # ここに追加    
     validate :last_worn_on_is_date?
 
     private
