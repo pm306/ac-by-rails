@@ -1,5 +1,6 @@
 class ClothesController < ApplicationController
   before_action :require_login, only: [:index, :new, :create, :show, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :cloth_not_found
 
   def index
     base_query = current_user.cloths
@@ -41,5 +42,9 @@ class ClothesController < ApplicationController
   private
   def cloth_params
     params.require(:cloth).permit(:image, :cloth_type_id, :description)
+  end
+
+  def cloth_not_found
+    redirect_to closet_path, alert: '指定された服は見つかりませんでした。'
   end
 end
