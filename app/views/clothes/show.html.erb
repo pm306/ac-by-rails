@@ -9,4 +9,4 @@
 
 <p class="show-description"><%= @cloth.description %></p>
 
-<%= button_to "服を削除する", cloth_path(@cloth), method: :delete, data:{ confirm: "本当に削除しますか？"} %>
+<%= general_delete_button("服を削除する", cloth_path(@cloth)) %>

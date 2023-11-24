@@ -87,22 +87,22 @@ end
 
 # 夏用ルール
 summer_rule = OutfitSelectionRule.find_or_create_by(name: '夏用') do |rule|
-  rule.description = ''
+  rule.description = '夏用のルール'
   rule.priority = 1
   rule.min_temperature_lower_bound = 20
 end
 
 # 冬用ルール
 winter_rule = OutfitSelectionRule.find_or_create_by(name: '冬用') do |rule|
-  rule.description = ''
+  rule.description = '冬用のルール'
   rule.priority = 2
   rule.max_temperature_upper_bound = 15
 end
 
 # その他のルール
-other_rule = OutfitSelectionRule.find_or_create_by(name: 'その他') do |rule|
+other_rule = OutfitSelectionRule.find_or_create_by(name: 'default') do |rule|
   rule.description = 'いずれのルールにもマッチしなかった時に選ばれる'
-  rule.priority = 50
+  rule.priority = 100
 end
 
 # ClothGroupSelectionの作成（既存の選択肢がない場合のみ）

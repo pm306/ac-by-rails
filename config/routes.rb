@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :users, only:[:new, :create, :show, :edit, :update]
   resources :clothes
   resources :cloth_types, only:[:index, :new, :create]
-  resources :outfit_selection_rules, as: 'rules', path: 'rules', only:[:index, :show, :new, :create]
+  resources :outfit_selection_rules, as: 'rules', path: 'rules', only:[:index, :show, :new, :create, :destroy]
 
   root 'static_pages#home'
 end

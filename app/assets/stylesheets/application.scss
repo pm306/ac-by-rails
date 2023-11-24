@@ -124,6 +124,7 @@ $flash-types: (
   error: rgb(255, 50, 50),
   success: green,
   notice: green,
+  alert: rgb(255, 50, 50),
 );
 
 @each $type, $color in $flash-types {

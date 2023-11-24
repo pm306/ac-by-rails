@@ -3,12 +3,12 @@ class ClothesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :cloth_not_found
 
   def index
-    base_query = current_user.cloths
+    base_query = current_user.clothes
 
     if params[:types].present?
-      @cloths = base_query.where(cloth_type_id: params[:types])
+      @clothes = base_query.where(cloth_type_id: params[:types])
     else
-      @cloths = Cloth.none
+      @clothes = Cloth.none
     end
   end
 
@@ -45,6 +45,6 @@ class ClothesController < ApplicationController
   end
 
   def cloth_not_found
-    redirect_to closet_path, alert: '指定された服は見つかりませんでした。'
+    redirect_to closet_url, alert: '指定された服は見つかりませんでした。'
   end
 end

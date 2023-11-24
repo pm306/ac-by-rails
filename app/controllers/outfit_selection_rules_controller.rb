@@ -1,5 +1,6 @@
 class OutfitSelectionRulesController < ApplicationController
-  before_action :require_login, only: [:index, :new, :create, :show, :select_outfit]
+  before_action :require_login, only: [:index, :new, :create, :show, :select_outfit, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :rule_not_found
 
   def index
     @outfit_selection_rules = OutfitSelectionRule.all
@@ -29,6 +30,17 @@ class OutfitSelectionRulesController < ApplicationController
 
   def show
     @outfit_selection_rule = OutfitSelectionRule.includes(:cloth_groups).find(params[:id])
+  end
+
+  def destroy
+    @outfit_selection_rule = OutfitSelectionRule.find(params[:id])
+
+    if @outfit_selection_rule.name = "default"
+      redirect_to rules_url, alert: "デフォルトのルールは削除できません！"
+    else 
+    @outfit_selection_rule.destroy
+    redirect_to root_url, notice: "ロジックの削除に成功しました！"
+    end
   end
 
   def select_outfit
@@ -103,5 +115,9 @@ class OutfitSelectionRulesController < ApplicationController
         )
       end
     end
+  end
+
+  def rule_not_found
+    redirect_to root_url, alert: "指定されたルールは存在しませんでした。"
   end
 end

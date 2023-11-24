@@ -31,7 +31,7 @@
   </div>
 <% end %>
 
-<% @cloths.each do |cloth| %>
+<% @clothes.each do |cloth| %>
   <% if cloth.image.attached? %>
     <%=link_to (image_tag cloth.image, width: "200", height: "200"), cloth_path(cloth) %>
   <% end %>

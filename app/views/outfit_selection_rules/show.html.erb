@@ -39,3 +39,8 @@
 <div>
   <%= back_link_to(rules_path) %>
 </div>
+
+<div>
+  <%= general_delete_button("このルールを削除する", rule_path(@outfit_selection_rule)) %>
+  <p>※ルール名が"default"のルールは削除することができません</p>
+</div>
