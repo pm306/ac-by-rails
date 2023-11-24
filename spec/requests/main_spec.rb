@@ -17,7 +17,7 @@ RSpec.describe "Main", type: :request do
 
       it "リダイレクトせずにアクセスできる" do
         get root_path
-        expect(response).to have_http_status(:success)
+        expect(response).to have_http_status(:notice)
       end
     end
   end

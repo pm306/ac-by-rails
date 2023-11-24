@@ -19,11 +19,11 @@ class OutfitSelectionRulesController < ApplicationController
       process_cloth_group_selections(@outfit_selection_rule, params[:outfit_selection_rule][:cloth_group_selections] || {})
     end
 
-    flash[:success] = "ルールの登録に成功しました。"
+    flash[:notice] = "ルールの登録に成功しました。"
     redirect_to rules_url
 
     rescue ActiveRecord::RecordInvalid
-      flash[:error] = "ルールの登録に失敗しました。"
+      flash[:alert] = "ルールの登録に失敗しました。"
       redirect_to new_rule_url
   end
 
@@ -47,10 +47,12 @@ class OutfitSelectionRulesController < ApplicationController
     
     max_temperature = params[:max_temperature]
     min_temperature = params[:min_temperature]
+    flash[:max_temperature] = max_temperature
+    flash[:min_temperature] = min_temperature
   
     # 数値であることを確認
     unless valid_number?(max_temperature) && valid_number?(min_temperature)
-      flash[:error] = "数値を入力してください。"
+      flash[:alert] = "数値を入力してください。"
       redirect_to root_url
       return
     end
@@ -59,8 +61,6 @@ class OutfitSelectionRulesController < ApplicationController
     @selections = find_cloth_group_selections(rule_id)
     session[:selected_clothes_ids] = select_clothes(@selections)
     session[:outfit_selected] = true
-    flash[:max_temperature] = max_temperature
-    flash[:min_temperature] = min_temperature
     redirect_to root_url
   end
 

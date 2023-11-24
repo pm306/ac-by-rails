@@ -1,4 +1,6 @@
 <% flash.each do |message_type, message| %>
-  <div class="flash-<%= message_type %>"><%= message %></div>
-  <% flash.discard %>
+  <% if message_type == "notice" || message_type == "alert" %>
+    <div class="flash-<%= message_type %>"><%= message %></div>
+  <% end %>
 <% end %>
+

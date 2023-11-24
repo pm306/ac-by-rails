@@ -17,7 +17,7 @@ RSpec.describe "Clothes", type: :request do
 
       example "returns http success" do
         get closet_path
-        expect(response).to have_http_status(:success)
+        expect(response).to have_http_status(:notice)
       end
     end
   end
@@ -39,7 +39,7 @@ RSpec.describe "Clothes", type: :request do
     context "ログインしている" do
       example "returns http success" do
         get cloth_path(cloth)
-        expect(response).to have_http_status(:success)
+        expect(response).to have_http_status(:notice)
       end
     end
   end
@@ -47,7 +47,7 @@ RSpec.describe "Clothes", type: :request do
   # describe "GET /show" do
   #   it "returns http success" do
   #     get cloth_path(cloth)
-  #     expect(response).to have_http_status(:success)
+  #     expect(response).to have_http_status(:notice)
   #   end
   # end
 
@@ -67,7 +67,7 @@ RSpec.describe "Clothes", type: :request do
 
       example "returns http success" do
         get closet_add_path
-        expect(response).to have_http_status(:success)
+        expect(response).to have_http_status(:notice)
       end
     end
   end

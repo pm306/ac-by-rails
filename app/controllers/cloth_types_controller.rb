@@ -14,10 +14,10 @@ class ClothTypesController < ApplicationController
   def create
     @cloth_type = ClothType.new(cloth_type_create_params)
     if @cloth_type.save
-      flash[:success] = "分類を追加できました。"
+      flash[:notice] = "分類を追加できました。"
       redirect_to cloth_types_url
     else
-      flash[:error] = "分類を追加できませんでした。"
+      flash[:alert] = "分類を追加できませんでした。"
       redirect_to new_cloth_type_url
     end
   end
