@@ -8,11 +8,12 @@ Rails.application.routes.draw do
   get '/login',         to: 'sessions#new',        as: 'login'
   post '/login',        to: 'sessions#create',     as: 'create_login'
   delete '/logout',     to: 'sessions#destroy',    as: 'logout'
-  post '/deside',       to: 'static_pages#deside', as: 'deside'
+  get '/deside',        to: 'static_pages#deside', as: 'deside'
+  post '/deside',       to: 'clothes#update',      as: 'deside_push'
   get '/home',          to: redirect('/')
 
   resources :users,       only:[:new, :create, :show, :edit, :update, :destroy]
-  resources :clothes,     only:[:index, :new, :create, :show, :destroy]
+  resources :clothes,     only:[:index, :new, :create, :show, :update, :destroy]
   resources :cloth_types, only:[:index, :new, :create, :destroy]
   resources :outfit_selection_rules, as: 'rules', path: 'rules', 
                           only:[:index, :show, :new, :create, :destroy]

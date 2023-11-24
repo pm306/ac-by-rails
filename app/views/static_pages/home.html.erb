@@ -36,7 +36,7 @@
 <% end %>
 
 <% if session[:outfit_selected] %>
-  <%= form_with url: deside_path, method: :post do %>
+  <%= form_with url: deside_push_path, method: :post do %>
     <%= hidden_field_tag :selected_clothes_ids, session[:selected_clothes_ids].join(",") %>
     <%= button_tag(type: "submit", class: "deside-button") do %>
       <%= image_tag("sites/pop_kettei.png", alt: "決定", style: "max-width: 150px;") %>

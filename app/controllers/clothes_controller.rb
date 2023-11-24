@@ -1,5 +1,5 @@
 class ClothesController < ApplicationController
-  before_action :require_login, only: [:index, :new, :create, :show, :destroy]
+  before_action :require_login, only: [:index, :new, :create, :show, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :cloth_not_found
 
   def index
@@ -31,6 +31,19 @@ class ClothesController < ApplicationController
 
   def show
     @cloth = Cloth.find(params[:id])
+  end
+
+  def update
+    # 決定ボタンが押された場合の処理
+    if params[:selected_clothes_ids].present?
+      selected_clothes_ids = params[:selected_clothes_ids].split(',')
+      selected_clothes_ids.each do |id|
+        cloth = Cloth.find(id)
+        cloth.update(last_worn_on: Date.today)
+      end
+
+      redirect_to deside_url
+    end
   end
 
   def destroy
