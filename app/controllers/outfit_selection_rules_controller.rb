@@ -90,7 +90,9 @@ class OutfitSelectionRulesController < ApplicationController
     selections.map do |selection|
       cloth_group = ClothGroup.find_by(name: selection[:cloth_group])
       cloth_type_ids = ClothType.where(cloth_group_id: cloth_group.id).pluck(:id)
-      Cloth.where(cloth_type_id: cloth_type_ids).sample(selection[:selection_count]).pluck(:id)
+      Cloth.where(cloth_type_id: cloth_type_ids)
+           .where(user_id: current_user.id)
+           .sample(selection[:selection_count]).pluck(:id)
     end.flatten
   end
 
