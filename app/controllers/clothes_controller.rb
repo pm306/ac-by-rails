@@ -1,5 +1,6 @@
 class ClothesController < ApplicationController
-  before_action :require_login, only: [:index, :new, :create, :show, :update, :destroy]
+  before_action :require_login, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  before_action :set_cloth, only: [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :cloth_not_found
 
   def index
@@ -17,7 +18,7 @@ class ClothesController < ApplicationController
   end
 
   def create
-    @cloth = Cloth.new(cloth_params)
+    @cloth = Cloth.new(cloth_create_params)
     @cloth.user_id = current_user.id
     @cloth.last_worn_on = Date.parse('2000-01-01')
     if @cloth.save
@@ -30,10 +31,18 @@ class ClothesController < ApplicationController
   end
 
   def show
-    @cloth = Cloth.find(params[:id])
+  end
+
+  def edit
   end
 
   def update
+    if @cloth.update(cloth_update_params)
+      redirect_to cloth_url(@cloth), notice: "更新しました"
+    else
+      render :edit, alert: "更新に失敗しました"
+    end
+
     # 決定ボタンが押された場合の処理
     if params[:selected_clothes_ids].present?
       selected_clothes_ids = params[:selected_clothes_ids].split(',')
@@ -47,14 +56,21 @@ class ClothesController < ApplicationController
   end
 
   def destroy
-    @cloth = Cloth.find(params[:id])
     @cloth.destroy
     redirect_to closet_path, notice: "服が削除されました"
   end
 
   private
-  def cloth_params
+  def set_cloth
+    @cloth = Cloth.find(params[:id])
+  end
+
+  def cloth_create_params
     params.require(:cloth).permit(:image, :cloth_type_id, :description)
+  end
+
+  def cloth_update_params
+    params.require(:cloth).permit(:image, :description, :last_worn_on, :cloth_type_id)
   end
 
   def cloth_not_found

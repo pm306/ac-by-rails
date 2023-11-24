@@ -20,6 +20,12 @@ function handleFileChange(e) {
         return;
     }
 
+    // 既存の画像を非表示にする
+    let existingImage = document.querySelector('#existing-image');
+    if (existingImage) {
+        existingImage.style.display = 'none';
+    }
+
     // FileReaderのインスタンスを作成します
     let reader = new FileReader();
 

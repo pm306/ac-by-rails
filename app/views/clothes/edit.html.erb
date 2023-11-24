@@ -1,0 +1,46 @@
+<% provide(:title, "edit closs") %>
+<%= render 'layouts/flash_messages' %>
+<%= javascript_include_tag 'preview_cloth_image' %>
+
+<h1>服の編集</h1>
+
+<% if @cloth.image.attached? %>
+  <div id="existing-image">
+    <%= image_tag @cloth.image, style: "max-width:400px;" %>
+  </div>
+<% end %>
+
+<div id="image-preview" style="display:none;">
+  <img src="" class="cloth-image" style="max-width: 400px" />
+</div>
+
+<%= form_with(model: @cloth,
+              url: cloth_path(@cloth),
+              local: true,
+              html: { class: "form-container" }) do |form| %>
+  <ul>
+    <li>
+      <%= form.label :image, "画像" %>
+      <%= form.file_field :image %>
+    <li>
+      <%= form.label :description, "説明" %>
+      <%= form.text_area :description %>
+    </li>
+    <li>
+      <%= form.label :last_worn_on, "最後に着た日" %>
+      <%= form.date_select :last_worn_on, start_year: 2000, end_year: Date.today.year %>
+    </li>
+    <li>
+      <%= form.label :cloth_type_id, '服の種類' %>
+      <%= form.collection_select :cloth_type_id, ClothType.all, :id, :name,
+          { prompt: '-----' }, { class: "select-type" } %>
+    </li>
+    <li>
+      <%= form.submit '更新' %>
+    </li>
+  </ul>
+<% end %>
+
+<div>
+  <%= back_link_to(cloth_path(@cloth)) %>
+</div>

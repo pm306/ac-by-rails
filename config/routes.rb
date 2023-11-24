@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/home',          to: redirect('/')
 
   resources :users,       only:[:new, :create, :show, :edit, :update, :destroy]
-  resources :clothes,     only:[:index, :new, :create, :show, :update, :destroy]
+  resources :clothes,     only:[:index, :new, :create, :show, :edit, :update, :destroy]
   resources :cloth_types, only:[:index, :new, :create, :destroy]
   resources :outfit_selection_rules, as: 'rules', path: 'rules', 
                           only:[:index, :show, :new, :create, :destroy]

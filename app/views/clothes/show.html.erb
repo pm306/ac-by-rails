@@ -1,7 +1,14 @@
 <% provide(:title, "Detail") %>
+<%= render 'layouts/flash_messages' %>
+
 <h1><%= @cloth.description %></h1>
 
 <p>最後に着た日：<%= @cloth.last_worn_on %></p>
+<p>分類：<%= @cloth.cloth_type.name %></p>
+
+<div class="edit-link">
+  <%= link_to "●編集", edit_cloth_path(@cloth) %>
+</div>
 
 <div>
   <%= back_link_to(closet_path) %>
