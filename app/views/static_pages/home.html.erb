@@ -36,6 +36,11 @@
   <% session.delete(:selected_clothes_ids) %>
 <% end %>
 
+<% if session[:outfit_selected] %>
+  <%= link_to image_tag("sites/pop_kettei.png", style: "max-width: 150px;", alt: "決定"), root_path %>
+  <% session.delete(:outfit_selected) %>
+<% end %>
+
 <div>
   <%= link_to "●服の選択ロジックを管理する", rules_path %>
 </div>
@@ -49,4 +54,6 @@
   </ul>
 </div>
 
-<%= button_to "ログアウト", logout_path, :method=> :delete %>
+<div>
+  <%= button_to "ログアウト", logout_path, :method=> :delete %>
+</div>

@@ -1,5 +1,5 @@
 class OutfitSelectionRulesController < ApplicationController
-  before_action :require_login, only: [:index, :new, :create, :show, :select_outfit, :destroy]
+  before_action :require_login, only: [:index, :new, :create, :show, :select_outfit, :destroy, :select_outfit]
   rescue_from ActiveRecord::RecordNotFound, with: :rule_not_found
 
   def index
@@ -23,7 +23,6 @@ class OutfitSelectionRulesController < ApplicationController
     redirect_to rules_url
 
     rescue ActiveRecord::RecordInvalid
-      #TODO:エラーメッセージで場合分け
       flash[:error] = "ルールの登録に失敗しました。"
       redirect_to new_rule_url
   end
@@ -59,6 +58,7 @@ class OutfitSelectionRulesController < ApplicationController
     rule_id = find_appropriate_rule_id(max_temperature, min_temperature)
     @selections = find_cloth_group_selections(rule_id)
     session[:selected_clothes_ids] = select_clothes(@selections)
+    session[:outfit_selected] = true
     redirect_to root_url
   end
 
