@@ -12,12 +12,12 @@
   <ul>
     <li>
       <%= form.label :max_temperature, '最高気温' %>
-      <%= form.number_field :max_temperature %>
+      <%= form.number_field :max_temperature, value: flash[:max_temperature] %>
     </li>
 
     <li>
       <%= form.label :min_temperature, '最低気温' %>
-      <%= form.number_field :min_temperature %>
+      <%= form.number_field :min_temperature, value: flash[:min_temperature] %>
     </li>
     <li>
       <%= form.submit '服を選ぶ' %>
@@ -33,12 +33,17 @@
       </div>
     <% end %>
   </div>
-  <% session.delete(:selected_clothes_ids) %>
 <% end %>
 
 <% if session[:outfit_selected] %>
-  <%= link_to image_tag("sites/pop_kettei.png", style: "max-width: 150px;", alt: "決定"), root_path %>
+  <%= form_with url: deside_path, method: :post do %>
+    <%= hidden_field_tag :selected_clothes_ids, session[:selected_clothes_ids].join(",") %>
+    <%= button_tag(type: "submit", class: "deside-button") do %>
+      <%= image_tag("sites/pop_kettei.png", alt: "決定", style: "max-width: 150px;") %>
+    <% end %>
+  <% end %>
   <% session.delete(:outfit_selected) %>
+  <% session.delete(:selected_clothes_ids) %>
 <% end %>
 
 <div>

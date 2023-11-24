@@ -1,0 +1,12 @@
+<% provide(:title, "home") %>
+<%= render 'layouts/flash_messages' %>
+
+<h1>Have a nice day!</h1>
+
+<div>
+  <%= image_tag "sites/halloween_nekomajo.png", alt: "cat"%>
+</div>
+
+<div>
+  <%= back_link_to(root_path) %>
+</div>

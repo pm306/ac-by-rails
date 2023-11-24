@@ -119,6 +119,17 @@ li {
   }
 }
 
+.deside-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .alert-message {
   color: red;
 }

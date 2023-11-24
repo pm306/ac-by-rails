@@ -59,6 +59,8 @@ class OutfitSelectionRulesController < ApplicationController
     @selections = find_cloth_group_selections(rule_id)
     session[:selected_clothes_ids] = select_clothes(@selections)
     session[:outfit_selected] = true
+    flash[:max_temperature] = max_temperature
+    flash[:min_temperature] = min_temperature
     redirect_to root_url
   end
 
