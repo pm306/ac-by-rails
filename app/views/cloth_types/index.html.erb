@@ -3,8 +3,9 @@
 
 <h1>服の分類とグループ一覧</h1>
 <p>・服にはそれぞれ分類（Tシャツ、ジーンズなど）が設定できます。</p>
-<p>・分類１つにつき１種類のグループに属しており、服を選択するロジックにはこのグループを使用します。</p>
-<p>例：「Tシャツ」と「半袖Yシャツ」は別の分類ですが、「半袖（外）」という同じグループに属しています。</p>
+<p>・分類１つにつき１種類のグループに属しており、<strong>服を選択するロジックには分類ではなくグループを使用します。</strong></p>
+<p>例：初期状態の「Tシャツ」と「半袖Yシャツ」は別の分類ですが、「半袖（外）」という同じグループに属しています。</p>
+<p class="alert-message">※分類を削除すると、その分類に属する服がすべて削除されます</p>
 
 <div>
   <%= link_to "●服の分類を追加する", new_cloth_type_path %>
@@ -16,6 +17,7 @@
       <th>分類名</th>
       <th>グループ名</th>
       <th>説明</th>
+      <th>削除</th>
     </tr>
   </thead>
   <tbody>
@@ -24,6 +26,7 @@
         <td><%= cloth_type.name %></td>
         <td><%= cloth_type.cloth_group.name %></td>
         <td><%= cloth_type.cloth_group.description %></td>
+        <td><%= general_delete_button("削除", cloth_type_path(cloth_type)) %></td>
       </tr>
     <% end %>
   </tbody>

@@ -119,6 +119,9 @@ li {
   }
 }
 
+.alert-message {
+  color: red;
+}
 
 $flash-types: (
   error: rgb(255, 50, 50),

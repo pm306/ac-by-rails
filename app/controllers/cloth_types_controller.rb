@@ -1,5 +1,6 @@
 class ClothTypesController < ApplicationController
-  before_action :require_login, only: [:index, :new, :create]
+  before_action :require_login, only: [:index, :new, :create, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :cloth_type_not_found
 
   def index
     @cloth_types = ClothType.includes(:cloth_group).all
@@ -21,7 +22,18 @@ class ClothTypesController < ApplicationController
     end
   end
 
+  def destroy
+    @cloth_type = ClothType.find(params[:id])
+    @cloth_type.destroy
+    redirect_to cloth_types_url, notice: "分類の削除に成功しました！"
+  end
+
+  private
   def cloth_type_create_params
     params.require(:cloth_type).permit(:name, :cloth_group_id)
+  end
+
+  def cloth_type_not_found
+    redirect_to cloth_url, alert: "分類の削除に失敗しました。"
   end
 end
