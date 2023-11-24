@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   delete '/logout',     to: 'sessions#destroy', as: 'logout'
   get '/home',          to: redirect('/')
 
-  resources :users, only:[:new, :create, :show, :edit, :update]
-  resources :clothes
+  resources :users, only:[:new, :create, :show, :edit, :update, :destroy]
+  resources :clothes # TODO:only書く
   resources :cloth_types, only:[:index, :new, :create, :destroy]
   resources :outfit_selection_rules, as: 'rules', path: 'rules', only:[:index, :show, :new, :create, :destroy]
 

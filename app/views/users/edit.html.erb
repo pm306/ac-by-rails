@@ -31,9 +31,10 @@
   </ul>
 <% end %>
 
-
-<%= button_to "ユーザーを削除する(ハリボテ)", edit_user_path %>
-
 <div>
   <%= back_link_to(root_path) %>
+</div>
+
+<div>
+  <%= general_delete_button("このユーザーを削除する", user_path(@user)) %>
 </div>

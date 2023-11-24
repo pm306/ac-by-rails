@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: [:show, :edit, :update]
+  before_action :require_login, only: [:show, :edit, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :user_not_found
 
   def new
     @user = User.new
@@ -69,8 +70,18 @@ class UsersController < ApplicationController
     end    
   end
 
-  private
+  def destroy
+    @user = User.find(params[:id])
+    if @user == current_user
+      @user.destroy
+      reset_session
+      redirect_to login_url, notice: "ユーザーを削除しました。"
+    else
+      redirect_to root_url, alert: "ユーザーを削除できませんでした。"
+    end
+  end
 
+  private
   def user_create_params
     params.require(:user).permit(:name, :email, :password)
   end
@@ -81,5 +92,9 @@ class UsersController < ApplicationController
 
   def password_change_requested?
     params[:user][:password].present?
+  end
+
+  def user_not_found
+    redirect_to root_url, alert: "ユーザーが見つかりませんでした。"
   end
 end
