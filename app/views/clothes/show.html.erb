@@ -1,5 +1,7 @@
 <% provide(:title, "Detail") %>
-<h1>服の詳細ページ</h1>
+<h1><%= @cloth.description %></h1>
+
+<p>最後に着た日：<%= @cloth.last_worn_on %></p>
 
 <div>
   <%= back_link_to(closet_path) %>
@@ -7,6 +9,6 @@
 
 <%= image_tag @cloth.image, class:"image-cloth-detail" if @cloth.image.attached? %>
 
-<p class="show-description"><%= @cloth.description %></p>
-
-<%= general_delete_button("服を削除する", cloth_path(@cloth)) %>
+<div>
+  <%= general_delete_button("服を削除する", cloth_path(@cloth)) %>
+</div>
