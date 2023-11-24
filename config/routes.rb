@@ -10,10 +10,11 @@ Rails.application.routes.draw do
   delete '/logout',     to: 'sessions#destroy', as: 'logout'
   get '/home',          to: redirect('/')
 
-  resources :users, only:[:new, :create, :show, :edit, :update, :destroy]
-  resources :clothes, only: [:index, :new, :create, :show, :destroy]
+  resources :users,       only:[:new, :create, :show, :edit, :update, :destroy]
+  resources :clothes,     only:[:index, :new, :create, :show, :destroy]
   resources :cloth_types, only:[:index, :new, :create, :destroy]
-  resources :outfit_selection_rules, as: 'rules', path: 'rules', only:[:index, :show, :new, :create, :destroy]
+  resources :outfit_selection_rules, as: 'rules', path: 'rules', 
+                          only:[:index, :show, :new, :create, :destroy]
 
   root 'static_pages#home'
 end
