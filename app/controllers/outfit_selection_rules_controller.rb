@@ -32,13 +32,13 @@ class OutfitSelectionRulesController < ApplicationController
   end
 
   def destroy
-    @outfit_selection_rule = OutfitSelectionRule.find(params[:id])
+    @outfit_selection_rule = OutfitSelectionRule.includes(:cloth_groups).find(params[:id])
 
-    if @outfit_selection_rule.name = "default"
+    if @outfit_selection_rule.name == "default"
       redirect_to rules_url, alert: "デフォルトのルールは削除できません！"
     else 
-    @outfit_selection_rule.destroy
-    redirect_to root_url, notice: "ロジックの削除に成功しました！"
+      @outfit_selection_rule.destroy
+      redirect_to root_url, notice: "ロジックの削除に成功しました！"
     end
   end
 
