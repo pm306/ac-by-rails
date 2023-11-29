@@ -19,18 +19,18 @@ railsでリファクタリングした自作アプリです
 `git clone https://github.com/pm306/ac-by-rails.git`
 2. ルートディレクトリに移動します  
 `cd ac-by-rails`
-4. コンテナをビルドします  
+3. コンテナをビルドします  
 `docker-compose build`  
-面倒な人は`make all`で4~8を一気に進められます
-5. コンテナを立ち上げます  
+面倒な人は`make all`で3~7を一気に進められます
+4. コンテナを立ち上げます  
 `docker-compose up -d`
-6. DBをマイグレーションします
+5. DBをマイグレーションします  
 `docker-compose run web rails db:migrate`
-7. 初期データを生成します
+7. 初期データを生成します  
 `docker-compose run web rails db:seed`
-8. sassをプリコンパイルします
+8. sassをプリコンパイルします  
 `docker-compose run web rails dartsass:build`
-10. `http://localhost:3000`にアクセスします
+9. `http://localhost:3000`にアクセスします
 
 # データを初期化したくなったら
 `docker-compose run web rails db:reset` で初期化できます
