@@ -18,4 +18,5 @@ build-sass:
 all: up setup-db build-sass
 
 # コンテナの停止
-down: docker-compose down -v
+down: 
+	docker-compose down -v
