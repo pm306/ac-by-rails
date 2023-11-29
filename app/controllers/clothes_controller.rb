@@ -42,8 +42,9 @@ class ClothesController < ApplicationController
     else
       render :edit, alert: "更新に失敗しました"
     end
+  end
 
-    # 決定ボタンが押された場合の処理
+  def update_deside
     if params[:selected_clothes_ids].present?
       selected_clothes_ids = params[:selected_clothes_ids].split(',')
       selected_clothes_ids.each do |id|

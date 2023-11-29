@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/login',        to: 'sessions#create',     as: 'create_login'
   delete '/logout',     to: 'sessions#destroy',    as: 'logout'
   get '/deside',        to: 'static_pages#deside', as: 'deside'
-  post '/deside',       to: 'clothes#update',      as: 'deside_push'
+  post '/deside',       to: 'clothes#update_deside',      as: 'deside_push'
   get '/home',          to: redirect('/')
 
   resources :users,       only:[:new, :create, :show, :edit, :update, :destroy]
