@@ -9,7 +9,7 @@ Docker-Compose
 # 使い方
 
 1. `git clone https://github.com/pm306/ac-by-rails.git`
-2. `path/to/ac-by-rails`
+2.  cd `path/to/ac-by-rails`
 4. `docker-compose build`
 6. `docker-compose up -d`
 7. `docker-compose run web rails db:migrate`
