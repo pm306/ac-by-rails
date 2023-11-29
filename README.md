@@ -19,3 +19,6 @@ Docker-Compose
 
 # データを初期化したくなったら
 `docker-compose run web rails db:reset` で初期化できます
+
+# コンテナを停止させる
+`docker-compose down -v`
