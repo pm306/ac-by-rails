@@ -25,11 +25,11 @@ railsでリファクタリングした自作アプリです
 4. コンテナを立ち上げます  
 `docker-compose up -d`
 5. DBをマイグレーションします  
-`docker-compose run web rails db:migrate`
+`docker-compose run --rm web rails db:migrate`
 7. 初期データを生成します  
-`docker-compose run web rails db:seed`
+`docker-compose run --rm web rails db:seed`
 8. sassをプリコンパイルします  
-`docker-compose run web rails dartsass:build`
+`docker-compose run --rm web rails dartsass:build`
 9. `http://localhost:3000`にアクセスします
 
 # データを初期化したくなったら
