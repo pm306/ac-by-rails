@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_12_100348) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_30_124215) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -73,7 +73,25 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_12_100348) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "cloth_type_id"
+    t.datetime "deleted_at"
     t.index ["user_id"], name: "index_clothes_on_user_id"
+  end
+
+  create_table "outfit_logs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_outfit_logs_on_user_id"
+  end
+
+  create_table "outfit_logs_clothes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "outfit_log_id", null: false
+    t.bigint "cloth_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cloth_id"], name: "index_outfit_logs_clothes_on_cloth_id"
+    t.index ["outfit_log_id"], name: "index_outfit_logs_clothes_on_outfit_log_id"
   end
 
   create_table "outfit_selection_rules", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -103,4 +121,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_12_100348) do
   add_foreign_key "cloth_group_selections", "cloth_groups"
   add_foreign_key "cloth_group_selections", "outfit_selection_rules"
   add_foreign_key "cloth_types", "cloth_groups"
+  add_foreign_key "outfit_logs", "users"
+  add_foreign_key "outfit_logs_clothes", "clothes"
+  add_foreign_key "outfit_logs_clothes", "outfit_logs"
 end

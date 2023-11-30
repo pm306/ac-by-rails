@@ -1,0 +1,16 @@
+<% provide(:title, "Outfit Logs") %>
+<%= render 'layouts/flash_messages' %>
+
+<h1>過去の服装ログ</h1>
+
+<% @outfit_log.cloths.unscoped.each do |cloth| %>
+  <% if cloth.deleted? %>
+    <s><%= cloth.description %> (削除済み)</s>
+  <% else %>
+    <%= cloth.description %>
+  <% end %>
+<% end %>
+
+<div>
+  <%= back_link_to(root_path) %>
+</div>

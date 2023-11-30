@@ -1,5 +1,5 @@
 class ClothesController < ApplicationController
-  before_action :require_login, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  before_action :require_login, only: [:index, :new, :create, :show, :edit, :update, :update_deside, :destroy]
   before_action :set_cloth, only: [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :cloth_not_found
 
@@ -57,7 +57,7 @@ class ClothesController < ApplicationController
   end
 
   def destroy
-    @cloth.destroy
+    @cloth.soft_delete
     redirect_to closet_path, notice: "服が削除されました"
   end
 
