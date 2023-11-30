@@ -46,10 +46,6 @@
   <% session.delete(:selected_clothes_ids) %>
 <% end %>
 
-<div>
-  <%= link_to "●服の選択ロジックを管理する", rules_path %>
-</div>
-
 <div class="closet-link-container">
   <ul>
     <li>▼服を管理する▼</li>
@@ -57,6 +53,14 @@
       <%= link_to image_tag("sites/closet.png", class:"image-closet"), closet_path %>
     </li>
   </ul>
+</div>
+
+<div class="edit-link">
+  <%= link_to "●過去の服装ログを見る", outfit_logs_path %>
+</div>
+
+<div class="edit-link">
+  <%= link_to "●服の選択ロジックを管理する", rules_path %>
 </div>
 
 <div>

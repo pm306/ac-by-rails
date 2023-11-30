@@ -47,10 +47,17 @@ class ClothesController < ApplicationController
   def update_deside
     if params[:selected_clothes_ids].present?
       selected_clothes_ids = params[:selected_clothes_ids].split(',')
+
       selected_clothes_ids.each do |id|
         cloth = Cloth.find(id)
         cloth.update(last_worn_on: Date.today)
       end
+
+      outfit_log = OutfitLog.new(user: current_user, date: Date.today)
+      selected_clothes_ids.each do |cloth_id|
+        outfit_log.outfit_logs_clothes.build(cloth_id: cloth_id)
+      end
+      outfit_log.save      
 
       redirect_to deside_url
     end

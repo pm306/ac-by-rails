@@ -18,11 +18,7 @@ class OutfitLogsController < ApplicationController
   end
 
   def index
-    @outfit_logs = OutfitLog.all # またはユーザーに応じたもの
-  end
-
-  def show
-    @outfit_log = OutfitLog.find(params[:id])
+    @outfit_logs = OutfitLog.includes(:clothes).where(user_id: current_user.id)
   end
 
   private

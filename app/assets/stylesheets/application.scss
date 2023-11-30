@@ -119,6 +119,25 @@ li {
   }
 }
 
+.log-clothes-container {
+  display: flex;
+  flex-wrap: wrap;
+  .cloth {
+    flex: 1;
+    max-width: 250px;
+    margin-right: 10px;
+    text-align: center;
+    .description {
+      font-weight: bold;
+    }
+  }
+  
+  .cloth img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 .deside-button {
   background: none;
   border: none;
