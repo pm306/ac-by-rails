@@ -11,12 +11,12 @@
               html: { class: "form-container" }) do |form| %>
   <ul>
     <li>
-      <%= form.label :max_temperature, '最高気温' %>
+      <%= form.label :max_temperature, '最高気温', style: 'color: red;' %>
       <%= form.number_field :max_temperature, value: flash[:max_temperature] %>
     </li>
 
     <li>
-      <%= form.label :min_temperature, '最低気温' %>
+      <%= form.label :min_temperature, '最低気温', style: 'color: blue;' %>
       <%= form.number_field :min_temperature, value: flash[:min_temperature] %>
     </li>
     <li>
