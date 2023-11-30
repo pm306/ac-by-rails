@@ -4,7 +4,7 @@
 
 <h1>クローゼット(衣服管理ページ)</h1>
 <p>服を登録したり、登録した服を表示することができます。</p>
-<p>服の画像をクリックすると詳細画面を表示できます。</p>
+<p>服の画像をクリックすると、詳細画面を表示できます。</p>
 
 <div class="closet-link">
   <%= link_to "●服を追加する", closet_add_path %>
@@ -22,7 +22,7 @@
       <%= check_box_tag "types[]", type.id, class: "cloth-type-checkbox" %>
       <%= label_tag "types_#{type.id}", type.name, class: "cloth-type-label" %>
     </div>
-    <%= '<br>'.html_safe if (index + 1) % 4 == 0 %> <!-- 4つごとに改行 -->
+    <%= '<br>'.html_safe if (index + 1) % 5 == 0 %> <!-- 5つごとに改行 -->
   <% end %>
   <div class="check-button">
     <%= submit_tag "表示", class:"cloth-filter-button" %>

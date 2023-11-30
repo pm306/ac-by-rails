@@ -99,6 +99,7 @@ class OutfitSelectionRulesController < ApplicationController
       cloth_type_ids = ClothType.where(cloth_group_id: cloth_group.id).pluck(:id)
       Cloth.where(cloth_type_id: cloth_type_ids)
            .where(user_id: current_user.id)
+           .where('last_worn_on IS NULL OR last_worn_on < ?', Date.yesterday)
            .sample(selection[:selection_count]).pluck(:id)
     end.flatten
   end
