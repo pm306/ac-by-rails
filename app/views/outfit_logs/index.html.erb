@@ -7,7 +7,7 @@
   <%= back_link_to(root_path) %>
 </div>
 
-<% @outfit_logs.each do |outfit_log| %>
+<% @outfit_logs.order(created_at: :desc).each do |outfit_log| %>
   <div>
     <h3><%= outfit_log.date %></h3>
     <div class="log-clothes-container">
