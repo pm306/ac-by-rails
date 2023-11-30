@@ -49,8 +49,13 @@ class OutfitSelectionRulesController < ApplicationController
     min_temperature = params[:min_temperature]
     flash[:max_temperature] = max_temperature
     flash[:min_temperature] = min_temperature
+
+    if min_temperature > max_temperature
+      flash[:alert] = "最低気温が最高気温を上回っています。"
+      redirect_to root_url
+      return
+    end
   
-    # 数値であることを確認
     unless valid_number?(max_temperature) && valid_number?(min_temperature)
       flash[:alert] = "数値を入力してください。"
       redirect_to root_url
