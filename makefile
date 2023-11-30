@@ -1,11 +1,10 @@
 # Makefile
 
-# コンテナのビルドと起動
-up:
+build:
 	docker-compose build
+up:
 	docker-compose up -d
 
-# データベースの初期設定
 setup-db:
 	docker-compose run web rails db:migrate
 	docker-compose run web rails db:seed
