@@ -1,108 +1,17 @@
 Inspecting 103 files
-WCCCWCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCWCCCCCCCCCCCCCWWCCCCCCWCCWCCCCCCC
+WCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCWCCCCCCCCCCCCCWWCCCCCCCCCWCCCCCCC
 
 Offenses:
 
 Gemfile:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 source 'https://rubygems.org'
 ^
-Gemfile:1:8: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-source "https://rubygems.org"
-       ^^^^^^^^^^^^^^^^^^^^^^
-Gemfile:3:6: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-ruby "3.2.2"
-     ^^^^^^^
-Gemfile:5:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-gem "rails", "~> 7.1.1"
-    ^^^^^^^
-Gemfile:5:14: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-gem "rails", "~> 7.1.1"
-             ^^^^^^^^^^
-Gemfile:7:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-gem "sprockets-rails"
-    ^^^^^^^^^^^^^^^^^
-Gemfile:9:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-gem "mysql2", ">= 0.5"
-    ^^^^^^^^
-Gemfile:9:15: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-gem "mysql2", ">= 0.5"
-              ^^^^^^^^
-Gemfile:11:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-gem "puma", ">= 5.0"
-    ^^^^^^
-Gemfile:11:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-gem "puma", ">= 5.0"
-            ^^^^^^^^
-Gemfile:13:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-gem "importmap-rails"
-    ^^^^^^^^^^^^^^^^^
-Gemfile:15:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-gem "turbo-rails"
-    ^^^^^^^^^^^^^
-Gemfile:17:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-gem "stimulus-rails"
-    ^^^^^^^^^^^^^^^^
-Gemfile:19:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-gem "jbuilder"
-    ^^^^^^^^^^
-Gemfile:21:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-gem "tzinfo-data", platforms: %i[ windows jruby ]
-    ^^^^^^^^^^^^^
-Gemfile:21:34: C: [Corrected] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
-gem "tzinfo-data", platforms: %i[ windows jruby ]
-                                 ^
-Gemfile:21:48: C: [Corrected] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
-gem "tzinfo-data", platforms: %i[ windows jruby ]
-                                               ^
-Gemfile:23:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-gem "bootsnap", require: false
-    ^^^^^^^^^^
-Gemfile:28:7: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  gem "debug", platforms: %i[ mri windows ]
-      ^^^^^^^
-Gemfile:28:30: C: [Corrected] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
-  gem "debug", platforms: %i[ mri windows ]
-                             ^
-Gemfile:28:42: C: [Corrected] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
-  gem "debug", platforms: %i[ mri windows ]
-                                         ^
-Gemfile:32:7: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  gem "web-console"
-      ^^^^^^^^^^^^^
-Gemfile:33:1: C: [Corrected] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
-Gemfile:37:7: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  gem "capybara"
-      ^^^^^^^^^^
-Gemfile:38:7: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  gem "selenium-webdriver"
-      ^^^^^^^^^^^^^^^^^^^^
 Gemfile:40:1: W: Bundler/DuplicatedGroup: Gem group :development, :test already defined on line 27 of the Gemfile.
 group :development, :test do
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-Gemfile:43:3: C: [Corrected] Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem factory_bot_rails should appear before rspec-rails.
-  gem 'factory_bot_rails'
-  ^^^^^^^^^^^^^^^^^^^^^^^
-Gemfile:43:3: C: [Corrected] Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem rails-controller-testing should appear before rspec-rails.
-  gem 'rails-controller-testing'
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Gemfile:46:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-gem "dartsass-rails", "~> 0.5.0"
-    ^^^^^^^^^^^^^^^^
-Gemfile:46:23: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-gem "dartsass-rails", "~> 0.5.0"
-                      ^^^^^^^^^^
-Gemfile:47:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-gem "jsbundling-rails"
-    ^^^^^^^^^^^^^^^^^^
-Gemfile:49:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-gem "pry"
-    ^^^^^
 Rakefile:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 # Add your own tasks in files placed in lib/tasks ending in .rake,
 ^
-Rakefile:4:18: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require_relative "config/application"
-                 ^^^^^^^^^^^^^^^^^^^^
 app/channels/application_cable/channel.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 module ApplicationCable
 ^
@@ -112,48 +21,21 @@ module ApplicationCable
 app/controllers/application_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class ApplicationController < ActionController::Base
 ^
-app/controllers/application_controller.rb:2:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    include SessionsHelper
-^^^^
-app/controllers/application_controller.rb:3:3: W: [Corrected] Layout/EndAlignment: end at 3, 2 is not aligned with class at 1, 0.
-  end
-  ^^^
-app/controllers/application_controller.rb:3:6: C: [Corrected] Layout/TrailingEmptyLines: Final newline missing.
-  end
-     
 app/controllers/cloth_types_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class ClothTypesController.
 class ClothTypesController < ApplicationController
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/cloth_types_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class ClothTypesController < ApplicationController
 ^
-app/controllers/cloth_types_controller.rb:2:39: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
-  before_action :require_login, only: [:index, :new, :create, :destroy]
-                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/cloth_types_controller.rb:17:24: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       flash[:notice] = '分類を追加できました。'
-                       ^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/cloth_types_controller.rb:17:24: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      flash[:notice] = "分類を追加できました。"
                        ^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/cloth_types_controller.rb:20:23: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       flash[:alert] = '分類を追加できませんでした。'
                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/cloth_types_controller.rb:20:23: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      flash[:alert] = "分類を追加できませんでした。"
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/cloth_types_controller.rb:28:42: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
     redirect_to cloth_types_url, notice: '分類の削除に成功しました！'
                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/cloth_types_controller.rb:28:42: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    redirect_to cloth_types_url, notice: "分類の削除に成功しました！"
-                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/cloth_types_controller.rb:31:3: C: [Corrected] Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
-  private
-  ^^^^^^^
-app/controllers/cloth_types_controller.rb:37:35: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    redirect_to cloth_url, alert: "分類の削除に失敗しました。"
-                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/cloth_types_controller.rb:38:35: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
     redirect_to cloth_url, alert: '分類の削除に失敗しました。'
                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -163,46 +45,6 @@ class ClothesController < ApplicationController
 app/controllers/clothes_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class ClothesController < ApplicationController
 ^
-app/controllers/clothes_controller.rb:2:39: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
-  before_action :require_login, only: [:index, :new, :create, :show, :edit, :update, :update_deside, :destroy]
-                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:3:35: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
-  before_action :set_cloth, only: [:show, :edit, :update, :destroy]
-                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:9:5: C: [Corrected] Style/ConditionalAssignment: Use the return of the conditional for variable assignment and comparison.
-    if params[:types].present? ...
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:10:7: C: [Corrected] Layout/IndentationWidth: Use 2 (not -9) spaces for indentation.
-      base_query.where(cloth_type_id: params[:types])
-      ^^^^^^^^^
-app/controllers/clothes_controller.rb:11:5: C: [Corrected] Layout/ElseAlignment: Align else with if.
-    else
-    ^^^^
-app/controllers/clothes_controller.rb:12:7: C: [Corrected] Layout/IndentationWidth: Use 2 (not -9) spaces for indentation.
-      Cloth.none
-      ^^^^^^^^^
-app/controllers/clothes_controller.rb:17:3: C: [Corrected] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
-  def new
-  ^^^^^^^
-app/controllers/clothes_controller.rb:20:3: C: [Corrected] Rails/ActionOrder: Action show should appear before new.
-  def show; end
-  ^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:21:1: C: [Corrected] Layout/EmptyLines: Extra blank line detected.
-app/controllers/clothes_controller.rb:21:3: C: [Corrected] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
-  def create
-  ^^^^^^^^^^
-app/controllers/clothes_controller.rb:22:3: C: [Corrected] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 2.
-  def edit; end
-  ^^^^^^^^
-app/controllers/clothes_controller.rb:23:3: C: [Corrected] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
-  def create
-  ^^^^^^^^^^
-app/controllers/clothes_controller.rb:25:24: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      flash[:notice] = "服が登録されました"
-                       ^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:28:23: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      flash[:alert] = "服の登録に失敗しました"
-                      ^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/clothes_controller.rb:29:24: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       flash[:notice] = '服が登録されました'
                        ^^^^^^^^^^^^^^^^^^^^
@@ -212,94 +54,30 @@ app/controllers/clothes_controller.rb:30:7: C: [Correctable] Style/IdenticalCond
 app/controllers/clothes_controller.rb:32:23: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       flash[:alert] = '服の登録に失敗しました'
                       ^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:33:3: C: [Corrected] Rails/ActionOrder: Action show should appear before create.
-  def show ...
-  ^^^^^^^^
-app/controllers/clothes_controller.rb:33:3: C: [Corrected] Style/EmptyMethod: Put empty method definitions on a single line.
-  def show ...
-  ^^^^^^^^
 app/controllers/clothes_controller.rb:33:7: C: [Correctable] Style/IdenticalConditionalBranches: Move redirect_to closet_add_url out of the conditional.
       redirect_to closet_add_url
       ^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:34:1: C: [Corrected] Layout/EmptyLines: Extra blank line detected.
-app/controllers/clothes_controller.rb:35:3: C: [Corrected] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 2.
-  def edit; end
-  ^^^^^^^^
-app/controllers/clothes_controller.rb:35:3: C: [Corrected] Rails/ActionOrder: Action edit should appear before create.
-  def edit; end
-  ^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:36:1: C: [Corrected] Layout/EmptyLines: Extra blank line detected.
-app/controllers/clothes_controller.rb:36:3: C: [Corrected] Style/EmptyMethod: Put empty method definitions on a single line.
-  def edit ...
-  ^^^^^^^^
-app/controllers/clothes_controller.rb:37:3: C: [Corrected] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 2.
-  def update
-  ^^^^^^^^^^
 app/controllers/clothes_controller.rb:39:46: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       redirect_to cloth_url(@cloth), notice: '更新しました'
                                              ^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:41:46: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      redirect_to cloth_url(@cloth), notice: "更新しました"
-                                             ^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:43:28: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      render :edit, alert: "更新に失敗しました"
-                           ^^^^^^^^^^^^^^^^^^^^
 app/controllers/clothes_controller.rb:45:3: C: Metrics/AbcSize: Assignment Branch Condition size for update_deside is too high. [<5, 19, 3> 19.87/17]
   def update_deside ...
   ^^^^^^^^^^^^^^^^^
 app/controllers/clothes_controller.rb:45:3: C: Metrics/MethodLength: Method has too many lines. [12/10]
   def update_deside ...
   ^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:46:5: C: [Corrected] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
-    return unless params[:selected_clothes_ids].present?
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/clothes_controller.rb:46:12: C: [Correctable] Rails/Blank: Use if params[:selected_clothes_ids].blank? instead of unless params[:selected_clothes_ids].present?.
     return unless params[:selected_clothes_ids].present?
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:47:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      selected_clothes_ids = params[:selected_clothes_ids].split(',')
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:48:5: C: [Corrected] Style/GuardClause: Use a guard clause (return unless params[:selected_clothes_ids].present?) instead of wrapping the code inside a conditional expression.
-    if params[:selected_clothes_ids].present?
-    ^^
-app/controllers/clothes_controller.rb:49:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      selected_clothes_ids.each do |id| ...
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/clothes_controller.rb:52:39: C: [Correctable] Rails/Date: Do not use Date.today without zone. Use Time.zone.today instead.
       cloth.update(last_worn_on: Date.today)
                                       ^^^^^
-app/controllers/clothes_controller.rb:54:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      outfit_log = OutfitLog.new(user: current_user, date: Date.today)
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:55:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      selected_clothes_ids.each do |cloth_id| ...
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/clothes_controller.rb:55:63: C: [Correctable] Rails/Date: Do not use Date.today without zone. Use Time.zone.today instead.
     outfit_log = OutfitLog.new(user: current_user, date: Date.today)
                                                               ^^^^^
-app/controllers/clothes_controller.rb:58:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      outfit_log.save
-      ^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:58:56: C: [Corrected] Style/HashSyntax: Omit the hash value.
-        outfit_log.outfit_logs_clothes.build(cloth_id: cloth_id)
-                                                       ^^^^^^^^
-app/controllers/clothes_controller.rb:60:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      redirect_to deside_url
-      ^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:60:22: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-      outfit_log.save      
-                     ^^^^^^
-app/controllers/clothes_controller.rb:61:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-app/controllers/clothes_controller.rb:62:1: C: [Corrected] Layout/EmptyLinesAroundMethodBody: Extra empty line detected at method body end.
 app/controllers/clothes_controller.rb:66:38: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
     redirect_to closet_path, notice: '服が削除されました'
                                      ^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:68:38: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    redirect_to closet_path, notice: "服が削除されました"
-                                     ^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:71:3: C: [Corrected] Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
-  private
-  ^^^^^^^
 app/controllers/clothes_controller.rb:84:36: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
     redirect_to closet_url, alert: '指定された服は見つかりませんでした。'
                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -309,9 +87,6 @@ class OutfitLogsController < ApplicationController
 app/controllers/outfit_logs_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class OutfitLogsController < ApplicationController
 ^
-app/controllers/outfit_logs_controller.rb:12:34: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    redirect_to root_url, alart: "服装のログが取得できませんでした。"
-                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/outfit_selection_rules_controller.rb:1:1: C: Metrics/ClassLength: Class has too many lines. [111/100]
 class OutfitSelectionRulesController < ApplicationController ...
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -321,83 +96,23 @@ class OutfitSelectionRulesController < ApplicationController
 app/controllers/outfit_selection_rules_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class OutfitSelectionRulesController < ApplicationController
 ^
-app/controllers/outfit_selection_rules_controller.rb:2:39: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
-  before_action :require_login, only: [:index, :new, :create, :show, :select_outfit, :destroy, :select_outfit]
-                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:12:3: C: [Corrected] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
-  def new
-  ^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:14:3: C: [Corrected] Rails/ActionOrder: Action show should appear before new.
-  def show ...
-  ^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:17:1: C: [Corrected] Layout/EmptyLines: Extra blank line detected.
-app/controllers/outfit_selection_rules_controller.rb:17:3: C: [Corrected] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
-  def create
-  ^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:18:3: C: [Corrected] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 2.
-  def create
-  ^^^^^^^^^^
 app/controllers/outfit_selection_rules_controller.rb:18:3: C: Metrics/AbcSize: Assignment Branch Condition size for create is too high. [<3, 17, 2> 17.38/17]
   def create ...
   ^^^^^^^^^^
 app/controllers/outfit_selection_rules_controller.rb:18:3: C: Metrics/MethodLength: Method has too many lines. [11/10]
   def create ...
   ^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:19:121: C: [Corrected] Layout/LineLength: Line is too long. [123/120]
-      process_cloth_group_selections(@outfit_selection_rule, params[:outfit_selection_rule][:cloth_group_selections] || {})
-                                                                                                                        ^^^
-app/controllers/outfit_selection_rules_controller.rb:22:22: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    flash[:notice] = "ルールの登録に成功しました。"
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:22:61: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-      process_cloth_group_selections(@outfit_selection_rule, 
-                                                            ^
-app/controllers/outfit_selection_rules_controller.rb:23:1: C: [Corrected] Layout/ArgumentAlignment: Align the arguments of a method call if they span more than one line.
-params[:outfit_selection_rule][:cloth_group_selections] || {})
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:24:1: C: [Corrected] Layout/EmptyLinesAroundExceptionHandlingKeywords: Extra empty line detected before the rescue.
-app/controllers/outfit_selection_rules_controller.rb:25:5: C: [Corrected] Layout/RescueEnsureAlignment: rescue at 25, 4 is not aligned with def create at 14, 2.
-    rescue ActiveRecord::RecordInvalid
-    ^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:26:23: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      flash[:alert] = "ルールの登録に失敗しました。"
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/outfit_selection_rules_controller.rb:27:22: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
     flash[:notice] = 'ルールの登録に成功しました。'
                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:29:3: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-      flash[:alert] = 'ルールの登録に失敗しました。'
-  ^^^^
-app/controllers/outfit_selection_rules_controller.rb:30:3: C: [Corrected] Rails/ActionOrder: Action show should appear before create.
-  def show ...
-  ^^^^^^^^
 app/controllers/outfit_selection_rules_controller.rb:30:21: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
     flash[:alert] = 'ルールの登録に失敗しました。'
                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:31:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      redirect_to new_rule_url
-      ^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:33:1: C: [Corrected] Layout/EmptyLines: Extra blank line detected.
-app/controllers/outfit_selection_rules_controller.rb:34:3: C: [Corrected] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 2.
-  def destroy
-  ^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:37:39: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    if @outfit_selection_rule.name == "default"
-                                      ^^^^^^^^^
 app/controllers/outfit_selection_rules_controller.rb:38:37: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       redirect_to rules_url, alert: 'デフォルトのルールは削除できません！'
                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:38:37: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      redirect_to rules_url, alert: "デフォルトのルールは削除できません！"
-                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:39:9: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-    else 
-        ^
 app/controllers/outfit_selection_rules_controller.rb:41:37: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       redirect_to root_url, notice: 'ロジックの削除に成功しました！'
-                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:41:37: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      redirect_to root_url, notice: "ロジックの削除に成功しました！"
                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/outfit_selection_rules_controller.rb:45:3: C: Metrics/AbcSize: Assignment Branch Condition size for select_outfit is too high. [<11, 28, 4> 30.35/17]
   def select_outfit ...
@@ -405,72 +120,15 @@ app/controllers/outfit_selection_rules_controller.rb:45:3: C: Metrics/AbcSize: A
 app/controllers/outfit_selection_rules_controller.rb:45:3: C: Metrics/MethodLength: Method has too many lines. [20/10]
   def select_outfit ...
   ^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:47:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
 app/controllers/outfit_selection_rules_controller.rb:54:23: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       flash[:alert] = '最低気温が最高気温を上回っています。'
                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:54:23: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      flash[:alert] = "最低気温が最高気温を上回っています。"
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:58:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
 app/controllers/outfit_selection_rules_controller.rb:60:23: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       flash[:alert] = '数値を入力してください。'
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:60:23: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      flash[:alert] = "数値を入力してください。"
                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/outfit_selection_rules_controller.rb:81:25: C: [Correctable] Rails/Pick: Prefer pick(:id) over pluck(:id).first.
                        .pluck(:id) ...
                         ^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:108:1: C: [Corrected] Layout/EmptyLinesAroundMethodBody: Extra empty line detected at method body beginning.
-app/controllers/outfit_selection_rules_controller.rb:108:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-app/controllers/outfit_selection_rules_controller.rb:108:5: C: [Corrected] Style/RedundantBegin: Redundant begin block detected.
-    begin
-    ^^^^^
-app/controllers/outfit_selection_rules_controller.rb:108:5: C: [Corrected] Style/RescueModifier: Avoid using rescue in its modifier form.
-    true if Float(str) rescue false
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:109:3: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-      true if Float(str)
-  ^^^^
-app/controllers/outfit_selection_rules_controller.rb:110:5: C: [Corrected] Layout/RescueEnsureAlignment: rescue at 110, 4 is not aligned with def valid_number? at 107, 2.
-    rescue StandardError
-    ^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:110:5: C: [Corrected] Style/RescueStandardError: Avoid rescuing without specifying an error class.
-    rescue
-    ^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:112:1: C: [Corrected] Layout/EmptyLinesAroundMethodBody: Extra empty line detected at method body end.
-app/controllers/outfit_selection_rules_controller.rb:112:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-app/controllers/outfit_selection_rules_controller.rb:112:82: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-    params.require(:outfit_selection_rule).permit(:name, :description, :priority, 
-                                                                                 ^
-app/controllers/outfit_selection_rules_controller.rb:113:7: C: [Corrected] Layout/ArgumentAlignment: Align the arguments of a method call if they span more than one line.
-      :min_temperature_lower_bound, :min_temperature_upper_bound, 
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:113:66: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-      :min_temperature_lower_bound, :min_temperature_upper_bound, 
-                                                                 ^
-app/controllers/outfit_selection_rules_controller.rb:114:7: C: [Corrected] Layout/ArgumentAlignment: Align the arguments of a method call if they span more than one line.
-      :max_temperature_lower_bound, :max_temperature_upper_bound,
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:115:7: C: [Corrected] Layout/ArgumentAlignment: Align the arguments of a method call if they span more than one line.
-      cloth_group_selections: {})
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:120:7: C: [Corrected] Style/Next: Use next to skip iteration.
-      if selection_count.to_i.positive?
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:123:27: C: [Corrected] Style/HashSyntax: Omit the hash value.
-          cloth_group_id: cloth_group_id,
-                          ^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:124:7: C: [Corrected] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
-      next unless selection_count.to_i.positive?
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:124:28: C: [Corrected] Style/HashSyntax: Omit the hash value.
-          selection_count: selection_count
-                           ^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:131:34: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    redirect_to root_url, alert: "指定されたルールは存在しませんでした。"
-                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/outfit_selection_rules_controller.rb:133:34: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
     redirect_to root_url, alert: '指定されたルールは存在しませんでした。'
                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -480,12 +138,6 @@ class SessionsController < ApplicationController
 app/controllers/sessions_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class SessionsController < ApplicationController
 ^
-app/controllers/sessions_controller.rb:2:42: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
-  before_action :require_no_login, only: [:new, :create]
-                                         ^^^^^^^^^^^^^^^
-app/controllers/sessions_controller.rb:5:3: C: [Corrected] Style/EmptyMethod: Put empty method definitions on a single line.
-  def new ...
-  ^^^^^^^
 app/controllers/sessions_controller.rb:7:3: C: Metrics/AbcSize: Assignment Branch Condition size for create is too high. [<3, 18, 3> 18.49/17]
   def create ...
   ^^^^^^^^^^
@@ -495,116 +147,45 @@ app/controllers/sessions_controller.rb:9:8: C: [Correctable] Style/SafeNavigatio
 app/controllers/sessions_controller.rb:10:24: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       flash[:notice] = 'ログインに成功しました'
                        ^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/sessions_controller.rb:11:24: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      flash[:notice] = "ログインに成功しました"
-                       ^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/sessions_controller.rb:14:27: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       flash.now[:alert] = '無効なメールアドレスかパスワードです'
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/sessions_controller.rb:15:27: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      flash.now[:alert] = "無効なメールアドレスかパスワードです"
                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/sessions_controller.rb:21:22: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
     flash[:notice] = 'ログアウトしました'
                      ^^^^^^^^^^^^^^^^^^^^
-app/controllers/sessions_controller.rb:22:22: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    flash[:notice] = "ログアウトしました"
-                     ^^^^^^^^^^^^^^^^^^^^
-app/controllers/sessions_controller.rb:25:1: C: [Corrected] Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
 app/controllers/static_pages_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class StaticPagesController.
 class StaticPagesController < ApplicationController
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/static_pages_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class StaticPagesController < ApplicationController
 ^
-app/controllers/static_pages_controller.rb:2:39: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
-  before_action :require_login, only: [:home, :deside]
-                                      ^^^^^^^^^^^^^^^^
-app/controllers/static_pages_controller.rb:8:3: C: [Corrected] Style/EmptyMethod: Put empty method definitions on a single line.
-  def deside ...
-  ^^^^^^^^^^
 app/controllers/users_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class UsersController.
 class UsersController < ApplicationController
 ^^^^^^^^^^^^^^^^^^^^^
 app/controllers/users_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class UsersController < ApplicationController
 ^
-app/controllers/users_controller.rb:2:39: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
-  before_action :require_login, only: [:show, :edit, :update, :destroy] #TODO:newの扱い
-                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:2:73: C: [Corrected] Layout/LeadingCommentSpace: Missing space after #.
-  before_action :require_login, only: [:show, :edit, :update, :destroy] #TODO:newの扱い
-                                                                        ^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:2:74: C: [Corrected] Style/CommentAnnotation: Annotation keywords like TODO should be all upper case, followed by a colon, and a space, then a note describing the problem.
-  before_action :require_login, only: [:show, :edit, :update, :destroy] #TODO:newの扱い
-                                                                         ^^^^^
-app/controllers/users_controller.rb:8:3: C: [Corrected] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
-  def new
-  ^^^^^^^
-app/controllers/users_controller.rb:9:3: C: [Corrected] Rails/ActionOrder: Action show should appear before new.
-  def show ...
-  ^^^^^^^^
-app/controllers/users_controller.rb:11:23: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      flash[:alert] = "ユーザー名が空です"
-                      ^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:12:1: C: [Corrected] Layout/EmptyLines: Extra blank line detected.
-app/controllers/users_controller.rb:12:3: C: [Corrected] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
-  def create
-  ^^^^^^^^^^
-app/controllers/users_controller.rb:13:3: C: [Corrected] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 2.
-  def edit
-  ^^^^^^^^
-app/controllers/users_controller.rb:16:3: C: [Corrected] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 0.
-  def create
-  ^^^^^^^^^^
-app/controllers/users_controller.rb:16:23: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      flash[:alert] = "メールアドレスが空です"
-                      ^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/users_controller.rb:17:3: C: Metrics/AbcSize: Assignment Branch Condition size for create is too high. [<6, 35, 5> 35.86/17]
   def create ...
   ^^^^^^^^^^
 app/controllers/users_controller.rb:17:3: C: Metrics/MethodLength: Method has too many lines. [20/10]
   def create ...
   ^^^^^^^^^^
-app/controllers/users_controller.rb:19:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
 app/controllers/users_controller.rb:19:23: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       flash[:alert] = 'ユーザー名が空です'
-                      ^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:21:23: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      flash[:alert] = "パスワードが空です"
                       ^^^^^^^^^^^^^^^^^^^^
 app/controllers/users_controller.rb:24:23: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       flash[:alert] = 'メールアドレスが空です'
                       ^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:28:24: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      flash[:notice] = "ユーザー登録に成功しました！"
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/users_controller.rb:29:23: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       flash[:alert] = 'パスワードが空です'
                       ^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:31:23: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      flash[:alert] = "ユーザー登録に失敗しました"
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:36:3: C: [Corrected] Rails/ActionOrder: Action show should appear before create.
-  def show ...
-  ^^^^^^^^
 app/controllers/users_controller.rb:36:24: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       flash[:notice] = 'ユーザー登録に成功しました！'
                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:39:1: C: [Corrected] Layout/EmptyLines: Extra blank line detected.
 app/controllers/users_controller.rb:39:23: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       flash[:alert] = 'ユーザー登録に失敗しました'
                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:40:3: C: [Corrected] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 2.
-  def edit
-  ^^^^^^^^
-app/controllers/users_controller.rb:40:3: C: [Corrected] Rails/ActionOrder: Action edit should appear before create.
-  def edit ...
-  ^^^^^^^^
-app/controllers/users_controller.rb:43:1: C: [Corrected] Layout/EmptyLines: Extra blank line detected.
-app/controllers/users_controller.rb:44:3: C: [Corrected] Layout/EmptyLineBetweenDefs: Expected 1 empty line between method definitions; found 2.
-  def update
-  ^^^^^^^^^^
 app/controllers/users_controller.rb:44:3: C: Metrics/AbcSize: Assignment Branch Condition size for update is too high. [<5, 27, 6> 28.11/17]
   def update ...
   ^^^^^^^^^^
@@ -617,48 +198,21 @@ app/controllers/users_controller.rb:51:9: C: [Correctable] Rails/ActionControlle
 app/controllers/users_controller.rb:51:25: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
         flash[:alert] = '現在のパスワードが一致しません'
                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:51:25: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-        flash[:alert] = "現在のパスワードが一致しません"
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/users_controller.rb:57:25: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
         flash[:alert] = '新しいパスワードが一致しません'
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:57:25: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-        flash[:alert] = "新しいパスワードが一致しません"
                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/users_controller.rb:65:24: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       flash[:notice] = '更新に成功しました'
                        ^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:65:24: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      flash[:notice] = "更新に成功しました"
-                       ^^^^^^^^^^^^^^^^^^^^
 app/controllers/users_controller.rb:68:23: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       flash[:alert] = '更新に失敗しました'
                       ^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:68:23: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      flash[:alert] = "更新に失敗しました"
-                      ^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:70:8: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-    end    
-       ^^^^
 app/controllers/users_controller.rb:78:38: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       redirect_to login_url, notice: 'ユーザーを削除しました。'
-                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:78:38: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      redirect_to login_url, notice: "ユーザーを削除しました。"
                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/users_controller.rb:80:36: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
       redirect_to root_url, alert: 'ユーザーを削除できませんでした。'
                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:80:36: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      redirect_to root_url, alert: "ユーザーを削除できませんでした。"
-                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/users_controller.rb:84:3: C: [Corrected] Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
-  private
-  ^^^^^^^
-app/controllers/users_controller.rb:98:34: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    redirect_to root_url, alert: "ユーザーが見つかりませんでした。"
-                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/controllers/users_controller.rb:99:34: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
     redirect_to root_url, alert: 'ユーザーが見つかりませんでした。'
                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -668,31 +222,9 @@ module ApplicationHelper
 app/helpers/application_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 module ApplicationHelper
 ^
-app/helpers/application_helper.rb:2:1: C: [Corrected] Layout/EmptyLinesAroundModuleBody: Extra empty line detected at module body beginning.
-app/helpers/application_helper.rb:5:18: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    base_title = "AutoCoordinator"
-                 ^^^^^^^^^^^^^^^^^
 app/helpers/application_helper.rb:8:7: C: [Correctable] Style/StringConcatenation: Prefer string interpolation to string concatenation.
       page_title + ' | ' + base_title
       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/helpers/application_helper.rb:9:20: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      page_title + " | " + base_title
-                   ^^^^^
-app/helpers/application_helper.rb:15:23: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    link_to image_tag("sites/navigationj_back.png", class: "image-back-link"), path
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/helpers/application_helper.rb:15:60: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    link_to image_tag("sites/navigationj_back.png", class: "image-back-link"), path
-                                                           ^^^^^^^^^^^^^^^^^
-app/helpers/application_helper.rb:20:48: C: [Corrected] Layout/SpaceAfterColon: Space missing after colon.
-    button_to view, path, method: :delete, data:{ confirm: "本当に削除しますか？"}
-                                               ^
-app/helpers/application_helper.rb:20:60: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    button_to view, path, method: :delete, data:{ confirm: "本当に削除しますか？"}
-                                                           ^^^^^^^^^^^^^^^^^^^^^^
-app/helpers/application_helper.rb:20:72: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-    button_to view, path, method: :delete, data:{ confirm: "本当に削除しますか？"}
-                                                                                 ^
 app/helpers/clothes_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module ClothesHelper.
 module ClothesHelper
 ^^^^^^^^^^^^^^^^^^^^
@@ -717,77 +249,12 @@ module SessionsHelper
 app/helpers/sessions_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 module SessionsHelper
 ^
-app/helpers/sessions_helper.rb:2:1: C: [Corrected] Layout/EmptyLinesAroundModuleBody: Extra empty line detected at module body beginning.
-app/helpers/sessions_helper.rb:3:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    def log_in(user)
-^^^^
-app/helpers/sessions_helper.rb:6:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-app/helpers/sessions_helper.rb:7:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    def current_user
-^^^^
-app/helpers/sessions_helper.rb:10:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-app/helpers/sessions_helper.rb:11:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    def logged_in?
-^^^^
-app/helpers/sessions_helper.rb:14:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-app/helpers/sessions_helper.rb:15:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    def log_out
-^^^^
 app/helpers/sessions_helper.rb:16:5: C: Rails/HelperInstanceVariable: Do not use instance variables in helpers.
     @current_user = nil
     ^^^^^^^^^^^^^
-app/helpers/sessions_helper.rb:19:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    def require_login
-^^^^
-app/helpers/sessions_helper.rb:19:5: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-    def require_login ...
-    ^^^^^^^^^^^^^^^^^
-app/helpers/sessions_helper.rb:20:3: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-  def require_login ...
-  ^^^^^^^^^^^^^^^^^
-app/helpers/sessions_helper.rb:20:7: C: [Corrected] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
-      return if logged_in?
-      ^^^^^^^^^^^^^^^^^^^^
-app/helpers/sessions_helper.rb:21:5: C: [Corrected] Style/GuardClause: Use a guard clause (return if logged_in?) instead of wrapping the code inside a conditional expression.
-    unless logged_in?
-    ^^^^^^
-app/helpers/sessions_helper.rb:22:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      flash[:danger] = 'Please log in.'
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/helpers/sessions_helper.rb:22:22: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
     flash[:danger] = 'Please log in.'
                      ^^^^^^^^^^^^^^^^
-app/helpers/sessions_helper.rb:22:24: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      flash[:danger] = "Please log in."
-                       ^^^^^^^^^^^^^^^^
-app/helpers/sessions_helper.rb:23:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-app/helpers/sessions_helper.rb:23:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      redirect_to login_url
-      ^^^^^^^^^^^^^^^^^^^^^
-app/helpers/sessions_helper.rb:24:1: C: [Corrected] Layout/EmptyLinesAroundMethodBody: Extra empty line detected at method body end.
-app/helpers/sessions_helper.rb:26:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    def require_no_login
-^^^^
-app/helpers/sessions_helper.rb:26:5: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-    def require_no_login ...
-    ^^^^^^^^^^^^^^^^^^^^
-app/helpers/sessions_helper.rb:27:3: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-  def require_no_login ...
-  ^^^^^^^^^^^^^^^^^^^^
-app/helpers/sessions_helper.rb:27:7: C: [Corrected] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
-      return unless logged_in?
-      ^^^^^^^^^^^^^^^^^^^^^^^^
-app/helpers/sessions_helper.rb:28:5: C: [Corrected] Style/GuardClause: Use a guard clause (return unless logged_in?) instead of wrapping the code inside a conditional expression.
-    if logged_in?
-    ^^
-app/helpers/sessions_helper.rb:28:5: C: [Corrected] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
-    if logged_in?
-    ^^
-app/helpers/sessions_helper.rb:29:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-app/helpers/sessions_helper.rb:30:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      redirect_to root_url
-      ^^^^^^^^^^^^^^^^^^^^
-app/helpers/sessions_helper.rb:31:1: C: [Corrected] Layout/EmptyLinesAroundMethodBody: Extra empty line detected at method body end.
 app/helpers/static_pages_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module StaticPagesHelper.
 module StaticPagesHelper
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -809,12 +276,6 @@ class ApplicationMailer < ActionMailer::Base
 app/mailers/application_mailer.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class ApplicationMailer < ActionMailer::Base
 ^
-app/mailers/application_mailer.rb:2:17: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  default from: "from@example.com"
-                ^^^^^^^^^^^^^^^^^^
-app/mailers/application_mailer.rb:3:10: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  layout "mailer"
-         ^^^^^^^^
 app/models/application_record.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class ApplicationRecord.
 class ApplicationRecord < ActiveRecord::Base
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -827,31 +288,12 @@ class Cloth < ApplicationRecord
 app/models/cloth.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class Cloth < ApplicationRecord
 ^
-app/models/cloth.rb:3:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-app/models/cloth.rb:4:3: C: [Corrected] Layout/LeadingCommentSpace: Missing space after #.
-  #TODO: 最後に選択してからn日経てば再選択可能になるか、というカラム
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 app/models/cloth.rb:7:3: C: Rails/HasManyOrHasOneDependent: Specify a :dependent option.
   has_many :outfit_logs_clothes
   ^^^^^^^^
 app/models/cloth.rb:12:23: C: [Correctable] Rails/RedundantPresenceValidationOnBelongsTo: Remove explicit presence validation for user_id.
   validates :user_id, presence: true
                       ^^^^^^^^^^^^^^
-app/models/cloth.rb:14:35: C: [Corrected] Layout/ExtraSpacing: Unnecessary spacing detected.
-  validates :image, presence: true  # ここに追加    
-                                  ^
-app/models/cloth.rb:14:44: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-  validates :image, presence: true  # ここに追加    
-                                                ^^^^
-app/models/cloth.rb:18:3: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-      update(deleted_at: Time.current)
-  ^^^^
-app/models/cloth.rb:21:3: C: [Corrected] Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
-  private
-  ^^^^^^^
-app/models/cloth.rb:23:3: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-      errors.add(:last_worn_on, 'must be a valid date') unless last_worn_on.is_a?(Date)
-  ^^^^
 app/models/cloth_group.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class ClothGroup.
 class ClothGroup < ApplicationRecord
 ^^^^^^^^^^^^^^^^
@@ -870,18 +312,9 @@ class ClothType < ApplicationRecord
 app/models/cloth_type.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class ClothType < ApplicationRecord
 ^
-app/models/cloth_type.rb:2:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    has_many :cloths
-^^^^
 app/models/cloth_type.rb:2:3: C: Rails/HasManyOrHasOneDependent: Specify a :dependent option.
   has_many :cloths
   ^^^^^^^^
-app/models/cloth_type.rb:3:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    belongs_to :cloth_group
-^^^^
-app/models/cloth_type.rb:5:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    validates :name, presence: true, uniqueness: true
-^^^^
 app/models/outfit_log.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class OutfitLog.
 class OutfitLog < ApplicationRecord
 ^^^^^^^^^^^^^^^
@@ -891,9 +324,6 @@ class OutfitLog < ApplicationRecord
 app/models/outfit_log.rb:3:3: C: Rails/HasManyOrHasOneDependent: Specify a :dependent option.
   has_many :outfit_logs_clothes
   ^^^^^^^^
-app/models/outfit_log.rb:4:51: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-  has_many :clothes, through: :outfit_logs_clothes  
-                                                  ^^
 app/models/outfit_logs_cloth.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class OutfitLogsCloth.
 class OutfitLogsCloth < ApplicationRecord
 ^^^^^^^^^^^^^^^^^^^^^
@@ -912,190 +342,54 @@ class User < ApplicationRecord
 app/models/user.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class User < ApplicationRecord
 ^
-app/models/user.rb:2:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    has_many :clothes, dependent: :destroy
-^^^^
-app/models/user.rb:3:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    has_many :outfit_logs
-^^^^
 app/models/user.rb:3:3: C: Rails/HasManyOrHasOneDependent: Specify a :dependent option.
   has_many :outfit_logs
   ^^^^^^^^
-app/models/user.rb:5:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    validates :name, presence: true, length: { maximum: 16 }
-^^^^
-app/models/user.rb:6:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP },uniqueness: true
-^^^^
-app/models/user.rb:6:82: C: [Corrected] Layout/SpaceAfterComma: Space missing after comma.
-    validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP },uniqueness: true
-                                                                                 ^
-app/models/user.rb:7:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    has_secure_password
-^^^^
 config.ru:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 # This file is used by Rack-based servers to start the application.
 ^
-config.ru:3:18: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require_relative "config/environment"
-                 ^^^^^^^^^^^^^^^^^^^^
 config/application.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require_relative 'boot'
 ^
-config/application.rb:1:18: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require_relative "boot"
-                 ^^^^^^
-config/application.rb:3:9: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require "rails/all"
-        ^^^^^^^^^^^
 config/application.rb:10:3: C: Style/Documentation: Missing top-level documentation comment for class AcByRails::Application.
   class Application < Rails::Application
   ^^^^^^^^^^^^^^^^^
-config/application.rb:17:33: C: [Corrected] Style/PercentLiteralDelimiters: %w-literals should be delimited by [ and ].
-    config.autoload_lib(ignore: %w(assets tasks))
-                                ^^^^^^^^^^^^^^^^
-config/application.rb:27:1: C: [Corrected] Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
 config/boot.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__)
 ^
-config/boot.rb:1:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../Gemfile", __dir__)
-    ^^^^^^^^^^^^^^^^
-config/boot.rb:1:44: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../Gemfile", __dir__)
-                                           ^^^^^^^^^^^^
-config/boot.rb:3:9: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require "bundler/setup" # Set up gems listed in the Gemfile.
-        ^^^^^^^^^^^^^^^
-config/boot.rb:4:9: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require "bootsnap/setup" # Speed up boot time by caching expensive operations.
-        ^^^^^^^^^^^^^^^^
 config/environment.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 # Load the Rails application.
 ^
-config/environment.rb:2:18: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require_relative "application"
-                 ^^^^^^^^^^^^^
 config/environments/development.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'active_support/core_ext/integer/time'
 ^
-config/environments/development.rb:1:9: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require "active_support/core_ext/integer/time"
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 config/environments/development.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [26/25]
 Rails.application.configure do ...
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-config/environments/development.rb:22:22: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  if Rails.root.join("tmp/caching-dev.txt").exist?
-                     ^^^^^^^^^^^^^^^^^^^^^
-config/environments/development.rb:28:7: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      "Cache-Control" => "public, max-age=#{2.days.to_i}"
-      ^^^^^^^^^^^^^^^
 config/environments/production.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'active_support/core_ext/integer/time'
 ^
-config/environments/production.rb:1:9: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require "active_support/core_ext/integer/time"
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 config/environments/production.rb:55:45: C: [Correctable] Style/GlobalStdStream: Use $stdout instead of STDOUT.
   config.logger = ActiveSupport::Logger.new(STDOUT)
                                             ^^^^^^
-config/environments/production.rb:56:5: C: [Corrected] Layout/MultilineMethodCallIndentation: Align .tap with .new on line 55.
-    .tap  { |logger| logger.formatter = ::Logger::Formatter.new }
-    ^^^^
-config/environments/production.rb:56:41: C: [Corrected] Style/RedundantConstantBase: Remove redundant ::.
-    .tap  { |logger| logger.formatter = ::Logger::Formatter.new }
-                                        ^^
-config/environments/production.rb:57:5: C: [Corrected] Layout/MultilineMethodCallIndentation: Align .then with .new on line 55.
-    .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
-    ^^^^^
-config/environments/production.rb:60:22: C: [Corrected] Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
-  config.log_tags = [ :request_id ]
-                     ^
-config/environments/production.rb:65:32: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
-                               ^^^^^^^^^^^^^^^^^
-config/environments/production.rb:65:51: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
-                                                  ^^^^^^
 config/environments/test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'active_support/core_ext/integer/time'
 ^
-config/environments/test.rb:1:9: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require "active_support/core_ext/integer/time"
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-config/environments/test.rb:18:27: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  config.eager_load = ENV["CI"].present?
-                          ^^^^
-config/environments/test.rb:23:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    "Cache-Control" => "public, max-age=#{1.hour.to_i}"
-    ^^^^^^^^^^^^^^^
 config/importmap.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 # Pin npm packages by running ./bin/importmap
 ^
-config/importmap.rb:3:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-pin "application", preload: true
-    ^^^^^^^^^^^^^
-config/importmap.rb:4:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
-    ^^^^^^^^^^^^^^^^^^^^^^^
-config/importmap.rb:4:34: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-pin "@hotwired/turbo-rails", to: "turbo.min.js", preload: true
-                                 ^^^^^^^^^^^^^^
-config/importmap.rb:5:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-pin "@hotwired/stimulus", to: "stimulus.min.js", preload: true
-    ^^^^^^^^^^^^^^^^^^^^
-config/importmap.rb:5:31: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-pin "@hotwired/stimulus", to: "stimulus.min.js", preload: true
-                              ^^^^^^^^^^^^^^^^^
-config/importmap.rb:6:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-config/importmap.rb:6:39: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
-                                      ^^^^^^^^^^^^^^^^^^^^^
-config/importmap.rb:7:14: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-pin_all_from "app/javascript/controllers", under: "controllers"
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-config/importmap.rb:7:51: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-pin_all_from "app/javascript/controllers", under: "controllers"
-                                                  ^^^^^^^^^^^^^
 config/initializers/assets.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 # Be sure to restart your server when you modify this file.
 ^
-config/initializers/assets.rb:4:43: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-Rails.application.config.assets.version = "1.0"
-                                          ^^^^^
-config/initializers/assets.rb:13:47: C: [Corrected] Style/PercentLiteralDelimiters: %w-literals should be delimited by [ and ].
-Rails.application.config.assets.precompile += %w( preview_cloth_image.js )
-                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-config/initializers/assets.rb:13:50: C: [Corrected] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
-Rails.application.config.assets.precompile += %w( preview_cloth_image.js )
-                                                 ^
-config/initializers/assets.rb:13:73: C: [Corrected] Layout/SpaceInsidePercentLiteralDelimiters: Do not use spaces inside percent literal delimiters.
-Rails.application.config.assets.precompile += %w( preview_cloth_image.js )
-                                                                        ^
-config/initializers/assets.rb:13:75: C: [Corrected] Layout/TrailingEmptyLines: Final newline missing.
-Rails.application.config.assets.precompile += %w( preview_cloth_image.js )
-                                                                          
 config/initializers/content_security_policy.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 # Be sure to restart your server when you modify this file.
 ^
 config/initializers/filter_parameter_logging.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 # Be sure to restart your server when you modify this file.
 ^
-config/initializers/filter_parameter_logging.rb:6:47: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
-Rails.application.config.filter_parameters += [ ...
-                                              ^
 config/initializers/inflections.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 ActiveSupport::Inflector.inflections(:en) do |inflect|
 ^
-config/initializers/inflections.rb:2:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    inflect.irregular 'cloth', 'clothes'
-^^^^
-config/initializers/inflections.rb:3:3: C: [Corrected] Layout/BlockAlignment: end at 3, 2 is not aligned with ActiveSupport::Inflector.inflections(:en) do |inflect| at 1, 0.
-  end
-  ^^^
 config/initializers/permissions_policy.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 # Be sure to restart your server when you modify this file.
 ^
@@ -1105,96 +399,12 @@ config/puma.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing f
 config/puma.rb:10:25: C: [Correctable] Style/RedundantFetchBlock: Use fetch('RAILS_MAX_THREADS', 5) instead of fetch('RAILS_MAX_THREADS') { 5 }.
 max_threads_count = ENV.fetch('RAILS_MAX_THREADS') { 5 }
                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-config/puma.rb:10:31: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-max_threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
-                              ^^^^^^^^^^^^^^^^^^^
-config/puma.rb:11:31: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-min_threads_count = ENV.fetch("RAILS_MIN_THREADS") { max_threads_count }
-                              ^^^^^^^^^^^^^^^^^^^
-config/puma.rb:15:8: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-if ENV["RAILS_ENV"] == "production"
-       ^^^^^^^^^^^
-config/puma.rb:15:24: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-if ENV["RAILS_ENV"] == "production"
-                       ^^^^^^^^^^^^
-config/puma.rb:16:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  require "concurrent-ruby"
-          ^^^^^^^^^^^^^^^^^
-config/puma.rb:17:36: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  worker_count = Integer(ENV.fetch("WEB_CONCURRENCY") { Concurrent.physical_processor_count })
-                                   ^^^^^^^^^^^^^^^^^
-config/puma.rb:23:34: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
-                                 ^^^^^^^^^^^
-config/puma.rb:23:47: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
-                                              ^^^^^^^^^^^^^
-config/puma.rb:23:65: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
-                                                                ^^^^^^^^^^^^^
 config/puma.rb:26:10: C: [Correctable] Style/RedundantFetchBlock: Use fetch('PORT', 3000) instead of fetch('PORT') { 3000 }.
 port ENV.fetch('PORT') { 3000 }
          ^^^^^^^^^^^^^^^^^^^^^^
-config/puma.rb:26:16: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-port ENV.fetch("PORT") { 3000 }
-               ^^^^^^
-config/puma.rb:29:23: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-environment ENV.fetch("RAILS_ENV") { "development" }
-                      ^^^^^^^^^^^
-config/puma.rb:29:38: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-environment ENV.fetch("RAILS_ENV") { "development" }
-                                     ^^^^^^^^^^^^^
-config/puma.rb:32:19: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
-                  ^^^^^^^^^
-config/puma.rb:32:32: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
-                               ^^^^^^^^^^^^^^^^^^^^^
 config/routes.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 Rails.application.routes.draw do
 ^
-config/routes.rb:12:53: C: [Corrected] Layout/ExtraSpacing: Unnecessary spacing detected.
-  post '/deside',       to: 'clothes#update_deside',      as: 'deside_push'
-                                                    ^^^^^
-config/routes.rb:15:31: C: [Corrected] Layout/SpaceAfterColon: Space missing after colon.
-  resources :users,       only:[:new, :create, :show, :edit, :update, :destroy]
-                              ^
-config/routes.rb:15:32: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
-  resources :users,       only:[:new, :create, :show, :edit, :update, :destroy]
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-config/routes.rb:16:31: C: [Corrected] Layout/SpaceAfterColon: Space missing after colon.
-  resources :clothes,     only:[:index, :new, :create, :show, :edit, :update, :update_deside, :destroy]
-                              ^
-config/routes.rb:16:32: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
-  resources :clothes,     only:[:index, :new, :create, :show, :edit, :update, :update_deside, :destroy]
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-config/routes.rb:17:31: C: [Corrected] Layout/SpaceAfterColon: Space missing after colon.
-  resources :cloth_types, only:[:index, :new, :create, :destroy]
-                              ^
-config/routes.rb:17:32: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
-  resources :cloth_types, only:[:index, :new, :create, :destroy]
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-config/routes.rb:18:65: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-  resources :outfit_selection_rules, as: 'rules', path: 'rules', 
-                                                                ^
-config/routes.rb:19:27: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-                          only:[:index, :show, :new, :create, :destroy]
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-config/routes.rb:19:31: C: [Corrected] Layout/SpaceAfterColon: Space missing after colon.
-                          only:[:index, :show, :new, :create, :destroy]
-                              ^
-config/routes.rb:19:32: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
-                          only:[:index, :show, :new, :create, :destroy]
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-config/routes.rb:19:38: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-                                     only:  %i[index show new create destroy]
-                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-config/routes.rb:20:31: C: [Corrected] Layout/SpaceAfterColon: Space missing after colon.
-  resources :outfit_logs, only:[:index, :new, :create, :show]
-                              ^
-config/routes.rb:20:32: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
-  resources :outfit_logs, only:[:index, :new, :create, :show]
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 db/migrate/20231105024401_create_users.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateUsers.
 class CreateUsers < ActiveRecord::Migration[7.1]
 ^^^^^^^^^^^^^^^^^
@@ -1225,18 +435,12 @@ class CreateClothes < ActiveRecord::Migration[7.1]
 db/migrate/20231106133200_create_clothes.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class CreateClothes < ActiveRecord::Migration[7.1]
 ^
-db/migrate/20231106133200_create_clothes.rb:6:41: C: [Corrected] Layout/LeadingCommentSpace: Missing space after #.
-      t.date :last_worn_on, null: false #一度も着ていない場合は古い日付にする
-                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 db/migrate/20231106133207_create_cloth_types.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateClothTypes.
 class CreateClothTypes < ActiveRecord::Migration[7.1]
 ^^^^^^^^^^^^^^^^^^^^^^
 db/migrate/20231106133207_create_cloth_types.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class CreateClothTypes < ActiveRecord::Migration[7.1]
 ^
-db/migrate/20231106133207_create_cloth_types.rb:8:49: C: [Corrected] Layout/LeadingCommentSpace: Missing space after #.
-    add_index :cloth_types, :name, unique: true #type_nameにユニーク制約
-                                                ^^^^^^^^^^^^^^^^^^^^^^^^
 db/migrate/20231106141445_create_active_storage_tables.active_storage.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 # This migration comes from active_storage (originally 20170806125915)
 ^
@@ -1246,65 +450,15 @@ db/migrate/20231106141445_create_active_storage_tables.active_storage.rb:3:3: C:
 db/migrate/20231106141445_create_active_storage_tables.active_storage.rb:3:3: C: Metrics/MethodLength: Method has too many lines. [35/10]
   def change ...
   ^^^^^^^^^^
-db/migrate/20231106141445_create_active_storage_tables.active_storage.rb:22:16: C: [Corrected] Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
-      t.index [ :key ], unique: true
-               ^
-db/migrate/20231106141445_create_active_storage_tables.active_storage.rb:36:15: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
-      t.index [ :record_type, :record_id, :name, :blob_id ], name: :index_active_storage_attachments_uniqueness, unique: true
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/migrate/20231106141445_create_active_storage_tables.active_storage.rb:36:16: C: [Corrected] Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
-      t.index [ :record_type, :record_id, :name, :blob_id ], name: :index_active_storage_attachments_uniqueness, unique: true
-               ^
-db/migrate/20231106141445_create_active_storage_tables.active_storage.rb:36:106: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-      t.index %i[record_type record_id name blob_id], name: :index_active_storage_attachments_uniqueness, 
-                                                                                                         ^
-db/migrate/20231106141445_create_active_storage_tables.active_storage.rb:36:121: C: [Corrected] Layout/LineLength: Line is too long. [125/120]
-      t.index [ :record_type, :record_id, :name, :blob_id ], name: :index_active_storage_attachments_uniqueness, unique: true
-                                                                                                                        ^^^^^
-db/migrate/20231106141445_create_active_storage_tables.active_storage.rb:37:1: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-unique: true
-^^^^^^^^^^^^
-db/migrate/20231106141445_create_active_storage_tables.active_storage.rb:44:15: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
-      t.index [ :blob_id, :variation_digest ], name: :index_active_storage_variant_records_uniqueness, unique: true
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/migrate/20231106141445_create_active_storage_tables.active_storage.rb:44:16: C: [Corrected] Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
-      t.index [ :blob_id, :variation_digest ], name: :index_active_storage_variant_records_uniqueness, unique: true
-               ^
-db/migrate/20231106141445_create_active_storage_tables.active_storage.rb:49:3: C: [Corrected] Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
-  private
-  ^^^^^^^
-db/migrate/20231106141445_create_active_storage_tables.active_storage.rb:50:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    def primary_and_foreign_key_types
-^^^^
-db/migrate/20231106141445_create_active_storage_tables.active_storage.rb:50:5: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-    def primary_and_foreign_key_types ...
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 db/migrate/20231109134401_add_cloth_type_id_to_cloths.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddClothTypeIdToCloths.
 class AddClothTypeIdToCloths < ActiveRecord::Migration[7.1]
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 db/migrate/20231109134401_add_cloth_type_id_to_cloths.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class AddClothTypeIdToCloths < ActiveRecord::Migration[7.1]
 ^
-db/migrate/20231109134401_add_cloth_type_id_to_cloths.rb:3:5: C: [Corrected] Style/IfUnlessModifier: Favor modifier unless usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
-    unless column_exists?(:clothes, :cloth_type_id)
-    ^^^^^^
-db/migrate/20231109134401_add_cloth_type_id_to_cloths.rb:7:5: C: [Corrected] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
-    return unless column_exists?(:clothes, :type_name)
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 db/migrate/20231109134401_add_cloth_type_id_to_cloths.rb:7:5: C: Rails/ReversibleMigration: remove_column(without type) is not reversible.
     remove_column :clothes, :type_name
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/migrate/20231109134401_add_cloth_type_id_to_cloths.rb:7:5: C: [Corrected] Style/GuardClause: Use a guard clause (return unless column_exists?(:clothes, :type_name)) instead of wrapping the code inside a conditional expression.
-    if column_exists?(:clothes, :type_name)
-    ^^
-db/migrate/20231109134401_add_cloth_type_id_to_cloths.rb:7:5: C: [Corrected] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
-    if column_exists?(:clothes, :type_name)
-    ^^
-db/migrate/20231109134401_add_cloth_type_id_to_cloths.rb:8:1: C: [Corrected] Layout/EmptyLinesAroundMethodBody: Extra empty line detected at method body end.
-db/migrate/20231109134401_add_cloth_type_id_to_cloths.rb:8:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      remove_column :clothes, :type_name
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/migrate/20231109134401_add_cloth_type_id_to_cloths.rb:9:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
 db/migrate/20231112080345_create_cloth_groups.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateClothGroups.
 class CreateClothGroups < ActiveRecord::Migration[7.1]
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -1353,642 +507,48 @@ class AddDeletedAtToCloths < ActiveRecord::Migration[7.1]
 db/seeds.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 ActiveStorage::AnalyzeJob.queue_adapter = :inline
 ^
-db/seeds.rb:4:38: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-user = User.find_or_create_by(email: "example@guest.com") do |u|
-                                     ^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:5:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  u.name = "ゲスト太郎"
-           ^^^^^^^^^^^^
-db/seeds.rb:6:16: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  u.password = "password"
-               ^^^^^^^^^^
-db/seeds.rb:7:29: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  u.password_confirmation = "password"
-                            ^^^^^^^^^^
-db/seeds.rb:11:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "半袖（外）", description: "外向けの半袖全般です"},
-          ^^^^^^^^^^^^
-db/seeds.rb:11:33: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "半袖（外）", description: "外向けの半袖全般です"},
-                                     ^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:11:45: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-  { name: "半袖（外）", description: "外向けの半袖全般です"},
-                                                           ^
-db/seeds.rb:12:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "半袖（内）", description: "インナーとして使う半袖です"},
-          ^^^^^^^^^^^^
-db/seeds.rb:12:33: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "半袖（内）", description: "インナーとして使う半袖です"},
-                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:12:48: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-  { name: "半袖（内）", description: "インナーとして使う半袖です"},
-                                                                 ^
-db/seeds.rb:13:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "長袖（薄）", description: "薄手の長袖全般です"},
-          ^^^^^^^^^^^^
-db/seeds.rb:13:33: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "長袖（薄）", description: "薄手の長袖全般です"},
-                                     ^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:13:44: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-  { name: "長袖（薄）", description: "薄手の長袖全般です"},
-                                                         ^
-db/seeds.rb:14:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "長袖（厚）", description: "厚手の長袖全般です"},
-          ^^^^^^^^^^^^
-db/seeds.rb:14:33: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "長袖（厚）", description: "厚手の長袖全般です"},
-                                     ^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:14:44: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-  { name: "長袖（厚）", description: "厚手の長袖全般です"},
-                                                         ^
-db/seeds.rb:15:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "アウター",   description: "アウター全般です"},
-          ^^^^^^^^^^
-db/seeds.rb:15:18: C: [Corrected] Layout/ExtraSpacing: Unnecessary spacing detected.
-  { name: "アウター",   description: "アウター全般です"},
-                     ^^
-db/seeds.rb:15:34: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "アウター",   description: "アウター全般です"},
-                                     ^^^^^^^^^^^^^^^^^^
-db/seeds.rb:15:44: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-  { name: "アウター",   description: "アウター全般です"},
-                                                       ^
-db/seeds.rb:16:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "ボトムス（薄）", description: "薄い生地のボトムスです"},
-          ^^^^^^^^^^^^^^^^
-db/seeds.rb:16:35: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "ボトムス（薄）", description: "薄い生地のボトムスです"},
-                                         ^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:16:48: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-  { name: "ボトムス（薄）", description: "薄い生地のボトムスです"},
-                                                                 ^
-db/seeds.rb:17:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "ボトムス（厚）", description: "厚い生地のボトムスです"},
-          ^^^^^^^^^^^^^^^^
-db/seeds.rb:17:35: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "ボトムス（厚）", description: "厚い生地のボトムスです"},
-                                         ^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:17:48: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-  { name: "ボトムス（厚）", description: "厚い生地のボトムスです"},
-                                                                 ^
-db/seeds.rb:18:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "その他",     description: "その他"},
-          ^^^^^^^^
-db/seeds.rb:18:35: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "その他",     description: "その他"},
-                                     ^^^^^^^^
-db/seeds.rb:18:40: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-  { name: "その他",     description: "その他"},
-                                             ^
-db/seeds.rb:18:41: C: [Corrected] Style/TrailingCommaInArrayLiteral: Avoid comma after the last item of an array.
-  { name: "その他",     description: "その他"},
-                                              ^
-db/seeds.rb:24:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-db/seeds.rb:26:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "Tシャツ",    cloth_group_id: 1 },
-          ^^^^^^^^^
-db/seeds.rb:26:18: C: [Corrected] Layout/ExtraSpacing: Unnecessary spacing detected.
-  { name: "Tシャツ",    cloth_group_id: 1 },
-                    ^^^
-db/seeds.rb:27:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "長袖シャツ", cloth_group_id: 3 },
-          ^^^^^^^^^^^^
-db/seeds.rb:28:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "長袖全般",   cloth_group_id: 4 },
-          ^^^^^^^^^^
-db/seeds.rb:28:18: C: [Corrected] Layout/ExtraSpacing: Unnecessary spacing detected.
-  { name: "長袖全般",   cloth_group_id: 4 },
-                     ^^
-db/seeds.rb:29:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "ジーンズ(薄)",   cloth_group_id: 6 },
-          ^^^^^^^^^^^^^^
-db/seeds.rb:29:21: C: [Corrected] Layout/ExtraSpacing: Unnecessary spacing detected.
-  { name: "ジーンズ(薄)",   cloth_group_id: 6 },
-                         ^^
-db/seeds.rb:30:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "ジーンズ(厚)", cloth_group_id: 7},
-          ^^^^^^^^^^^^^^
-db/seeds.rb:30:39: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-  { name: "ジーンズ(厚)", cloth_group_id: 7},
-                                           ^
-db/seeds.rb:31:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "アウター",   cloth_group_id: 5 },
-          ^^^^^^^^^^
-db/seeds.rb:32:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "半袖Yシャツ", cloth_group_id: 1},
-          ^^^^^^^^^^^^^
-db/seeds.rb:32:38: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-  { name: "半袖Yシャツ", cloth_group_id: 1},
-                                          ^
-db/seeds.rb:33:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "上インナー", cloth_group_id: 2},
-          ^^^^^^^^^^^^
-db/seeds.rb:33:37: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-  { name: "上インナー", cloth_group_id: 2},
-                                         ^
-db/seeds.rb:34:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { name: "その他", cloth_group_id: 8}
-          ^^^^^^^^
-db/seeds.rb:34:35: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-  { name: "その他", cloth_group_id: 8}
-                                     ^
-db/seeds.rb:44:54: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { user_id: user.id, cloth_type_id: 1, description: "橙のTシャツ",   
-                                                     ^^^^^^^^^^^^^
-db/seeds.rb:44:63: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-  { user_id: user.id, cloth_type_id: 1, description: "橙のTシャツ",   
-                                                                   ^^^
-db/seeds.rb:45:58: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/tshirt.png") },
-                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:46:54: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { user_id: user.id, cloth_type_id: 8, description: "白のTシャツ",   
-                                                     ^^^^^^^^^^^^^
-db/seeds.rb:46:63: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-  { user_id: user.id, cloth_type_id: 8, description: "白のTシャツ",   
-                                                                   ^^^
-db/seeds.rb:47:58: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/siro_t.png") },
-                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:48:54: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { user_id: user.id, cloth_type_id: 1, description: "緑の柄付きTシャツ",   
-                                                     ^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:48:66: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-  { user_id: user.id, cloth_type_id: 1, description: "緑の柄付きTシャツ",   
-                                                                         ^^^
-db/seeds.rb:49:58: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/midori_t.png") },
-                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:50:54: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { user_id: user.id, cloth_type_id: 7, description: "アロハシャツ",   
-                                                     ^^^^^^^^^^^^^^
-db/seeds.rb:50:63: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-  { user_id: user.id, cloth_type_id: 7, description: "アロハシャツ",   
-                                                                    ^^^
-db/seeds.rb:51:58: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/aroha_y.png") },
-                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:52:54: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { user_id: user.id, cloth_type_id: 7, description: "Yシャツ",   
-                                                     ^^^^^^^^^
-db/seeds.rb:52:61: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-  { user_id: user.id, cloth_type_id: 7, description: "Yシャツ",   
-                                                               ^^^
-db/seeds.rb:53:58: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/ysyatu.png") },    
-                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:53:98: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/ysyatu.png") },    
-                                                                                                 ^^^^
-db/seeds.rb:54:54: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { user_id: user.id, cloth_type_id: 2, description: "長袖シャツ",
-                                                     ^^^^^^^^^^^^
-db/seeds.rb:55:58: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/longsleeve.png") },
-                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:56:54: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { user_id: user.id, cloth_type_id: 2, description: "長袖シャツ",
-                                                     ^^^^^^^^^^^^
-db/seeds.rb:57:58: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/nagasyatu.png") },
-                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:58:54: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { user_id: user.id, cloth_type_id: 3, description: "パーカー2",  
-                                                     ^^^^^^^^^^^
-db/seeds.rb:58:62: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-  { user_id: user.id, cloth_type_id: 3, description: "パーカー2",  
-                                                                 ^^
-db/seeds.rb:59:58: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/hoodie.png") },
-                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:60:54: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { user_id: user.id, cloth_type_id: 3, description: "パーカー",  
-                                                     ^^^^^^^^^^
-db/seeds.rb:60:61: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-  { user_id: user.id, cloth_type_id: 3, description: "パーカー",  
-                                                                ^^
-db/seeds.rb:61:58: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/paka.png") },
-                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:62:54: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { user_id: user.id, cloth_type_id: 3, description: "トレーナー",  
-                                                     ^^^^^^^^^^^^
-db/seeds.rb:62:62: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-  { user_id: user.id, cloth_type_id: 3, description: "トレーナー",  
-                                                                  ^^
-db/seeds.rb:63:58: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/atunaga.png") },
-                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:64:54: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { user_id: user.id, cloth_type_id: 3, description: "トレーナー2",  
-                                                     ^^^^^^^^^^^^^
-db/seeds.rb:64:63: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-  { user_id: user.id, cloth_type_id: 3, description: "トレーナー2",  
-                                                                   ^^
-db/seeds.rb:65:58: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/atunaga2.png") },
-                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:66:54: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { user_id: user.id, cloth_type_id: 4, description: "ジーンズ",  
-                                                     ^^^^^^^^^^
-db/seeds.rb:66:61: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-  { user_id: user.id, cloth_type_id: 4, description: "ジーンズ",  
-                                                                ^^
-db/seeds.rb:67:58: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/jeans.png") },
-                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:68:54: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { user_id: user.id, cloth_type_id: 5, description: "ジーンズ2", 
-                                                     ^^^^^^^^^^^
-db/seeds.rb:68:62: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-  { user_id: user.id, cloth_type_id: 5, description: "ジーンズ2", 
-                                                                 ^
-db/seeds.rb:69:58: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/jeans2.png") },
-                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:70:54: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { user_id: user.id, cloth_type_id: 6, description: "アウター",  
-                                                     ^^^^^^^^^^
-db/seeds.rb:70:61: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-  { user_id: user.id, cloth_type_id: 6, description: "アウター",  
-                                                                ^^
-db/seeds.rb:71:58: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/outer.png") },
-                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:72:54: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { user_id: user.id, cloth_type_id: 6, description: "カーキのアウター",  
-                                                     ^^^^^^^^^^^^^^^^^^
-db/seeds.rb:72:65: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-  { user_id: user.id, cloth_type_id: 6, description: "カーキのアウター",  
-                                                                        ^^
-db/seeds.rb:73:58: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/sotoyou.png") },
-                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:74:54: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  { user_id: user.id, cloth_type_id: 6, description: "ジャケット",  
-                                                     ^^^^^^^^^^^^
-db/seeds.rb:74:62: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-  { user_id: user.id, cloth_type_id: 6, description: "ジャケット",  
-                                                                  ^^
-db/seeds.rb:75:58: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/outer2.png") },
-                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-db/seeds.rb:75:97: C: [Corrected] Style/TrailingCommaInArrayLiteral: Avoid comma after the last item of an array.
-    last_worn_on: init_date, image_path: Rails.root.join("app/assets/images/seeds/outer2.png") },
-                                                                                                ^
-db/seeds.rb:110:27: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-[ClothGroup.find_by(name: "半袖（外）"), ClothGroup.find_by(name: "ボトムス（薄）")].each do |group|
-                          ^^^^^^^^^^^^
-db/seeds.rb:110:62: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-[ClothGroup.find_by(name: "半袖（外）"), ClothGroup.find_by(name: "ボトムス（薄）")].each do |group|
-                                                                  ^^^^^^^^^^^^^^^^
-db/seeds.rb:117:2: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-["半袖（内）", "長袖（薄）", "長袖（厚）", "アウター", "ボトムス（厚）"].each do |group_name|
- ^^^^^^^^^^^^
-db/seeds.rb:117:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-["半袖（内）", "長袖（薄）", "長袖（厚）", "アウター", "ボトムス（厚）"].each do |group_name|
-               ^^^^^^^^^^^^
-db/seeds.rb:117:20: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-["半袖（内）", "長袖（薄）", "長袖（厚）", "アウター", "ボトムス（厚）"].each do |group_name|
-                             ^^^^^^^^^^^^
-db/seeds.rb:117:29: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-["半袖（内）", "長袖（薄）", "長袖（厚）", "アウター", "ボトムス（厚）"].each do |group_name|
-                                           ^^^^^^^^^^
-db/seeds.rb:117:37: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-["半袖（内）", "長袖（薄）", "長袖（厚）", "アウター", "ボトムス（厚）"].each do |group_name|
-                                                       ^^^^^^^^^^^^^^^^
-db/seeds.rb:126:2: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-["半袖（外）", "長袖（薄）", "ボトムス（厚）"].each do |group_name|
- ^^^^^^^^^^^^
-db/seeds.rb:126:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-["半袖（外）", "長袖（薄）", "ボトムス（厚）"].each do |group_name|
-               ^^^^^^^^^^^^
-db/seeds.rb:126:20: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-["半袖（外）", "長袖（薄）", "ボトムス（厚）"].each do |group_name|
-                             ^^^^^^^^^^^^^^^^
-db/seeds.rb:131:4: C: [Corrected] Layout/TrailingEmptyLines: Final newline missing.
-end
-   
 spec/controllers/clothes_controller_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
-spec/controllers/clothes_controller_spec.rb:4:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    before do
-^^^^
-spec/controllers/clothes_controller_spec.rb:5:3: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-      allow(controller).to receive(:current_user).and_return(user)
-  ^^^^
-spec/controllers/clothes_controller_spec.rb:7:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-spec/controllers/clothes_controller_spec.rb:8:5: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-    describe 'POST #create' do ...
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/controllers/clothes_controller_spec.rb:8:14: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    describe "POST #create" do
-             ^^^^^^^^^^^^^^
-spec/controllers/clothes_controller_spec.rb:9:1: C: [Corrected] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
-spec/controllers/clothes_controller_spec.rb:9:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-spec/controllers/clothes_controller_spec.rb:10:5: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-        let(:user) { FactoryBot.create(:user) }
-    ^^^^
-spec/controllers/clothes_controller_spec.rb:10:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      let(:cloth_type) { FactoryBot.create(:cloth_type) }
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/controllers/clothes_controller_spec.rb:11:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      let(:image) { fixture_file_upload(Rails.root.join('spec/fixtures/images/test_image.png'), 'image/png') }
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/controllers/clothes_controller_spec.rb:13:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      let(:valid_attributes) do ...
-      ^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/controllers/clothes_controller_spec.rb:15:9: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-            {
-        ^^^^
-spec/controllers/clothes_controller_spec.rb:16:17: C: [Corrected] Layout/FirstHashElementIndentation: Use 2 spaces for indentation in a hash, relative to the start of the line where the left curly brace is.
-                cloth_type_id: cloth_type.id,
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/controllers/clothes_controller_spec.rb:17:15: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-              description: 'nekopanchi',
-              ^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/controllers/clothes_controller_spec.rb:17:30: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-                description: "nekopanchi",
-                             ^^^^^^^^^^^^
-spec/controllers/clothes_controller_spec.rb:18:15: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-              image:
-              ^^^^^^
-spec/controllers/clothes_controller_spec.rb:18:24: C: [Corrected] Style/HashSyntax: Omit the hash value.
-                image: image
-                       ^^^^^
-spec/controllers/clothes_controller_spec.rb:20:1: C: [Corrected] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
-spec/controllers/clothes_controller_spec.rb:20:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-spec/controllers/clothes_controller_spec.rb:21:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      context '有効なパラメータが送信される場合' do ...
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/controllers/clothes_controller_spec.rb:23:17: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-        context "有効なパラメータが送信される場合" do
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/controllers/clothes_controller_spec.rb:24:9: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-            example "新しい服インスタンスが生成される" do
-        ^^^^
-spec/controllers/clothes_controller_spec.rb:24:13: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-                post :create, params: { cloth: valid_attributes }
-            ^^^^
-spec/controllers/clothes_controller_spec.rb:24:21: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-            example "新しい服インスタンスが生成される" do
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/controllers/clothes_controller_spec.rb:25:11: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-              expect do
-          ^^^^
-spec/controllers/clothes_controller_spec.rb:25:13: C: [Corrected] Layout/BlockAlignment: end at 25, 12 is not aligned with expect do at 23, 10.
-            end.to change(Cloth, :count).by(1)
-            ^^^
-spec/controllers/clothes_controller_spec.rb:25:24: C: [Corrected] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
-                expect {
-                       ^
 spec/controllers/sessions_controller_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
-spec/controllers/sessions_controller_spec.rb:4:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "DELETE /logout" do
-           ^^^^^^^^^^^^^^^^
-spec/controllers/sessions_controller_spec.rb:10:8: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    it "ログアウトするとセッションが破棄される" do
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/controllers/sessions_controller_spec.rb:16:8: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    it "ログアウトするとloginにリダイレクトされる" do
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 spec/factories/cloth_group_selections.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 FactoryBot.define do
 ^
 spec/factories/cloth_types.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 FactoryBot.define do
 ^
-spec/factories/cloth_types.rb:3:17: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    type_name { "test_type_name" }
-                ^^^^^^^^^^^^^^^^
 spec/factories/cloths.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 FactoryBot.define do
 ^
-spec/factories/cloths.rb:5:19: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    description { "this is test description" }
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/factories/cloths.rb:6:20: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    last_worn_on { "2000-11-11" }
-                   ^^^^^^^^^^^^
 spec/factories/cloths.rb:9:30: C: [Correctable] Rails/RootPathnameMethods: Rails.root is a Pathname so you can just append #open.
       cloth.image.attach(io: File.open(Rails.root.join('spec/fixtures/images/test_image.png')),
                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/factories/cloths.rb:9:96: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-      cloth.image.attach(io: File.open(Rails.root.join('spec/fixtures/images/test_image.png')), 
-                                                                                               ^
-spec/factories/cloths.rb:9:121: C: [Corrected] Layout/LineLength: Line is too long. [150/120]
-      cloth.image.attach(io: File.open(Rails.root.join('spec/fixtures/images/test_image.png')), filename: 'test_image.png', content_type: 'image/png')
-                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/factories/cloths.rb:10:1: C: [Corrected] Layout/ArgumentAlignment: Align the arguments of a method call if they span more than one line.
-filename: 'test_image.png', content_type: 'image/png')
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/factories/cloths.rb:10:1: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-filename: 'test_image.png', content_type: 'image/png')
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/factories/cloths.rb:10:51: C: [Corrected] Layout/ArgumentAlignment: Align the arguments of a method call if they span more than one line.
-                                                  filename: 'test_image.png', content_type: 'image/png')
-                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/factories/cloths.rb:10:51: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-                                                  filename: 'test_image.png', content_type: 'image/png')
-                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
 spec/factories/outfit_logs.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 FactoryBot.define do
 ^
-spec/factories/outfit_logs.rb:4:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    date { "2023-11-30" }
-           ^^^^^^^^^^^^
 spec/factories/outfit_logs_clothes.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 FactoryBot.define do
 ^
 spec/factories/outfit_selection_rules.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 FactoryBot.define do
 ^
-spec/factories/outfit_selection_rules.rb:3:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    name { "MyString" }
-           ^^^^^^^^^^
-spec/factories/outfit_selection_rules.rb:4:19: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    description { "MyText" }
-                  ^^^^^^^^
 spec/factories/users.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 FactoryBot.define do
 ^
-spec/factories/users.rb:3:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    name { "Test User" }
-           ^^^^^^^^^^^
-spec/factories/users.rb:4:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    email { "test@example.com" }
-            ^^^^^^^^^^^^^^^^^^
-spec/factories/users.rb:5:16: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    password { "password" }
-               ^^^^^^^^^^
-spec/factories/users.rb:7:4: C: [Corrected] Layout/TrailingEmptyLines: Final newline missing.
-end
-   
 spec/features/page_navigation_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
 spec/features/page_navigation_spec.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [41/25]
 RSpec.feature 'ページ遷移のテスト', type: :feature do ...
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:3:15: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-RSpec.feature "ページ遷移のテスト", type: :feature do
-              ^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:4:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    context "ログインが必要ケース" do
-^^^^
 spec/features/page_navigation_spec.rb:4:3: C: Metrics/BlockLength: Block has too many lines. [27/25]
   context 'ログインが必要ケース' do ...
   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:4:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    context "ログインが必要ケース" do
-            ^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:5:3: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-      before do
-  ^^^^
-spec/features/page_navigation_spec.rb:6:5: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-        user = FactoryBot.create(:user, name: 'mahiro', email: 'oyama306@onimai.com', password: 'password')
-    ^^^^
 spec/features/page_navigation_spec.rb:6:7: W: [Correctable] Lint/UselessAssignment: Useless assignment to variable - user.
       user = FactoryBot.create(:user, name: 'mahiro', email: 'oyama306@onimai.com', password: 'password')
       ^^^^
-spec/features/page_navigation_spec.rb:6:51: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-            user = FactoryBot.create(:user, name: "mahiro", email: 'oyama306@onimai.com', password: 'password')
-                                                  ^^^^^^^^
-spec/features/page_navigation_spec.rb:7:9: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-        visit login_path
-        ^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:8:9: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-        fill_in 'session[email]', with: 'oyama306@onimai.com'
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:9:9: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-        fill_in 'session[password]', with: 'password'
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:10:9: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-        click_button 'ログイン'
-        ^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:13:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      scenario 'メインページ→クローゼットに遷移する' do ...
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:13:18: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-        scenario "メインページ→クローゼットに遷移する" do     
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:13:41: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-        scenario "メインページ→クローゼットに遷移する" do     
-                                                         ^^^^^
-spec/features/page_navigation_spec.rb:14:7: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-          visit root_path
-      ^^^^
-spec/features/page_navigation_spec.rb:15:9: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-        click_link 'クローゼットへ'
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:15:24: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-            click_link "クローゼットへ"
-                       ^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:16:9: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-        expect(current_path).to eq(closet_path)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:19:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      scenario 'クローゼット→メインページに遷移する' do ...
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:19:18: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-        scenario "クローゼット→メインページに遷移する" do
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:20:7: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-          visit closet_path
-      ^^^^
-spec/features/page_navigation_spec.rb:21:9: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-        click_link '戻る'
-        ^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:21:24: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-            click_link "戻る"
-                       ^^^^^^
-spec/features/page_navigation_spec.rb:22:9: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-        expect(current_path).to eq(root_path)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:25:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      scenario 'クローゼットから服追加ページに遷移する' do ...
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:25:18: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-        scenario "クローゼットから服追加ページに遷移する" do
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:26:7: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-          visit closet_path
-      ^^^^
-spec/features/page_navigation_spec.rb:27:9: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-        click_link '服を追加する'
-        ^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:27:24: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-            click_link "服を追加する"
-                       ^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:28:9: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-        expect(current_path).to eq(closet_add_path)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:31:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      scenario '服追加ページからクローゼットに遷移する' do ...
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:31:18: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-        scenario "服追加ページからクローゼットに遷移する" do
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:32:7: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-          visit closet_add_path
-      ^^^^
-spec/features/page_navigation_spec.rb:33:9: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-        click_link '戻る'
-        ^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:33:24: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-            click_link "戻る"
-                       ^^^^^^
-spec/features/page_navigation_spec.rb:34:9: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-        expect(current_path).to eq(closet_path)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:36:1: C: [Corrected] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
-spec/features/page_navigation_spec.rb:36:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-spec/features/page_navigation_spec.rb:38:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-spec/features/page_navigation_spec.rb:39:5: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-    context '非ログインであるべきケース' do ...
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:39:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    context "非ログインであるべきケース" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:40:5: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-        scenario "ログイン→ユーザー登録に遷移する" do
-    ^^^^
-spec/features/page_navigation_spec.rb:40:18: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-        scenario "ログイン→ユーザー登録に遷移する" do
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:41:7: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-          visit login_path
-      ^^^^
-spec/features/page_navigation_spec.rb:41:9: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-        click_link 'ユーザー登録'
-        ^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:42:9: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-        expect(current_path).to eq(signup_path)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:42:24: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-            click_link "ユーザー登録"
-                       ^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:45:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      scenario 'ユーザー登録→ログインに遷移する' do ...
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:46:18: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-        scenario "ユーザー登録→ログインに遷移する" do
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:47:9: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-        click_link '戻る'
-        ^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:47:9: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-            visit signup_path
-        ^^^^
-spec/features/page_navigation_spec.rb:48:9: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-        expect(current_path).to eq(login_path)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/features/page_navigation_spec.rb:48:24: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-            click_link "戻る"
-                       ^^^^^^
 spec/helpers/clothes_helper_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
@@ -2016,116 +576,12 @@ require 'rails_helper'
 spec/models/cloth_spec.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [39/25]
 RSpec.describe Cloth, type: :model do ...
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/cloth_spec.rb:4:1: C: [Corrected] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
-spec/models/cloth_spec.rb:4:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-spec/models/cloth_spec.rb:7:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "バリデーションチェック" do
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/cloth_spec.rb:8:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    example "バリデーションが有効である" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/cloth_spec.rb:12:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    example "user_idが空なら無効である" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/cloth_spec.rb:17:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    example "last_worn_onが空なら無効である" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/cloth_spec.rb:22:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    example "last_worn_onが日付型ではない" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/cloth_spec.rb:23:28: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      cloth.last_worn_on = "not-date"
-                           ^^^^^^^^^^
-spec/models/cloth_spec.rb:27:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    example "cloth_type_idが空なら無効である" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/cloth_spec.rb:32:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    example "画像が登録されていなければ無効である" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/cloth_spec.rb:38:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "アソシエーション" do
-           ^^^^^^^^^^^^^^^^^^
-spec/models/cloth_spec.rb:39:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    example "Userと関連している" do
-            ^^^^^^^^^^^^^^^^^^^^
-spec/models/cloth_spec.rb:43:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    example "Cloth_typeと関連している" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/cloth_spec.rb:48:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "メソッド" do
-           ^^^^^^^^^^
-spec/models/cloth_spec.rb:49:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    example "last_worn_onがdate型であるか調べる" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 spec/models/cloth_type_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
-spec/models/cloth_type_spec.rb:1:9: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require "rails_helper"
-        ^^^^^^^^^^^^^^
 spec/models/cloth_type_spec.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [28/25]
 RSpec.describe ClothType, type: :model do ...
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/cloth_type_spec.rb:4:1: C: [Corrected] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
-spec/models/cloth_type_spec.rb:7:16: C: [Corrected] Layout/SpaceInsideBlockBraces: Space missing inside {.
-  let(:cloth) {FactoryBot.create(:cloth)}
-               ^
-spec/models/cloth_type_spec.rb:7:41: C: [Corrected] Layout/SpaceInsideBlockBraces: Space missing inside }.
-  let(:cloth) {FactoryBot.create(:cloth)}
-                                        ^
-spec/models/cloth_type_spec.rb:8:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-spec/models/cloth_type_spec.rb:9:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "バリデーションチェック" do
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/cloth_type_spec.rb:10:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    example "バリデーションが有効である" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/cloth_type_spec.rb:14:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    example "type_nameが空のとき無効である" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/cloth_type_spec.rb:19:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    example "同じtype_nameが既に存在しているとき無効である" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/cloth_type_spec.rb:20:49: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      FactoryBot.create(:cloth_type, type_name: "nekodesu", category: :outerwear)
-                                                ^^^^^^^^^^
-spec/models/cloth_type_spec.rb:21:71: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      duplicate_cloth_type = FactoryBot.build(:cloth_type, type_name: "nekodesu", category: :tops)
-                                                                      ^^^^^^^^^^
-spec/models/cloth_type_spec.rb:23:66: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      expect(duplicate_cloth_type.errors[:type_name]).to include("has already been taken")
-                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/cloth_type_spec.rb:27:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "enums" do
-           ^^^^^^^
-spec/models/cloth_type_spec.rb:28:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    example "category enumが定義されている" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/cloth_type_spec.rb:29:42: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
-      expect(ClothType.categories).to eq({"tops" => 0, "bottoms" => 1, "outerwear" => 2, "other" => 3})
-                                         ^
-spec/models/cloth_type_spec.rb:29:43: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      expect(ClothType.categories).to eq({"tops" => 0, "bottoms" => 1, "outerwear" => 2, "other" => 3})
-                                          ^^^^^^
-spec/models/cloth_type_spec.rb:29:56: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      expect(ClothType.categories).to eq({"tops" => 0, "bottoms" => 1, "outerwear" => 2, "other" => 3})
-                                                       ^^^^^^^^^
-spec/models/cloth_type_spec.rb:29:72: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      expect(ClothType.categories).to eq({"tops" => 0, "bottoms" => 1, "outerwear" => 2, "other" => 3})
-                                                                       ^^^^^^^^^^^
-spec/models/cloth_type_spec.rb:29:90: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      expect(ClothType.categories).to eq({"tops" => 0, "bottoms" => 1, "outerwear" => 2, "other" => 3})
-                                                                                         ^^^^^^^
-spec/models/cloth_type_spec.rb:29:102: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-      expect(ClothType.categories).to eq({"tops" => 0, "bottoms" => 1, "outerwear" => 2, "other" => 3})
-                                                                                                     ^
-spec/models/cloth_type_spec.rb:33:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "アソシエーション" do
-           ^^^^^^^^^^^^^^^^^^
-spec/models/cloth_type_spec.rb:34:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    example "has many cloths" do
-            ^^^^^^^^^^^^^^^^^
-spec/models/cloth_type_spec.rb:38:1: C: [Corrected] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
 spec/models/outfit_log_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
@@ -2141,448 +597,86 @@ require 'rails_helper'
 spec/models/user_spec.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [42/25]
 RSpec.describe User, type: :model do ...
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/user_spec.rb:4:1: C: [Corrected] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
 spec/models/user_spec.rb:4:3: C: Metrics/BlockLength: Block has too many lines. [40/25]
   describe 'validations' do ...
   ^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/user_spec.rb:5:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "validations" do
-           ^^^^^^^^^^^^^
-spec/models/user_spec.rb:12:28: C: [Corrected] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
-    let(:valid_attributes) {
-                           ^
-spec/models/user_spec.rb:31:45: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      expect(user.errors[:name]).to include("is too long (maximum is 16 characters)")
-                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/user_spec.rb:41:1: C: [Corrected] Layout/EmptyLines: Extra blank line detected.
-spec/models/user_spec.rb:42:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    example "emailの入力形式が正しくないと無効" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/models/user_spec.rb:48:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    example "登録済みのメールアドレスは無効である" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 spec/rails_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ^
-spec/rails_helper.rb:6:7: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-abort("The Rails environment is running in production mode!") if Rails.env.production?
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/rails_helper.rb:23:5: C: [Corrected] Rails/FilePath: Prefer Rails.root.join('path/to').
-Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/rails_helper.rb:23:21: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |f| require f }
-                    ^^^^^^^^^^^^^^^^^^^^^^
 spec/rails_helper.rb:23:46: W: [Correctable] Lint/RedundantDirGlobSort: Remove redundant sort.
 Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |f| require f }
                                              ^^^^
-spec/rails_helper.rb:38:25: C: [Corrected] Rails/FilePath: Prefer Rails.root.join('path/to').
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 spec/rails_helper.rb:38:25: C: [Correctable] Style/RedundantInterpolation: Prefer to_s over string interpolation.
   config.fixture_path = "#{Rails.root.join('spec/fixtures')}"
                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/rails_helper.rb:38:28: C: [Corrected] Style/RedundantConstantBase: Remove redundant ::.
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
-                           ^^
-spec/rails_helper.rb:38:44: C: [Corrected] Style/StringLiteralsInInterpolation: Prefer single-quoted strings inside interpolations.
-  config.fixture_path = "#{Rails.root.join("spec/fixtures")}"
-                                           ^^^^^^^^^^^^^^^
 spec/requests/clothes_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
 spec/requests/clothes_spec.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [55/25]
 RSpec.describe 'Clothes', type: :request do ...
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/clothes_spec.rb:3:16: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-RSpec.describe "Clothes", type: :request do
-               ^^^^^^^^^
-spec/requests/clothes_spec.rb:4:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "GET /index" do
-           ^^^^^^^^^^^^
-spec/requests/clothes_spec.rb:5:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    context "ログインしていない" do
-            ^^^^^^^^^^^^^^^^^^^^
-spec/requests/clothes_spec.rb:6:15: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      example "ログインしていないとloginページにリダイレクトする" do
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/clothes_spec.rb:12:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    context "ログインしている" do
-            ^^^^^^^^^^^^^^^^^^
-spec/requests/clothes_spec.rb:18:15: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      example "returns http success" do
-              ^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/clothes_spec.rb:25:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "GET /show" do
-           ^^^^^^^^^^^
 spec/requests/clothes_spec.rb:29:7: W: [Correctable] Lint/UselessAssignment: Useless assignment to variable - cloth.
       cloth = FactoryBot.create(:cloth)
       ^^^^^
-spec/requests/clothes_spec.rb:32:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    context "ログインしていない" do
-            ^^^^^^^^^^^^^^^^^^^^
-spec/requests/clothes_spec.rb:33:15: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      example "ログインしていないとloginページにリダイレクトする" do
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/clothes_spec.rb:39:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    context "ログインしている" do
-            ^^^^^^^^^^^^^^^^^^
-spec/requests/clothes_spec.rb:40:15: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      example "returns http success" do
-              ^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/clothes_spec.rb:54:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "GET /new" do
-           ^^^^^^^^^^
-spec/requests/clothes_spec.rb:55:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    context "ログインしていない" do
-            ^^^^^^^^^^^^^^^^^^^^
-spec/requests/clothes_spec.rb:56:15: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      example "ログインしていないとloginページにリダイレクトする" do
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/clothes_spec.rb:62:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    context "ログインしている" do
-            ^^^^^^^^^^^^^^^^^^
-spec/requests/clothes_spec.rb:68:15: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      example "returns http success" do
-              ^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/clothes_spec.rb:74:1: C: [Corrected] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
 spec/requests/main_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
-spec/requests/main_spec.rb:3:16: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-RSpec.describe "Main", type: :request do
-               ^^^^^^
-spec/requests/main_spec.rb:4:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "GET /new" do
-           ^^^^^^^^^^
-spec/requests/main_spec.rb:5:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    context "非ログイン" do
-            ^^^^^^^^^^^^
-spec/requests/main_spec.rb:6:10: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      it "ログインしていないとloginページにリダイレクトする" do
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/main_spec.rb:12:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    context "ログインしている" do
-            ^^^^^^^^^^^^^^^^^^
-spec/requests/main_spec.rb:18:10: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      it "リダイレクトせずにアクセスできる" do
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 spec/requests/outfit_logs_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
-spec/requests/outfit_logs_spec.rb:3:16: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-RSpec.describe "OutfitLogs", type: :request do
-               ^^^^^^^^^^^^
-spec/requests/outfit_logs_spec.rb:4:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "GET /index" do
-           ^^^^^^^^^^^^
 spec/requests/sessions_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
 spec/requests/sessions_spec.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [34/25]
 RSpec.describe 'Sessions', type: :request do ...
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/sessions_spec.rb:3:16: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-RSpec.describe "Sessions", type: :request do
-               ^^^^^^^^^^
-spec/requests/sessions_spec.rb:4:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "GET /login" do
-           ^^^^^^^^^^^^
-spec/requests/sessions_spec.rb:5:8: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    it "returns http success" do
-       ^^^^^^^^^^^^^^^^^^^^^^
 spec/requests/sessions_spec.rb:11:3: C: Metrics/BlockLength: Block has too many lines. [26/25]
   describe 'POST /login' do ...
   ^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/sessions_spec.rb:11:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "POST /login" do
-           ^^^^^^^^^^^^^
-spec/requests/sessions_spec.rb:14:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    context "有効な情報を送信した場合" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/sessions_spec.rb:19:10: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      it "ユーザーがログインする" do
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/sessions_spec.rb:23:10: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      it "ユーザーがトップページに遷移する" do
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/sessions_spec.rb:28:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    context "無効な情報を送信した場合" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/sessions_spec.rb:30:54: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-        post login_path, params: { session: { email: "", password: "" } }
-                                                     ^^
-spec/requests/sessions_spec.rb:30:68: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-        post login_path, params: { session: { email: "", password: "" } }
-                                                                   ^^
-spec/requests/sessions_spec.rb:33:10: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      it "ログインが失敗する" do
-         ^^^^^^^^^^^^^^^^^^^^
-spec/requests/sessions_spec.rb:37:10: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      it "ログインフォームが再表示される" do
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/sessions_spec.rb:41:10: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      it "適切なエラーメッセージが表示される" do
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/sessions_spec.rb:43:10: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-      end      
-         ^^^^^^
-spec/requests/sessions_spec.rb:46:1: C: [Corrected] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
-spec/requests/sessions_spec.rb:46:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
 spec/requests/static_pages_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
-spec/requests/static_pages_spec.rb:3:16: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-RSpec.describe "StaticPages", type: :request do
-               ^^^^^^^^^^^^^
-spec/requests/static_pages_spec.rb:4:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "GET /home" do
-           ^^^^^^^^^^^
-spec/requests/static_pages_spec.rb:5:8: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    it "returns http success" do
-       ^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/static_pages_spec.rb:6:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      get "/static_pages/home"
-          ^^^^^^^^^^^^^^^^^^^^
-spec/requests/static_pages_spec.rb:10:1: C: [Corrected] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
 spec/requests/users_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
-spec/requests/users_spec.rb:3:16: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-RSpec.describe "Users", type: :request do
-               ^^^^^^^
-spec/requests/users_spec.rb:4:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "GET /signup" do
-           ^^^^^^^^^^^^^
-spec/requests/users_spec.rb:5:8: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    it "returns http success" do
-       ^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/users_spec.rb:11:12: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  describe "POST /signup" do
-           ^^^^^^^^^^^^^^
-spec/requests/users_spec.rb:12:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    context "リクエストに有効なパラメータがある" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/users_spec.rb:13:5: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-        example '新規ユーザーが作成される' do
-    ^^^^
-spec/requests/users_spec.rb:13:7: C: [Corrected] Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
-      example "新規ユーザーが作成される" do
-      
-spec/requests/users_spec.rb:13:15: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      example "新規ユーザーが作成される" do
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/users_spec.rb:14:16: C: [Corrected] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
-        expect {
-               ^
-spec/requests/users_spec.rb:15:52: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-          post users_path, params: { user: { name: "userman", email: "user@example.com", password: "password" } }
-                                                   ^^^^^^^^^
-spec/requests/users_spec.rb:15:70: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-          post users_path, params: { user: { name: "userman", email: "user@example.com", password: "password" } }
-                                                                     ^^^^^^^^^^^^^^^^^^
-spec/requests/users_spec.rb:15:100: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-          post users_path, params: { user: { name: "userman", email: "user@example.com", password: "password" } }
-                                                                                                   ^^^^^^^^^^
-spec/requests/users_spec.rb:17:9: C: [Corrected] Layout/BlockAlignment: end at 17, 8 is not aligned with example "新規ユーザーが作成される" do at 13, 6.
-        end
-        ^^^
-spec/requests/users_spec.rb:18:7: C: [Corrected] Layout/BlockAlignment: end at 18, 6 is not aligned with context "リクエストに有効なパラメータがある" do at 12, 4.
-      end
-      ^^^
-spec/requests/users_spec.rb:20:13: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    context "リクエストに無効なパラメータがある" do
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/users_spec.rb:21:15: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      example "新規ユーザーが作成されない" do
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/requests/users_spec.rb:22:16: C: [Corrected] Style/BlockDelimiters: Avoid using {...} for multi-line blocks.
-        expect {
-               ^
-spec/requests/users_spec.rb:23:52: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-          post users_path, params: { user: { name: "", email: "user@example.com", password: "password" } }
-                                                   ^^
-spec/requests/users_spec.rb:23:63: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-          post users_path, params: { user: { name: "", email: "user@example.com", password: "password" } }
-                                                              ^^^^^^^^^^^^^^^^^^
-spec/requests/users_spec.rb:23:93: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-          post users_path, params: { user: { name: "", email: "user@example.com", password: "password" } }
-                                                                                            ^^^^^^^^^^
 spec/spec_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 # This file was generated by the `rails generate rspec:install` command. Conventionally, all
 ^
-spec/spec_helper.rb:49:1: C: [Corrected] Style/BlockComments: Do not use block comments.
-=begin ...
-^^^^^^
-spec/spec_helper.rb:91:1: C: [Corrected] Layout/CommentIndentation: Incorrect indentation detected (column 0 instead of 2).
-#   Kernel.srand config.seed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 spec/support/session_helpers.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 # spec/support/session_helpers.rb
 ^
-spec/support/session_helpers.rb:3:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    def is_logged_in?
-^^^^
-spec/support/session_helpers.rb:6:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-spec/support/session_helpers.rb:7:1: C: [Corrected] Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
-    def log_in(user)
-^^^^
-spec/support/session_helpers.rb:10:3: W: [Corrected] Layout/EndAlignment: end at 10, 2 is not aligned with module at 2, 0.
-  end
-  ^^^
-spec/support/session_helpers.rb:11:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-spec/support/session_helpers.rb:12:3: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-  RSpec.configure do |config| ...
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/support/session_helpers.rb:15:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
 spec/views/clothes/index.html.erb_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
-spec/views/clothes/index.html.erb_spec.rb:3:16: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-RSpec.describe "clothes/index.html.erb", type: :view do
-               ^^^^^^^^^^^^^^^^^^^^^^^^
 spec/views/clothes/new.html.erb_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
-spec/views/clothes/new.html.erb_spec.rb:3:16: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-RSpec.describe "clothes/new.html.erb", type: :view do
-               ^^^^^^^^^^^^^^^^^^^^^^
 spec/views/main/new.html.erb_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
 spec/views/main/new.html.erb_spec.rb:3:1: W: Lint/EmptyBlock: Empty block detected.
 RSpec.describe 'main/new.html.erb', type: :view do ...
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/views/main/new.html.erb_spec.rb:3:16: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-RSpec.describe "main/new.html.erb", type: :view do
-               ^^^^^^^^^^^^^^^^^^^
-spec/views/main/new.html.erb_spec.rb:4:1: C: [Corrected] Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
-spec/views/main/new.html.erb_spec.rb:4:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
 spec/views/sessions/new.html.erb_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
-spec/views/sessions/new.html.erb_spec.rb:3:16: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-RSpec.describe "sessions/new.html.erb", type: :view do
-               ^^^^^^^^^^^^^^^^^^^^^^^
-spec/views/sessions/new.html.erb_spec.rb:4:11: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  example "ログインフォームが正しくレンダリングされている" do
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/views/sessions/new.html.erb_spec.rb:7:19: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    assert_select "form[action=?][method=?]", sessions_path, "post" do
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/views/sessions/new.html.erb_spec.rb:7:62: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    assert_select "form[action=?][method=?]", sessions_path, "post" do
-                                                             ^^^^^^
-spec/views/sessions/new.html.erb_spec.rb:8:5: C: [Corrected] Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
-    assert_select "input[name=?]", "session[email]"
-    
-spec/views/sessions/new.html.erb_spec.rb:8:19: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    assert_select "input[name=?]", "session[email]"
-                  ^^^^^^^^^^^^^^^
-spec/views/sessions/new.html.erb_spec.rb:8:36: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    assert_select "input[name=?]", "session[email]"
-                                   ^^^^^^^^^^^^^^^^
-spec/views/sessions/new.html.erb_spec.rb:9:5: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-    assert_select 'input[name=?]', 'session[password]'
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/views/sessions/new.html.erb_spec.rb:9:19: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    assert_select "input[name=?]", "session[password]"
-                  ^^^^^^^^^^^^^^^
-spec/views/sessions/new.html.erb_spec.rb:9:36: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    assert_select "input[name=?]", "session[password]"
-                                   ^^^^^^^^^^^^^^^^^^^
-spec/views/sessions/new.html.erb_spec.rb:10:5: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-    assert_select 'input[type=?]', 'submit'
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/views/sessions/new.html.erb_spec.rb:10:19: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    assert_select "input[type=?]", "submit" 
-                  ^^^^^^^^^^^^^^^
-spec/views/sessions/new.html.erb_spec.rb:10:36: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    assert_select "input[type=?]", "submit" 
-                                   ^^^^^^^^
-spec/views/sessions/new.html.erb_spec.rb:10:44: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-    assert_select "input[type=?]", "submit" 
-                                           ^
 spec/views/static_pages/home.html.erb_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
-spec/views/static_pages/home.html.erb_spec.rb:3:16: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-RSpec.describe "static_pages/home.html.erb", type: :view do
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 spec/views/users/new.html.erb_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
-spec/views/users/new.html.erb_spec.rb:3:16: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-RSpec.describe "users/new", type: :view do
-               ^^^^^^^^^^^
-spec/views/users/new.html.erb_spec.rb:8:6: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  it "ユーザー登録フォームが正しくレンダリングされている" do
-     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/views/users/new.html.erb_spec.rb:11:19: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    assert_select "form[action=?][method=?]", users_path, "post" do
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
-spec/views/users/new.html.erb_spec.rb:11:59: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    assert_select "form[action=?][method=?]", users_path, "post" do
-                                                          ^^^^^^
-spec/views/users/new.html.erb_spec.rb:12:21: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      assert_select "input[name=?]", "user[name]"
-                    ^^^^^^^^^^^^^^^
-spec/views/users/new.html.erb_spec.rb:12:38: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      assert_select "input[name=?]", "user[name]"
-                                     ^^^^^^^^^^^^
-spec/views/users/new.html.erb_spec.rb:13:21: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      assert_select "input[name=?]", "user[email]"
-                    ^^^^^^^^^^^^^^^
-spec/views/users/new.html.erb_spec.rb:13:38: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      assert_select "input[name=?]", "user[email]"
-                                     ^^^^^^^^^^^^^
-spec/views/users/new.html.erb_spec.rb:14:21: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      assert_select "input[name=?]", "user[password]"
-                    ^^^^^^^^^^^^^^^
-spec/views/users/new.html.erb_spec.rb:14:38: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      assert_select "input[name=?]", "user[password]"
-                                     ^^^^^^^^^^^^^^^^
-spec/views/users/new.html.erb_spec.rb:15:21: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      assert_select "input[type=?]", "submit"
-                    ^^^^^^^^^^^^^^^
-spec/views/users/new.html.erb_spec.rb:15:38: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      assert_select "input[type=?]", "submit"
-                                     ^^^^^^^^
 test/application_system_test_case.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'test_helper'
 ^
-test/application_system_test_case.rb:1:9: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require "test_helper"
-        ^^^^^^^^^^^^^
 test/channels/application_cable/connection_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'test_helper'
 ^
-test/channels/application_cable/connection_test.rb:1:9: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require "test_helper"
-        ^^^^^^^^^^^^^
 test/controllers/sessions_controller_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'test_helper'
 ^
-test/controllers/sessions_controller_test.rb:1:9: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require "test_helper"
-        ^^^^^^^^^^^^^
-test/controllers/sessions_controller_test.rb:4:8: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-  test "should get new" do
-       ^^^^^^^^^^^^^^^^
 test/test_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 ENV['RAILS_ENV'] ||= 'test'
 ^
-test/test_helper.rb:1:5: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-ENV["RAILS_ENV"] ||= "test"
-    ^^^^^^^^^^^
-test/test_helper.rb:1:22: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-ENV["RAILS_ENV"] ||= "test"
-                     ^^^^^^
-test/test_helper.rb:2:18: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require_relative "../config/environment"
-                 ^^^^^^^^^^^^^^^^^^^^^^^
-test/test_helper.rb:3:9: C: [Corrected] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-require "rails/test_help"
-        ^^^^^^^^^^^^^^^^^
 
-103 files inspected, 899 offenses detected, 674 offenses corrected, 121 more offenses can be corrected with `rubocop -A`
+103 files inspected, 225 offenses detected, 121 offenses autocorrectable

@@ -43,7 +43,7 @@ class ClothesController < ApplicationController
   end
 
   def update_deside
-    return unless params[:selected_clothes_ids].present?
+    return if params[:selected_clothes_ids].blank?
 
     selected_clothes_ids = params[:selected_clothes_ids].split(',')
 
