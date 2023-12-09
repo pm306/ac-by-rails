@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, only: [:show, :edit, :update, :destroy] #TODO:newの扱い
   rescue_from ActiveRecord::RecordNotFound, with: :user_not_found
 
   def new

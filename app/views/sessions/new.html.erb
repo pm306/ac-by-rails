@@ -1,12 +1,11 @@
 <% provide(:title, "Log in") %>
 <%= render 'layouts/flash_messages' %>
 
-<h1>オートコーディネータ</h1>
+<h1>オートコーディネータ／ログイン</h1>
 
 <%= image_tag "sites/kid_kigae_boy.png", class: "image-login", alt: "着替え" %>
 
-<p>その日に着る服を自動で選んでくれます。</p>
-<p>なお、ランダム選択なので着合わせがダサくなることもあります。</p>
+<p>その日に着る服を自動で選んでくれるアプリです。</p>
 
 <%= form_with(scope: :session, 
               url: create_login_path, 
@@ -27,10 +26,21 @@
   </ul>
 <% end %>
 
-<p></p>
-<%= link_to "ユーザー登録", signup_path, class: "link" %>
+<div>
+  <%= link_to "ユーザー登録", signup_path, class: "link" %>
+</div>
 
-<p>以下のゲストユーザーが初期データとして作られます。服もいくつか登録されています。</p>
-<p>名前:ゲスト太郎 email:example@guest.com パスワード:password</p>
+<strong>以下のゲストユーザーが初期データとして作られます。服もいくつか登録されています。</strong>
+<ul class="sample-user-list">
+  <li>
+    ゲスト太郎
+  </li>
+  <li>
+    example@guest.com
+  </li>
+  <li>
+    password
+  </li>
+</ul>
 
 <p>※このアプリはRuby on railsの学習のために作られています</p>

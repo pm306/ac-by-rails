@@ -153,6 +153,24 @@ li {
   color: red;
 }
 
+.sample-user-list {
+  li {
+    display: flex;
+    align-items: center;
+    font-size:20px;
+
+    &::before {
+      min-width: 120px; // ラベルの幅を固定
+      font-weight: bold;
+    }
+
+  }
+
+  li:nth-child(1)::before { content: "名前:"; }
+  li:nth-child(2)::before { content: "email:"; }
+  li:nth-child(3)::before { content: "パスワード:"; }
+}
+
 $flash-types: (
   error: rgb(255, 50, 50),
   success: green,
