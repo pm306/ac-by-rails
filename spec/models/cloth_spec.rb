@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: clothes
+#
+#  id            :bigint           not null, primary key
+#  deleted_at    :datetime
+#  description   :text(65535)
+#  last_worn_on  :date             not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  cloth_type_id :integer
+#  user_id       :integer          not null
+#
+# Indexes
+#
+#  index_clothes_on_user_id  (user_id)
+#
 require 'rails_helper'
 
 RSpec.describe Cloth, type: :model do
