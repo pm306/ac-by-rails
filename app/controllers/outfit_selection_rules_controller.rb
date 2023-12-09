@@ -1,9 +1,13 @@
 class OutfitSelectionRulesController < ApplicationController
-  before_action :require_login, only: [:index, :new, :create, :show, :select_outfit, :destroy, :select_outfit]
+  before_action :require_login, only: %i[index new create show select_outfit destroy select_outfit]
   rescue_from ActiveRecord::RecordNotFound, with: :rule_not_found
 
   def index
     @outfit_selection_rules = OutfitSelectionRule.all
+  end
+
+  def show
+    @outfit_selection_rule = OutfitSelectionRule.includes(:cloth_groups).find(params[:id])
   end
 
   def new
@@ -16,48 +20,44 @@ class OutfitSelectionRulesController < ApplicationController
 
     ActiveRecord::Base.transaction do
       @outfit_selection_rule.save!
-      process_cloth_group_selections(@outfit_selection_rule, params[:outfit_selection_rule][:cloth_group_selections] || {})
+      process_cloth_group_selections(@outfit_selection_rule,
+                                     params[:outfit_selection_rule][:cloth_group_selections] || {})
     end
 
-    flash[:notice] = "ルールの登録に成功しました。"
+    flash[:notice] = 'ルールの登録に成功しました。'
     redirect_to rules_url
-
-    rescue ActiveRecord::RecordInvalid
-      flash[:alert] = "ルールの登録に失敗しました。"
-      redirect_to new_rule_url
-  end
-
-  def show
-    @outfit_selection_rule = OutfitSelectionRule.includes(:cloth_groups).find(params[:id])
+  rescue ActiveRecord::RecordInvalid
+    flash[:alert] = 'ルールの登録に失敗しました。'
+    redirect_to new_rule_url
   end
 
   def destroy
     @outfit_selection_rule = OutfitSelectionRule.includes(:cloth_groups).find(params[:id])
 
-    if @outfit_selection_rule.name == "default"
-      redirect_to rules_url, alert: "デフォルトのルールは削除できません！"
-    else 
+    if @outfit_selection_rule.name == 'default'
+      redirect_to rules_url, alert: 'デフォルトのルールは削除できません！'
+    else
       @outfit_selection_rule.destroy
-      redirect_to root_url, notice: "ロジックの削除に成功しました！"
+      redirect_to root_url, notice: 'ロジックの削除に成功しました！'
     end
   end
 
   def select_outfit
     @user = current_user
-    
+
     max_temperature = params[:max_temperature]
     min_temperature = params[:min_temperature]
     flash[:max_temperature] = max_temperature
     flash[:min_temperature] = min_temperature
 
     if min_temperature > max_temperature
-      flash[:alert] = "最低気温が最高気温を上回っています。"
+      flash[:alert] = '最低気温が最高気温を上回っています。'
       redirect_to root_url
       return
     end
-  
+
     unless valid_number?(max_temperature) && valid_number?(min_temperature)
-      flash[:alert] = "数値を入力してください。"
+      flash[:alert] = '数値を入力してください。'
       redirect_to root_url
       return
     end
@@ -105,29 +105,31 @@ class OutfitSelectionRulesController < ApplicationController
   end
 
   def valid_number?(str)
-    true if Float(str) rescue false
+    true if Float(str)
+  rescue StandardError
+    false
   end
 
   def outfit_selection_rule_params
-    params.require(:outfit_selection_rule).permit(:name, :description, :priority, 
-      :min_temperature_lower_bound, :min_temperature_upper_bound, 
-      :max_temperature_lower_bound, :max_temperature_upper_bound,
-      cloth_group_selections: {})
+    params.require(:outfit_selection_rule).permit(:name, :description, :priority,
+                                                  :min_temperature_lower_bound, :min_temperature_upper_bound,
+                                                  :max_temperature_lower_bound, :max_temperature_upper_bound,
+                                                  cloth_group_selections: {})
   end
 
   def process_cloth_group_selections(rule, selections_params)
     selections_params.each do |cloth_group_id, selection_count|
-      if selection_count.to_i.positive?
-        ClothGroupSelection.create!(
-          outfit_selection_rule_id: rule.id,
-          cloth_group_id: cloth_group_id,
-          selection_count: selection_count
-        )
-      end
+      next unless selection_count.to_i.positive?
+
+      ClothGroupSelection.create!(
+        outfit_selection_rule_id: rule.id,
+        cloth_group_id:,
+        selection_count:
+      )
     end
   end
 
   def rule_not_found
-    redirect_to root_url, alert: "指定されたルールは存在しませんでした。"
+    redirect_to root_url, alert: '指定されたルールは存在しませんでした。'
   end
 end

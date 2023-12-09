@@ -1,17 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
-  describe "validations" do
+  describe 'validations' do
     before do
       # 事前にユーザーを1つ作成しておきます
       FactoryBot.create(:user)
     end
 
     # 有効なユーザーの属性
-    let(:valid_attributes) {
+    let(:valid_attributes) do
       { name: 'Example User', email: 'user@example.com', password: 'password' }
-    }
+    end
 
     it 'ユーザーが有効' do
       user = User.new(valid_attributes)
@@ -28,7 +27,7 @@ RSpec.describe User, type: :model do
     example 'nameが17文字以上で無効' do
       user = User.new(valid_attributes.merge(name: 'a' * 17))
       user.valid?
-      expect(user.errors[:name]).to include("is too long (maximum is 16 characters)")
+      expect(user.errors[:name]).to include('is too long (maximum is 16 characters)')
     end
 
     # emailが空の場合に無効であることを確認する
@@ -38,14 +37,13 @@ RSpec.describe User, type: :model do
       expect(user.errors[:email]).to include("can't be blank")
     end
 
-
-    example "emailの入力形式が正しくないと無効" do
+    example 'emailの入力形式が正しくないと無効' do
       user = User.new(valid_attributes.merge(email: 'umauma_onigiri'))
       user.valid?
       expect(user.errors[:email]).to include('is invalid')
     end
 
-    example "登録済みのメールアドレスは無効である" do
+    example '登録済みのメールアドレスは無効である' do
       user = FactoryBot.build(:user, email: 'test@example.com')
       expect(user).not_to be_valid
       expect(user.errors[:email]).to include('has already been taken')

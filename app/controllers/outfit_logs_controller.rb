@@ -9,6 +9,6 @@ class OutfitLogsController < ApplicationController
   private
 
   def log_not_found
-    redirect_to root_url, alart: "服装のログが取得できませんでした。"
+    redirect_to root_url, alart: '服装のログが取得できませんでした。'
   end
 end

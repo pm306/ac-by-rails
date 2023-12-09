@@ -9,15 +9,15 @@ Rails.application.routes.draw do
   post '/login',        to: 'sessions#create',     as: 'create_login'
   delete '/logout',     to: 'sessions#destroy',    as: 'logout'
   get '/deside',        to: 'static_pages#deside', as: 'deside'
-  post '/deside',       to: 'clothes#update_deside',      as: 'deside_push'
+  post '/deside',       to: 'clothes#update_deside', as: 'deside_push'
   get '/home',          to: redirect('/')
 
-  resources :users,       only:[:new, :create, :show, :edit, :update, :destroy]
-  resources :clothes,     only:[:index, :new, :create, :show, :edit, :update, :update_deside, :destroy]
-  resources :cloth_types, only:[:index, :new, :create, :destroy]
-  resources :outfit_selection_rules, as: 'rules', path: 'rules', 
-                          only:[:index, :show, :new, :create, :destroy]
-  resources :outfit_logs, only:[:index, :new, :create, :show]
+  resources :users,       only: %i[new create show edit update destroy]
+  resources :clothes,     only: %i[index new create show edit update update_deside destroy]
+  resources :cloth_types, only: %i[index new create destroy]
+  resources :outfit_selection_rules, as: 'rules', path: 'rules',
+                                     only: %i[index show new create destroy]
+  resources :outfit_logs, only: %i[index new create show]
 
   root 'static_pages#home'
 end

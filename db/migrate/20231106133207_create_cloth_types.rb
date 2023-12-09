@@ -5,6 +5,6 @@ class CreateClothTypes < ActiveRecord::Migration[7.1]
 
       t.timestamps
     end
-    add_index :cloth_types, :name, unique: true #type_nameにユニーク制約
+    add_index :cloth_types, :name, unique: true # type_nameにユニーク制約
   end
 end

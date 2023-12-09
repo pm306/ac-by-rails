@@ -1,26 +1,24 @@
 class SessionsController < ApplicationController
-  before_action :require_no_login, only: [:new, :create]
+  before_action :require_no_login, only: %i[new create]
   before_action :require_login, only: [:destroy]
 
-  def new
-  end
+  def new; end
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
-      flash[:notice] = "ログインに成功しました"
+      flash[:notice] = 'ログインに成功しました'
       log_in user
       redirect_to root_url
     else
-      flash.now[:alert] = "無効なメールアドレスかパスワードです"
+      flash.now[:alert] = '無効なメールアドレスかパスワードです'
       render :new
     end
   end
 
   def destroy
     reset_session
-    flash[:notice] = "ログアウトしました"
+    flash[:notice] = 'ログアウトしました'
     redirect_to login_url
   end
-
 end
