@@ -18,6 +18,9 @@ class User < ApplicationRecord
   has_many :outfit_logs, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 16 }
-  validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, unless: -> { email.blank? }
+  validates :password, presence: true
+  validates :password, length: {minimum: 8, maximum: 16}, unless: -> { password.blank? }
   has_secure_password
 end

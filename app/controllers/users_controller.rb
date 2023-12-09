@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: %i[show edit update destroy] # TODO: newの扱い
+  before_action :require_login, only: %i[show edit update destroy]
+  before_action :set_user, only: %i[show edit update destroy]
+  before_action :require_no_login, only: [:new]
   rescue_from ActiveRecord::RecordNotFound, with: :user_not_found
 
   def show
-    @user = current_user
   end
 
   def new
@@ -11,77 +12,44 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
   end
 
   def create
-    if params[:user][:name].empty?
-      flash[:alert] = 'ユーザー名が空です'
-      return redirect_to signup_url
-    end
-
-    if params[:user][:email].empty?
-      flash[:alert] = 'メールアドレスが空です'
-      return redirect_to signup_url
-    end
-
-    if params[:user][:password].empty?
-      flash[:alert] = 'パスワードが空です'
-      return redirect_to signup_url
-    end
-
     @user = User.new(user_create_params)
-
     if @user.save
-      flash[:notice] = 'ユーザー登録に成功しました！'
-      redirect_to login_url
+      redirect_with_notice('ユーザー登録に成功しました！', login_url)
     else
-      flash[:alert] = 'ユーザー登録に失敗しました'
-      redirect_to signup_url
+      render_with_alert(@user.errors.full_messages, :new)
     end
   end
 
   def update
-    @user = current_user
-
-    # パスワード変更の処理
-    if password_change_requested?
-      unless @user.authenticate(params[:user][:current_password])
-        # 現在のパスワードが一致しない場合のエラー処理
-        flash[:alert] = '現在のパスワードが一致しません'
-        return render :edit
-      end
-
-      unless params[:user][:password] == params[:user][:password_confirmation]
-        # 新しいパスワードとその確認が一致しない場合のエラー処理
-        flash[:alert] = '新しいパスワードが一致しません'
-        return render :edit
-      end
+    if password_change_requested? && !@user.authenticate(params[:user][:current_password])
+      return render_with_alert('現在のパスワードが一致しません', :edit)
     end
 
-    # 名前の更新
     if @user.update(user_update_params)
-      # 更新成功時の処理（リダイレクトなど）
-      flash[:notice] = '更新に成功しました'
-      redirect_to edit_user_path
+      redirect_with_notice('更新に成功しました', edit_user_path)
     else
-      flash[:alert] = '更新に失敗しました'
-      render :edit
+      render_with_alert('更新に失敗しました', :edit)
     end
   end
 
   def destroy
     @user = User.find(params[:id])
-    if @user == current_user
-      @user.destroy
+    if @user.destroy
       reset_session
-      redirect_to login_url, notice: 'ユーザーを削除しました。'
+      redirect_with_notice('ユーザーを削除しました。', login_url)
     else
-      redirect_to root_url, alert: 'ユーザーを削除できませんでした。'
+      render_with_alert('ユーザーを削除できませんでした。', :edit)
     end
   end
 
   private
+
+  def set_user
+    @user = current_user
+  end
 
   def user_create_params
     params.require(:user).permit(:name, :email, :password)
@@ -96,6 +64,6 @@ class UsersController < ApplicationController
   end
 
   def user_not_found
-    redirect_to root_url, alert: 'ユーザーが見つかりませんでした。'
+    redirect_with_alert('ユーザーが見つかりませんでした。', root_url)
   end
 end

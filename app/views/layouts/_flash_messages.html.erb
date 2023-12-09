@@ -1,6 +1,11 @@
-<% flash.each do |message_type, message| %>
+<% flash.each do |message_type, messages| %>
   <% if message_type == "notice" || message_type == "alert" %>
-    <div class="flash-<%= message_type %>"><%= message %></div>
+    <% if messages.is_a?(Array) %>
+      <% messages.each do |message| %>
+        <div class="flash-<%= message_type %>"><%= message %></div>
+      <% end %>
+    <% else %>
+      <div class="flash-<%= message_type %>"><%= messages %></div>
+    <% end %>
   <% end %>
 <% end %>
-

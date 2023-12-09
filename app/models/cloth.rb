@@ -18,10 +18,9 @@
 class Cloth < ApplicationRecord
   default_scope { where(deleted_at: nil) }
 
-  # TODO: 最後に選択してからn日経てば再選択可能になるか、というカラム
   belongs_to :user
   belongs_to :cloth_type
-  has_many :outfit_logs_clothes # 論理削除後も参照するためdependent: destroyはなし
+  has_many :outfit_logs_clothes
   has_many :outfit_logs, through: :outfit_logs_clothes
 
   has_one_attached :image
