@@ -5,20 +5,24 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
-      flash[:notice] = 'ログインに成功しました'
+    user = authenticate_user(params[:session][:email], params[:session][:password])
+    if user
       log_in user
-      redirect_to root_url
+      redirect_with_notice(I18n.t('flash.sessions.login_success'), root_url)
     else
-      flash.now[:alert] = '無効なメールアドレスかパスワードです'
-      render :new
+      render_with_alert(I18n.t('flash.sessions.login_failure'), :new)
     end
   end
 
   def destroy
     reset_session
-    flash[:notice] = 'ログアウトしました'
-    redirect_to login_url
+    redirect_with_notice(I18n.t('flash.sessions.logout_success'), login_url)
+  end
+
+  private
+
+  def authenticate_user(email, password)
+    user = User.find_by(email: email.downcase)
+    user if user && user.authenticate(password)
   end
 end

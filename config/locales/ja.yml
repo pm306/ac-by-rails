@@ -1,4 +1,9 @@
 ja:
+  flash:
+    sessions:
+      login_success: 'ログインに成功しました'
+      login_failure: '無効なメールアドレスかパスワードです'
+      logout_success: 'ログアウトしました'
   activerecord:
     models:
       user: ユーザー
