@@ -34,6 +34,13 @@ class Cloth < ApplicationRecord
     update(deleted_at: Time.current)
   end
 
+  def self.update_last_worn(cloth_ids)
+    cloth_ids.each do |id|
+      cloth = find(id)
+      cloth.update(last_worn_on: Date.today)
+    end
+  end
+
   private
 
   def last_worn_on_is_date?

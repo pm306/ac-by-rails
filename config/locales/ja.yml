@@ -12,6 +12,13 @@ ja:
       destroy_success: 'ユーザーを削除しました。'
       destroy_failure: 'ユーザーを削除できませんでした。'
       not_found: 'ユーザーが見つかりませんでした。'
+    clothes:
+      create_success: '服が登録されました'
+      create_failure: '服の登録に失敗しました'
+      update_success: '服の情報を更新しました'
+      update_failure: '服の情報の更新に失敗しました'
+      destroy_success: '服が削除されました'
+      not_found: '服が見つかりませんでした'
   activerecord:
     models:
       user: ユーザー
