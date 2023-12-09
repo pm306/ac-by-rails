@@ -4,6 +4,14 @@ ja:
       login_success: 'ログインに成功しました'
       login_failure: '無効なメールアドレスかパスワードです'
       logout_success: 'ログアウトしました'
+    users:
+      create_success: 'ユーザー登録に成功しました！'
+      password_mismatch: '現在のパスワードが一致しません'
+      update_success: '更新に成功しました'
+      update_failure: '更新に失敗しました'
+      destroy_success: 'ユーザーを削除しました。'
+      destroy_failure: 'ユーザーを削除できませんでした。'
+      not_found: 'ユーザーが見つかりませんでした。'
   activerecord:
     models:
       user: ユーザー

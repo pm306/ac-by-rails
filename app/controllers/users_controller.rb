@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_create_params)
     if @user.save
-      redirect_with_notice('ユーザー登録に成功しました！', login_url)
+      redirect_with_notice(I18n.t('flash.users.create_success'), login_url)
     else
       render_with_alert(@user.errors.full_messages, :new)
     end
@@ -25,13 +25,13 @@ class UsersController < ApplicationController
 
   def update
     if password_change_requested? && !@user.authenticate(params[:user][:current_password])
-      return render_with_alert('現在のパスワードが一致しません', :edit)
+      return render_with_alert(I18n.t('flash.users.password_mismatch'), :edit)
     end
 
     if @user.update(user_update_params)
-      redirect_with_notice('更新に成功しました', edit_user_path)
+      redirect_with_notice(I18n.t('flash.users.update_success'), edit_user_path)
     else
-      render_with_alert('更新に失敗しました', :edit)
+      render_with_alert(I18n.t('flash.users.update_failure'), :edit)
     end
   end
 
@@ -39,9 +39,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.destroy
       reset_session
-      redirect_with_notice('ユーザーを削除しました。', login_url)
+      redirect_with_notice(I18n.t('flash.users.destroy_success'), login_url)
     else
-      render_with_alert('ユーザーを削除できませんでした。', :edit)
+      render_with_alert(I18n.t('flash.users.destroy_failure'), :edit)
     end
   end
 
@@ -64,6 +64,6 @@ class UsersController < ApplicationController
   end
 
   def user_not_found
-    redirect_with_alert('ユーザーが見つかりませんでした。', root_url)
+    redirect_with_alert(I18n.t('flash.users.not_found'), root_url)
   end
 end
