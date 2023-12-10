@@ -33,6 +33,11 @@
       </div>
     <% end %>
   </div>
+  <% else if session[:outfit_selected] %>
+    <div style="margin: 10px;">
+      <%= image_tag("seeds/no_image_square.png", style: 'max-width: 200px; max-height: 200px;') %>
+    </div>
+  <% end%>
 <% end %>
 
 <% if session[:outfit_selected] %>

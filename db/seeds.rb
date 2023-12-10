@@ -120,12 +120,3 @@ end
     selection.selection_count = 1
   end
 end
-
-# デフォルトのルールでグループ1, 3, 6を選択
-# TODO: デフォルトではno imageが1枚だけ選ばれるようにしたい
-['半袖（外）', '長袖（薄）', 'ボトムス（厚）'].each do |group_name|
-  group = ClothGroup.find_by(name: group_name)
-  ClothGroupSelection.find_or_create_by(outfit_selection_rule: other_rule, cloth_group: group) do |selection|
-    selection.selection_count = 1
-  end
-end
