@@ -6,9 +6,6 @@ Offenses:
 Gemfile:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 source 'https://rubygems.org'
 ^
-Gemfile:33:3: C: [Corrected] Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem annotate should appear before web-console.
-  gem 'annotate'
-  ^^^^^^^^^^^^^^
 Gemfile:41:1: W: Bundler/DuplicatedGroup: Gem group :development, :test already defined on line 27 of the Gemfile.
 group :development, :test do
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -39,41 +36,9 @@ class ClothesController < ApplicationController
 app/controllers/clothes_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class ClothesController < ApplicationController
 ^
-app/controllers/clothes_controller.rb:7:5: C: [Corrected] Style/ConditionalAssignment: Use the return of the conditional for variable assignment and comparison.
-    if params[:types].present? ...
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:8:7: C: [Corrected] Layout/IndentationWidth: Use 2 (not -9) spaces for indentation.
-      current_user.clothes.where(cloth_type_id: params[:types])
-      ^^^^^^^^^
-app/controllers/clothes_controller.rb:9:5: C: [Corrected] Layout/ElseAlignment: Align else with if.
-    else
-    ^^^^
-app/controllers/clothes_controller.rb:10:7: C: [Corrected] Layout/IndentationWidth: Use 2 (not -9) spaces for indentation.
-      Cloth.none
-      ^^^^^^^^^
-app/controllers/clothes_controller.rb:42:5: C: [Corrected] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
-    return unless params[:selected_clothes_ids].present?
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:42:5: C: [Corrected] Style/GuardClause: Use a guard clause (return unless params[:selected_clothes_ids].present?) instead of wrapping the code inside a conditional expression.
-    if params[:selected_clothes_ids].present?
-    ^^
 app/controllers/clothes_controller.rb:42:12: C: [Correctable] Rails/Blank: Use if params[:selected_clothes_ids].blank? instead of unless params[:selected_clothes_ids].present?.
     return unless params[:selected_clothes_ids].present?
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:43:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      selected_clothes_ids = params[:selected_clothes_ids].split(',')
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:44:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      Cloth.update_last_worn(selected_clothes_ids)
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:45:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      OutfitLog.create_outfit_log(current_user, selected_clothes_ids)
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:46:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
-      redirect_to deside_url
-      ^^^^^^^^^^^^^^^^^^^^^^
-app/controllers/clothes_controller.rb:47:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-app/controllers/clothes_controller.rb:48:1: C: [Corrected] Layout/EmptyLinesAroundMethodBody: Extra empty line detected at method body end.
 app/controllers/outfit_logs_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class OutfitLogsController.
 class OutfitLogsController < ApplicationController
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -86,21 +51,12 @@ class OutfitSelectionRulesController < ApplicationController
 app/controllers/outfit_selection_rules_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class OutfitSelectionRulesController < ApplicationController
 ^
-app/controllers/outfit_selection_rules_controller.rb:3:42: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
-  before_action :set_cloth_groups, only: [:new, :create]
-                                         ^^^^^^^^^^^^^^^
 app/controllers/outfit_selection_rules_controller.rb:42:3: C: Metrics/AbcSize: Assignment Branch Condition size for select_outfit is too high. [<8, 28, 6> 29.73/17]
   def select_outfit ...
   ^^^^^^^^^^^^^^^^^
 app/controllers/outfit_selection_rules_controller.rb:42:3: C: Metrics/MethodLength: Method has too many lines. [21/10]
   def select_outfit ...
   ^^^^^^^^^^^^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:66:8: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
-    end      
-       ^^^^^^
-app/controllers/outfit_selection_rules_controller.rb:69:3: C: [Corrected] Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
-  private
-  ^^^^^^^
 app/controllers/sessions_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class SessionsController.
 class SessionsController < ApplicationController
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -122,12 +78,6 @@ class UsersController < ApplicationController
 app/controllers/users_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 class UsersController < ApplicationController
 ^
-app/controllers/users_controller.rb:7:3: C: [Corrected] Style/EmptyMethod: Put empty method definitions on a single line.
-  def show ...
-  ^^^^^^^^
-app/controllers/users_controller.rb:14:3: C: [Corrected] Style/EmptyMethod: Put empty method definitions on a single line.
-  def edit ...
-  ^^^^^^^^
 app/helpers/application_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module ApplicationHelper.
 module ApplicationHelper
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -224,15 +174,9 @@ app/models/outfit_log.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment:
 app/models/outfit_log.rb:21:3: C: Rails/HasManyOrHasOneDependent: Specify a :dependent option.
   has_many :outfit_logs_clothes
   ^^^^^^^^
-app/models/outfit_log.rb:25:28: C: [Corrected] Style/HashSyntax: Omit the hash value.
-    outfit_log = new(user: user, date: Date.today)
-                           ^^^^
 app/models/outfit_log.rb:25:40: C: [Correctable] Rails/Date: Do not use Date.today without zone. Use Time.zone.today instead.
     outfit_log = new(user:, date: Date.today)
                                        ^^^^^
-app/models/outfit_log.rb:27:54: C: [Corrected] Style/HashSyntax: Omit the hash value.
-      outfit_log.outfit_logs_clothes.build(cloth_id: cloth_id)
-                                                     ^^^^^^^^
 app/models/outfit_logs_cloth.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 # == Schema Information
 ^
@@ -245,12 +189,6 @@ app/models/user.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missi
 app/models/user.rb:17:3: C: Rails/HasManyOrHasOneDependent: Specify a :dependent option.
   has_many :clothes
   ^^^^^^^^
-app/models/user.rb:24:32: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
-  validates :password, length: {minimum: 8, maximum: 16}, unless: -> { password.blank? }
-                               ^
-app/models/user.rb:24:56: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
-  validates :password, length: {minimum: 8, maximum: 16}, unless: -> { password.blank? }
-                                                       ^
 app/services/outfit_selector.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class OutfitSelector.
 class OutfitSelector
 ^^^^^^^^^^^^^^^^^^^^
@@ -260,10 +198,6 @@ class OutfitSelector
 app/services/outfit_selector.rb:21:25: C: [Correctable] Rails/Pick: Prefer pick(:id) over pluck(:id).first.
                        .pluck(:id) ...
                         ^^^^^^^^^^
-app/services/outfit_selector.rb:46:1: C: [Corrected] Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
-app/services/outfit_selector.rb:47:4: C: [Corrected] Layout/TrailingEmptyLines: Final newline missing.
-end
-   
 config.ru:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 # This file is used by Rack-based servers to start the application.
 ^
@@ -324,9 +258,6 @@ port ENV.fetch('PORT') { 3000 }
 config/routes.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 Rails.application.routes.draw do
 ^
-config/routes.rb:3:45: C: [Corrected] Layout/ExtraSpacing: Unnecessary spacing detected.
-  get '/closet',        to: 'clothes#index',       as: 'closet'
-                                            ^^^^^^
 db/migrate/20231105024401_create_users.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateUsers.
 class CreateUsers < ActiveRecord::Migration[7.1]
 ^^^^^^^^^^^^^^^^^
@@ -438,141 +369,6 @@ lib/tasks/auto_annotate_models.rake:6:3: C: Metrics/BlockLength: Block has too m
 lib/tasks/auto_annotate_models.rake:6:3: C: [Correctable] Rails/RakeEnvironment: Include :environment task as a dependency for all Rake tasks.
   task :set_annotation_options do
   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:10:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'active_admin'                => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:11:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'additional_file_patterns'    => [],
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:12:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'routes'                      => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:13:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'models'                      => 'true',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:14:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'position_in_routes'          => 'before',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:15:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'position_in_class'           => 'before',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:16:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'position_in_test'            => 'before',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:17:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'position_in_fixture'         => 'before',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:18:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'position_in_factory'         => 'before',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:19:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'position_in_serializer'      => 'before',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:20:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'show_foreign_keys'           => 'true',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:21:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'show_complete_foreign_keys'  => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:22:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'show_indexes'                => 'true',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:23:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'simple_indexes'              => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:24:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'model_dir'                   => 'app/models',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:25:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'root_dir'                    => '',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:26:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'include_version'             => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:27:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'require'                     => '',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:28:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'exclude_tests'               => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:29:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'exclude_fixtures'            => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:30:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'exclude_factories'           => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:31:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'exclude_serializers'         => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:32:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'exclude_scaffolds'           => 'true',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:33:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'exclude_controllers'         => 'true',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:34:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'exclude_helpers'             => 'true',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:35:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'exclude_sti_subclasses'      => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:36:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'ignore_model_sub_dir'        => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:37:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'ignore_columns'              => nil,
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:38:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'ignore_routes'               => nil,
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:39:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'ignore_unknown_models'       => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:40:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'hide_limit_column_types'     => 'integer,bigint,boolean',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:41:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'hide_default_column_types'   => 'json,jsonb,hstore',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:42:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'skip_on_db_migrate'          => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:43:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'format_bare'                 => 'true',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:44:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'format_rdoc'                 => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:45:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'format_yard'                 => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:46:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'format_markdown'             => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:47:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'sort'                        => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:48:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'force'                       => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:49:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'frozen'                      => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:50:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'classified_sort'             => 'true',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:51:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'trace'                       => 'false',
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:52:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'wrapper_open'                => nil,
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:53:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'wrapper_close'               => nil,
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/tasks/auto_annotate_models.rake:54:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
-      'with_comment'                => 'true'
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 spec/controllers/clothes_controller_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
 require 'rails_helper'
 ^
@@ -745,7 +541,7 @@ test/test_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Miss
 ENV['RAILS_ENV'] ||= 'test'
 ^
 
-105 files inspected, 249 offenses detected, 70 offenses corrected, 121 more offenses can be corrected with `rubocop -A`
+105 files inspected, 179 offenses detected, 121 offenses autocorrectable
 
 Tip: Based on detected gems, the following RuboCop extension libraries might be helpful:
   * rubocop-capybara (https://rubygems.org/gems/rubocop-capybara)
