@@ -1,5 +1,6 @@
 class OutfitSelectionRulesController < ApplicationController
   before_action :require_login, only: %i[index new create show select_outfit destroy select_outfit]
+  before_action :set_cloth_groups, only: [:new, :create]
   rescue_from ActiveRecord::RecordNotFound, with: :rule_not_found
 
   def index
@@ -12,7 +13,6 @@ class OutfitSelectionRulesController < ApplicationController
 
   def new
     @outfit_selection_rule = OutfitSelectionRule.new
-    @cloth_groups = ClothGroup.all
   end
 
   def create
@@ -24,21 +24,18 @@ class OutfitSelectionRulesController < ApplicationController
                                      params[:outfit_selection_rule][:cloth_group_selections] || {})
     end
 
-    flash[:notice] = 'ルールの登録に成功しました。'
-    redirect_to rules_url
+    redirect_with_notice(I18n.t('flash.outfit_selection_rules.create_success'), rules_url)
   rescue ActiveRecord::RecordInvalid
-    flash[:alert] = 'ルールの登録に失敗しました。'
-    redirect_to new_rule_url
+    render_with_alert(I18n.t('flash.outfit_selection_rules.create_failure'), :new)
   end
 
   def destroy
     @outfit_selection_rule = OutfitSelectionRule.includes(:cloth_groups).find(params[:id])
-
-    if @outfit_selection_rule.name == 'default'
-      redirect_to rules_url, alert: 'デフォルトのルールは削除できません！'
-    else
+    if @outfit_selection_rule.destroyable?
       @outfit_selection_rule.destroy
-      redirect_to root_url, notice: 'ロジックの削除に成功しました！'
+      redirect_with_notice(I18n.t('flash.outfit_selection_rules.destroy_success'), rules_url)
+    else
+      redirect_with_alert(I18n.t('flash.outfit_selection_rules.destroy_failure'), rules_url)
     end
   end
 
@@ -51,14 +48,7 @@ class OutfitSelectionRulesController < ApplicationController
     flash[:min_temperature] = min_temperature
 
     if min_temperature > max_temperature
-      flash[:alert] = '最低気温が最高気温を上回っています。'
-      redirect_to root_url
-      return
-    end
-
-    unless valid_number?(max_temperature) && valid_number?(min_temperature)
-      flash[:alert] = '数値を入力してください。'
-      redirect_to root_url
+      redirect_with_alert(I18n.t('flash.outfit_selection_rules.min_over_max'), root_url)
       return
     end
 
@@ -104,12 +94,6 @@ class OutfitSelectionRulesController < ApplicationController
     end.flatten
   end
 
-  def valid_number?(str)
-    true if Float(str)
-  rescue StandardError
-    false
-  end
-
   def outfit_selection_rule_params
     params.require(:outfit_selection_rule).permit(:name, :description, :priority,
                                                   :min_temperature_lower_bound, :min_temperature_upper_bound,
@@ -129,7 +113,11 @@ class OutfitSelectionRulesController < ApplicationController
     end
   end
 
+  def set_cloth_groups
+    @cloth_groups = ClothGroup.all
+  end
+
   def rule_not_found
-    redirect_to root_url, alert: '指定されたルールは存在しませんでした。'
+    redirect_with_alert(I18n.t('flash.outfit_selection_rules.not_found'), root_url)
   end
 end

@@ -19,6 +19,13 @@ ja:
       update_failure: '服の情報の更新に失敗しました'
       destroy_success: '服が削除されました'
       not_found: '服が見つかりませんでした'
+    outfit_selection_rules:
+      create_success: 'ルールの登録に成功しました'
+      create_failure: 'ルールの登録に失敗しました'
+      destroy_success: 'ロジックの削除に成功しました'
+      destroy_failure: 'デフォルトのルールは削除できません'
+      min_over_max: '最低気温が最高気温を上回っています。'
+      not_found:
   activerecord:
     models:
       user: ユーザー

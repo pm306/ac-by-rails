@@ -25,4 +25,8 @@ class OutfitSelectionRule < ApplicationRecord
 
   validates :name,     presence: true, uniqueness: true
   validates :priority, presence: true
+
+  def destroyable?
+    name != 'default'
+  end
 end
