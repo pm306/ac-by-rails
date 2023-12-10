@@ -24,8 +24,10 @@ ja:
       create_failure: 'ルールの登録に失敗しました'
       destroy_success: 'ロジックの削除に成功しました'
       destroy_failure: 'デフォルトのルールは削除できません'
+      select_failure: '服の選択に失敗しました'
       min_over_max: '最低気温が最高気温を上回っています。'
-      not_found:
+      invalid_number: '数値を入力してください'
+      not_found: '服が見つかりませんでした'
   activerecord:
     models:
       user: ユーザー
