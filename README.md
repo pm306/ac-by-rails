@@ -24,7 +24,7 @@ railsでリファクタリングした自作アプリです
 `make up`
 5. DBをマイグレーションし、初期データを作成します  
 `make setup-db:`
-6. sassをプリコンパイルします  
+6. sassをプリコンパイルします   
 `make build-sass`
 7.次のページにアクセスします
  `http://localhost:3000`
