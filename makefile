@@ -6,15 +6,19 @@ up:
 	docker-compose up -d
 
 setup-db:
-	docker-compose run web rails db:migrate
-	docker-compose run web rails db:seed
+	docker-compose run --rm web rails db:migrate
+	docker-compose run --rm web rails db:seed
 
 # Dart Sassのビルド
 build-sass:
-	docker-compose run web rails dartsass:build
+	docker-compose run --rm web rails dartsass:build
 
-# すべてを一度に実行
+# コンテナ立ち上げ～Sassのビルドまでを一度に実行
 all: up setup-db build-sass
+
+# DBの初期化
+reset:
+	docker-compose run --rm web rails db:reset
 
 # コンテナの停止
 down: 
