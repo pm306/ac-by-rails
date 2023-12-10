@@ -1,5 +1,6 @@
 class ClothTypesController < ApplicationController
   before_action :require_login, only: %i[index new create destroy]
+  before_action :set_cloth_groups, only: %i[new create]
   rescue_from ActiveRecord::RecordNotFound, with: :cloth_type_not_found
 
   def index
@@ -8,24 +9,21 @@ class ClothTypesController < ApplicationController
 
   def new
     @cloth_type = ClothType.new
-    @cloth_groups = ClothGroup.all
   end
 
   def create
     @cloth_type = ClothType.new(cloth_type_create_params)
     if @cloth_type.save
-      flash[:notice] = '分類を追加できました。'
-      redirect_to cloth_types_url
+      redirect_with_notice(I18n.t('flash.cloth_types.create_success'), cloth_types_url)
     else
-      flash[:alert] = '分類を追加できませんでした。'
-      redirect_to new_cloth_type_url
+      render_with_alert(I18n.t('flash.cloth_types.create_failure'), :new)
     end
   end
 
   def destroy
     @cloth_type = ClothType.find(params[:id])
     @cloth_type.destroy
-    redirect_to cloth_types_url, notice: '分類の削除に成功しました！'
+    redirect_with_notice(I18n.t('flash.cloth_types.destroy_success'), cloth_type_url)
   end
 
   private
@@ -34,7 +32,11 @@ class ClothTypesController < ApplicationController
     params.require(:cloth_type).permit(:name, :cloth_group_id)
   end
 
+  def set_cloth_groups
+    @cloth_groups = ClothGroup.all
+  end
+
   def cloth_type_not_found
-    redirect_to cloth_url, alert: '分類の削除に失敗しました。'
+    redirect_with_alert(I18n.t('flash.cloth_types.not_found'), cloth_url)
   end
 end

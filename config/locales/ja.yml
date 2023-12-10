@@ -28,6 +28,11 @@ ja:
       min_over_max: '最低気温が最高気温を上回っています。'
       invalid_number: '数値を入力してください'
       not_found: '服が見つかりませんでした'
+    cloth_types:
+      create_success: '分類を追加できました'
+      create_failure: '分類を追加できませんでした'
+      success_detroy: '分類の削除に成功しました'
+      not_found: '指定した分類が見つかりませんでした'
   activerecord:
     models:
       user: ユーザー
