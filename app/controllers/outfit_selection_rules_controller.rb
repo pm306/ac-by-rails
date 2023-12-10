@@ -1,6 +1,6 @@
 class OutfitSelectionRulesController < ApplicationController
   before_action :require_login, only: %i[index new create show select_outfit destroy select_outfit]
-  before_action :set_cloth_groups, only: [:new, :create]
+  before_action :set_cloth_groups, only: %i[new create]
   rescue_from ActiveRecord::RecordNotFound, with: :rule_not_found
 
   def index
@@ -63,10 +63,11 @@ class OutfitSelectionRulesController < ApplicationController
       redirect_to root_url
     else
       redirect_with_alert(I18n.t('flash.outfit_selection_rules.select_failure'), root_url)
-    end      
+    end
   end
 
   private
+
   def outfit_selection_rule_params
     params.require(:outfit_selection_rule).permit(:name, :description, :priority,
                                                   :min_temperature_lower_bound, :min_temperature_upper_bound,

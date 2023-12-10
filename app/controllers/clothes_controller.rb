@@ -4,11 +4,11 @@ class ClothesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :cloth_not_found
 
   def index
-    if params[:types].present?
-      @clothes = current_user.clothes.where(cloth_type_id: params[:types])
-    else
-      @clothes = Cloth.none
-    end
+    @clothes = if params[:types].present?
+                 current_user.clothes.where(cloth_type_id: params[:types])
+               else
+                 Cloth.none
+               end
   end
 
   def show; end
@@ -39,12 +39,12 @@ class ClothesController < ApplicationController
   end
 
   def update_deside
-    if params[:selected_clothes_ids].present?
-      selected_clothes_ids = params[:selected_clothes_ids].split(',')
-      Cloth.update_last_worn(selected_clothes_ids)
-      OutfitLog.create_outfit_log(current_user, selected_clothes_ids)
-      redirect_to deside_url
-    end
+    return unless params[:selected_clothes_ids].present?
+
+    selected_clothes_ids = params[:selected_clothes_ids].split(',')
+    Cloth.update_last_worn(selected_clothes_ids)
+    OutfitLog.create_outfit_log(current_user, selected_clothes_ids)
+    redirect_to deside_url
   end
 
   def destroy

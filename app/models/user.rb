@@ -21,6 +21,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, unless: -> { email.blank? }
   validates :password, presence: true
-  validates :password, length: {minimum: 8, maximum: 16}, unless: -> { password.blank? }
+  validates :password, length: { minimum: 8, maximum: 16 }, unless: -> { password.blank? }
   has_secure_password
 end

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'static_pages/home'
-  get '/closet',        to: 'clothes#index',       as: 'closet'
+  get '/closet',        to: 'clothes#index', as: 'closet'
   post '/outfits',      to: 'outfit_selection_rules#select_outfit'
   get '/signup',        to: 'users#new',           as: 'signup'
   get '/login',         to: 'sessions#new',        as: 'login'

@@ -22,9 +22,9 @@ class OutfitLog < ApplicationRecord
   has_many :clothes, through: :outfit_logs_clothes
 
   def self.create_outfit_log(user, cloth_ids)
-    outfit_log = new(user: user, date: Date.today)
+    outfit_log = new(user:, date: Date.today)
     cloth_ids.each do |cloth_id|
-      outfit_log.outfit_logs_clothes.build(cloth_id: cloth_id)
+      outfit_log.outfit_logs_clothes.build(cloth_id:)
     end
     outfit_log.save
   end

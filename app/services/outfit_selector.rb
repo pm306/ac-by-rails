@@ -43,5 +43,4 @@ class OutfitSelector
            .sample(selection[:selection_count]).pluck(:id)
     end.flatten
   end
-
 end

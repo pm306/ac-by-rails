@@ -1,0 +1,758 @@
+Inspecting 105 files
+WCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCWCCCCCCCCCCCCCWWCCCCCCCCCWCCCCCCC
+
+Offenses:
+
+Gemfile:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+source 'https://rubygems.org'
+^
+Gemfile:33:3: C: [Corrected] Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem annotate should appear before web-console.
+  gem 'annotate'
+  ^^^^^^^^^^^^^^
+Gemfile:41:1: W: Bundler/DuplicatedGroup: Gem group :development, :test already defined on line 27 of the Gemfile.
+group :development, :test do
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Rakefile:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+^
+app/channels/application_cable/channel.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module ApplicationCable
+^
+app/channels/application_cable/connection.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module ApplicationCable
+^
+app/controllers/application_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class ApplicationController.
+class ApplicationController < ActionController::Base
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationController < ActionController::Base
+^
+app/controllers/cloth_types_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class ClothTypesController.
+class ClothTypesController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/cloth_types_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ClothTypesController < ApplicationController
+^
+app/controllers/clothes_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class ClothesController.
+class ClothesController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/clothes_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ClothesController < ApplicationController
+^
+app/controllers/clothes_controller.rb:7:5: C: [Corrected] Style/ConditionalAssignment: Use the return of the conditional for variable assignment and comparison.
+    if params[:types].present? ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/clothes_controller.rb:8:7: C: [Corrected] Layout/IndentationWidth: Use 2 (not -9) spaces for indentation.
+      current_user.clothes.where(cloth_type_id: params[:types])
+      ^^^^^^^^^
+app/controllers/clothes_controller.rb:9:5: C: [Corrected] Layout/ElseAlignment: Align else with if.
+    else
+    ^^^^
+app/controllers/clothes_controller.rb:10:7: C: [Corrected] Layout/IndentationWidth: Use 2 (not -9) spaces for indentation.
+      Cloth.none
+      ^^^^^^^^^
+app/controllers/clothes_controller.rb:42:5: C: [Corrected] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+    return unless params[:selected_clothes_ids].present?
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/clothes_controller.rb:42:5: C: [Corrected] Style/GuardClause: Use a guard clause (return unless params[:selected_clothes_ids].present?) instead of wrapping the code inside a conditional expression.
+    if params[:selected_clothes_ids].present?
+    ^^
+app/controllers/clothes_controller.rb:42:12: C: [Correctable] Rails/Blank: Use if params[:selected_clothes_ids].blank? instead of unless params[:selected_clothes_ids].present?.
+    return unless params[:selected_clothes_ids].present?
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/clothes_controller.rb:43:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
+      selected_clothes_ids = params[:selected_clothes_ids].split(',')
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/clothes_controller.rb:44:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
+      Cloth.update_last_worn(selected_clothes_ids)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/clothes_controller.rb:45:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
+      OutfitLog.create_outfit_log(current_user, selected_clothes_ids)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/clothes_controller.rb:46:7: C: [Corrected] Layout/IndentationConsistency: Inconsistent indentation detected.
+      redirect_to deside_url
+      ^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/clothes_controller.rb:47:1: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
+app/controllers/clothes_controller.rb:48:1: C: [Corrected] Layout/EmptyLinesAroundMethodBody: Extra empty line detected at method body end.
+app/controllers/outfit_logs_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class OutfitLogsController.
+class OutfitLogsController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/outfit_logs_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class OutfitLogsController < ApplicationController
+^
+app/controllers/outfit_selection_rules_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class OutfitSelectionRulesController.
+class OutfitSelectionRulesController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/outfit_selection_rules_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class OutfitSelectionRulesController < ApplicationController
+^
+app/controllers/outfit_selection_rules_controller.rb:3:42: C: [Corrected] Style/SymbolArray: Use %i or %I for an array of symbols.
+  before_action :set_cloth_groups, only: [:new, :create]
+                                         ^^^^^^^^^^^^^^^
+app/controllers/outfit_selection_rules_controller.rb:42:3: C: Metrics/AbcSize: Assignment Branch Condition size for select_outfit is too high. [<8, 28, 6> 29.73/17]
+  def select_outfit ...
+  ^^^^^^^^^^^^^^^^^
+app/controllers/outfit_selection_rules_controller.rb:42:3: C: Metrics/MethodLength: Method has too many lines. [21/10]
+  def select_outfit ...
+  ^^^^^^^^^^^^^^^^^
+app/controllers/outfit_selection_rules_controller.rb:66:8: C: [Corrected] Layout/TrailingWhitespace: Trailing whitespace detected.
+    end      
+       ^^^^^^
+app/controllers/outfit_selection_rules_controller.rb:69:3: C: [Corrected] Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/controllers/sessions_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class SessionsController.
+class SessionsController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/sessions_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class SessionsController < ApplicationController
+^
+app/controllers/sessions_controller.rb:26:13: C: [Correctable] Style/SafeNavigation: Use safe navigation (&.) instead of checking if an object exists before calling the method.
+    user if user && user.authenticate(password)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/static_pages_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class StaticPagesController.
+class StaticPagesController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/static_pages_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class StaticPagesController < ApplicationController
+^
+app/controllers/users_controller.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class UsersController.
+class UsersController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class UsersController < ApplicationController
+^
+app/controllers/users_controller.rb:7:3: C: [Corrected] Style/EmptyMethod: Put empty method definitions on a single line.
+  def show ...
+  ^^^^^^^^
+app/controllers/users_controller.rb:14:3: C: [Corrected] Style/EmptyMethod: Put empty method definitions on a single line.
+  def edit ...
+  ^^^^^^^^
+app/helpers/application_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module ApplicationHelper.
+module ApplicationHelper
+^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/application_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module ApplicationHelper
+^
+app/helpers/application_helper.rb:8:7: C: [Correctable] Style/StringConcatenation: Prefer string interpolation to string concatenation.
+      page_title + ' | ' + base_title
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/clothes_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module ClothesHelper.
+module ClothesHelper
+^^^^^^^^^^^^^^^^^^^^
+app/helpers/clothes_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module ClothesHelper
+^
+app/helpers/outfit_logs_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module OutfitLogsHelper.
+module OutfitLogsHelper
+^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/outfit_logs_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module OutfitLogsHelper
+^
+app/helpers/outfit_selection_rules_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module OutfitSelectionRulesHelper.
+module OutfitSelectionRulesHelper
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/outfit_selection_rules_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module OutfitSelectionRulesHelper
+^
+app/helpers/sessions_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module SessionsHelper.
+module SessionsHelper
+^^^^^^^^^^^^^^^^^^^^^
+app/helpers/sessions_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module SessionsHelper
+^
+app/helpers/sessions_helper.rb:16:5: C: Rails/HelperInstanceVariable: Do not use instance variables in helpers.
+    @current_user = nil
+    ^^^^^^^^^^^^^
+app/helpers/sessions_helper.rb:22:22: C: Rails/I18nLocaleTexts: Move locale texts to the locale files in the config/locales directory.
+    flash[:danger] = 'Please log in.'
+                     ^^^^^^^^^^^^^^^^
+app/helpers/static_pages_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module StaticPagesHelper.
+module StaticPagesHelper
+^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/static_pages_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module StaticPagesHelper
+^
+app/helpers/users_helper.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for module UsersHelper.
+module UsersHelper
+^^^^^^^^^^^^^^^^^^
+app/helpers/users_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module UsersHelper
+^
+app/jobs/application_job.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationJob < ActiveJob::Base
+^
+app/mailers/application_mailer.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class ApplicationMailer.
+class ApplicationMailer < ActionMailer::Base
+^^^^^^^^^^^^^^^^^^^^^^^
+app/mailers/application_mailer.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationMailer < ActionMailer::Base
+^
+app/models/application_record.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class ApplicationRecord.
+class ApplicationRecord < ActiveRecord::Base
+^^^^^^^^^^^^^^^^^^^^^^^
+app/models/application_record.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationRecord < ActiveRecord::Base
+^
+app/models/cloth.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+app/models/cloth.rb:23:3: C: Rails/HasManyOrHasOneDependent: Specify a :dependent option.
+  has_many :outfit_logs_clothes
+  ^^^^^^^^
+app/models/cloth.rb:28:23: C: [Correctable] Rails/RedundantPresenceValidationOnBelongsTo: Remove explicit presence validation for user_id.
+  validates :user_id, presence: true
+                      ^^^^^^^^^^^^^^
+app/models/cloth.rb:40:39: C: [Correctable] Rails/Date: Do not use Date.today without zone. Use Time.zone.today instead.
+      cloth.update(last_worn_on: Date.today)
+                                      ^^^^^
+app/models/cloth_group.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+app/models/cloth_group_selection.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+app/models/cloth_type.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+app/models/cloth_type.rb:21:3: C: Rails/HasManyOrHasOneDependent: Specify a :dependent option.
+  has_many :clothes
+  ^^^^^^^^
+app/models/outfit_log.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+app/models/outfit_log.rb:21:3: C: Rails/HasManyOrHasOneDependent: Specify a :dependent option.
+  has_many :outfit_logs_clothes
+  ^^^^^^^^
+app/models/outfit_log.rb:25:28: C: [Corrected] Style/HashSyntax: Omit the hash value.
+    outfit_log = new(user: user, date: Date.today)
+                           ^^^^
+app/models/outfit_log.rb:25:40: C: [Correctable] Rails/Date: Do not use Date.today without zone. Use Time.zone.today instead.
+    outfit_log = new(user:, date: Date.today)
+                                       ^^^^^
+app/models/outfit_log.rb:27:54: C: [Corrected] Style/HashSyntax: Omit the hash value.
+      outfit_log.outfit_logs_clothes.build(cloth_id: cloth_id)
+                                                     ^^^^^^^^
+app/models/outfit_logs_cloth.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+app/models/outfit_selection_rule.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+app/models/user.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+app/models/user.rb:17:3: C: Rails/HasManyOrHasOneDependent: Specify a :dependent option.
+  has_many :clothes
+  ^^^^^^^^
+app/models/user.rb:24:32: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+  validates :password, length: {minimum: 8, maximum: 16}, unless: -> { password.blank? }
+                               ^
+app/models/user.rb:24:56: C: [Corrected] Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+  validates :password, length: {minimum: 8, maximum: 16}, unless: -> { password.blank? }
+                                                       ^
+app/services/outfit_selector.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class OutfitSelector.
+class OutfitSelector
+^^^^^^^^^^^^^^^^^^^^
+app/services/outfit_selector.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class OutfitSelector
+^
+app/services/outfit_selector.rb:21:25: C: [Correctable] Rails/Pick: Prefer pick(:id) over pluck(:id).first.
+                       .pluck(:id) ...
+                        ^^^^^^^^^^
+app/services/outfit_selector.rb:46:1: C: [Corrected] Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
+app/services/outfit_selector.rb:47:4: C: [Corrected] Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+config.ru:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This file is used by Rack-based servers to start the application.
+^
+config/application.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require_relative 'boot'
+^
+config/application.rb:10:3: C: Style/Documentation: Missing top-level documentation comment for class AcByRails::Application.
+  class Application < Rails::Application
+  ^^^^^^^^^^^^^^^^^
+config/boot.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__)
+^
+config/environment.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Load the Rails application.
+^
+config/environments/development.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'active_support/core_ext/integer/time'
+^
+config/environments/development.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [26/25]
+Rails.application.configure do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'active_support/core_ext/integer/time'
+^
+config/environments/production.rb:55:45: C: [Correctable] Style/GlobalStdStream: Use $stdout instead of STDOUT.
+  config.logger = ActiveSupport::Logger.new(STDOUT)
+                                            ^^^^^^
+config/environments/test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'active_support/core_ext/integer/time'
+^
+config/importmap.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Pin npm packages by running ./bin/importmap
+^
+config/initializers/assets.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/content_security_policy.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/filter_parameter_logging.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/inflections.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+^
+config/initializers/permissions_policy.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/puma.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This configuration file will be evaluated by Puma. The top-level methods that
+^
+config/puma.rb:10:25: C: [Correctable] Style/RedundantFetchBlock: Use fetch('RAILS_MAX_THREADS', 5) instead of fetch('RAILS_MAX_THREADS') { 5 }.
+max_threads_count = ENV.fetch('RAILS_MAX_THREADS') { 5 }
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/puma.rb:26:10: C: [Correctable] Style/RedundantFetchBlock: Use fetch('PORT', 3000) instead of fetch('PORT') { 3000 }.
+port ENV.fetch('PORT') { 3000 }
+         ^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+Rails.application.routes.draw do
+^
+config/routes.rb:3:45: C: [Corrected] Layout/ExtraSpacing: Unnecessary spacing detected.
+  get '/closet',        to: 'clothes#index',       as: 'closet'
+                                            ^^^^^^
+db/migrate/20231105024401_create_users.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateUsers.
+class CreateUsers < ActiveRecord::Migration[7.1]
+^^^^^^^^^^^^^^^^^
+db/migrate/20231105024401_create_users.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreateUsers < ActiveRecord::Migration[7.1]
+^
+db/migrate/20231105030633_add_password_digest_to_users.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddPasswordDigestToUsers.
+class AddPasswordDigestToUsers < ActiveRecord::Migration[7.1]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20231105030633_add_password_digest_to_users.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AddPasswordDigestToUsers < ActiveRecord::Migration[7.1]
+^
+db/migrate/20231105030644_remove_password_from_users.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class RemovePasswordFromUsers.
+class RemovePasswordFromUsers < ActiveRecord::Migration[7.1]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20231105030644_remove_password_from_users.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class RemovePasswordFromUsers < ActiveRecord::Migration[7.1]
+^
+db/migrate/20231105094921_add_index_to_users_email.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddIndexToUsersEmail.
+class AddIndexToUsersEmail < ActiveRecord::Migration[7.1]
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20231105094921_add_index_to_users_email.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AddIndexToUsersEmail < ActiveRecord::Migration[7.1]
+^
+db/migrate/20231106133200_create_clothes.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateClothes.
+class CreateClothes < ActiveRecord::Migration[7.1]
+^^^^^^^^^^^^^^^^^^^
+db/migrate/20231106133200_create_clothes.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreateClothes < ActiveRecord::Migration[7.1]
+^
+db/migrate/20231106133207_create_cloth_types.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateClothTypes.
+class CreateClothTypes < ActiveRecord::Migration[7.1]
+^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20231106133207_create_cloth_types.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreateClothTypes < ActiveRecord::Migration[7.1]
+^
+db/migrate/20231106141445_create_active_storage_tables.active_storage.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This migration comes from active_storage (originally 20170806125915)
+^
+db/migrate/20231106141445_create_active_storage_tables.active_storage.rb:3:3: C: Metrics/AbcSize: Assignment Branch Condition size for change is too high. [<5, 29, 4> 29.7/17]
+  def change ...
+  ^^^^^^^^^^
+db/migrate/20231106141445_create_active_storage_tables.active_storage.rb:3:3: C: Metrics/MethodLength: Method has too many lines. [35/10]
+  def change ...
+  ^^^^^^^^^^
+db/migrate/20231109134401_add_cloth_type_id_to_cloths.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddClothTypeIdToCloths.
+class AddClothTypeIdToCloths < ActiveRecord::Migration[7.1]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20231109134401_add_cloth_type_id_to_cloths.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AddClothTypeIdToCloths < ActiveRecord::Migration[7.1]
+^
+db/migrate/20231109134401_add_cloth_type_id_to_cloths.rb:7:5: C: Rails/ReversibleMigration: remove_column(without type) is not reversible.
+    remove_column :clothes, :type_name
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20231112080345_create_cloth_groups.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateClothGroups.
+class CreateClothGroups < ActiveRecord::Migration[7.1]
+^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20231112080345_create_cloth_groups.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreateClothGroups < ActiveRecord::Migration[7.1]
+^
+db/migrate/20231112082744_add_group_id_to_cloth_types.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddGroupIdToClothTypes.
+class AddGroupIdToClothTypes < ActiveRecord::Migration[7.1]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20231112082744_add_group_id_to_cloth_types.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AddGroupIdToClothTypes < ActiveRecord::Migration[7.1]
+^
+db/migrate/20231112100246_create_outfit_selection_rules.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateOutfitSelectionRules.
+class CreateOutfitSelectionRules < ActiveRecord::Migration[7.1]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20231112100246_create_outfit_selection_rules.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreateOutfitSelectionRules < ActiveRecord::Migration[7.1]
+^
+db/migrate/20231112100246_create_outfit_selection_rules.rb:2:3: C: Metrics/MethodLength: Method has too many lines. [11/10]
+  def change ...
+  ^^^^^^^^^^
+db/migrate/20231112100348_create_cloth_group_selections.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateClothGroupSelections.
+class CreateClothGroupSelections < ActiveRecord::Migration[7.1]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20231112100348_create_cloth_group_selections.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreateClothGroupSelections < ActiveRecord::Migration[7.1]
+^
+db/migrate/20231130114411_create_outfit_logs.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateOutfitLogs.
+class CreateOutfitLogs < ActiveRecord::Migration[7.1]
+^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20231130114411_create_outfit_logs.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreateOutfitLogs < ActiveRecord::Migration[7.1]
+^
+db/migrate/20231130114439_create_outfit_logs_clothes.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class CreateOutfitLogsClothes.
+class CreateOutfitLogsClothes < ActiveRecord::Migration[7.1]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20231130114439_create_outfit_logs_clothes.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreateOutfitLogsClothes < ActiveRecord::Migration[7.1]
+^
+db/migrate/20231130124215_add_deleted_at_to_cloths.rb:1:1: C: Style/Documentation: Missing top-level documentation comment for class AddDeletedAtToCloths.
+class AddDeletedAtToCloths < ActiveRecord::Migration[7.1]
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20231130124215_add_deleted_at_to_cloths.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AddDeletedAtToCloths < ActiveRecord::Migration[7.1]
+^
+db/seeds.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+ActiveStorage::AnalyzeJob.queue_adapter = :inline
+^
+lib/tasks/auto_annotate_models.rake:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# NOTE: only doing this in development as some production environments (Heroku)
+^
+lib/tasks/auto_annotate_models.rake:6:3: C: Metrics/BlockLength: Block has too many lines. [47/25]
+  task :set_annotation_options do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:6:3: C: [Correctable] Rails/RakeEnvironment: Include :environment task as a dependency for all Rake tasks.
+  task :set_annotation_options do
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:10:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'active_admin'                => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:11:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'additional_file_patterns'    => [],
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:12:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'routes'                      => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:13:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'models'                      => 'true',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:14:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'position_in_routes'          => 'before',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:15:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'position_in_class'           => 'before',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:16:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'position_in_test'            => 'before',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:17:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'position_in_fixture'         => 'before',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:18:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'position_in_factory'         => 'before',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:19:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'position_in_serializer'      => 'before',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:20:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'show_foreign_keys'           => 'true',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:21:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'show_complete_foreign_keys'  => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:22:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'show_indexes'                => 'true',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:23:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'simple_indexes'              => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:24:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'model_dir'                   => 'app/models',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:25:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'root_dir'                    => '',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:26:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'include_version'             => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:27:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'require'                     => '',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:28:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'exclude_tests'               => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:29:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'exclude_fixtures'            => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:30:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'exclude_factories'           => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:31:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'exclude_serializers'         => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:32:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'exclude_scaffolds'           => 'true',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:33:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'exclude_controllers'         => 'true',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:34:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'exclude_helpers'             => 'true',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:35:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'exclude_sti_subclasses'      => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:36:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'ignore_model_sub_dir'        => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:37:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'ignore_columns'              => nil,
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:38:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'ignore_routes'               => nil,
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:39:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'ignore_unknown_models'       => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:40:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'hide_limit_column_types'     => 'integer,bigint,boolean',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:41:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'hide_default_column_types'   => 'json,jsonb,hstore',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:42:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'skip_on_db_migrate'          => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:43:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'format_bare'                 => 'true',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:44:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'format_rdoc'                 => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:45:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'format_yard'                 => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:46:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'format_markdown'             => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:47:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'sort'                        => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:48:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'force'                       => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:49:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'frozen'                      => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:50:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'classified_sort'             => 'true',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:51:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'trace'                       => 'false',
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:52:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'wrapper_open'                => nil,
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:53:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'wrapper_close'               => nil,
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/auto_annotate_models.rake:54:7: C: [Corrected] Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+      'with_comment'                => 'true'
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/controllers/clothes_controller_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/controllers/sessions_controller_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/factories/cloth_group_selections.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+spec/factories/cloth_types.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+spec/factories/cloths.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+FactoryBot.define do
+^
+spec/factories/cloths.rb:9:30: C: [Correctable] Rails/RootPathnameMethods: Rails.root is a Pathname so you can just append #open.
+      cloth.image.attach(io: File.open(Rails.root.join('spec/fixtures/images/test_image.png')),
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/factories/outfit_logs.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+spec/factories/outfit_logs_clothes.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+spec/factories/outfit_selection_rules.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+spec/factories/users.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+spec/features/page_navigation_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/features/page_navigation_spec.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [41/25]
+RSpec.feature 'ページ遷移のテスト', type: :feature do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/features/page_navigation_spec.rb:4:3: C: Metrics/BlockLength: Block has too many lines. [27/25]
+  context 'ログインが必要ケース' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/features/page_navigation_spec.rb:6:7: W: [Correctable] Lint/UselessAssignment: Useless assignment to variable - user.
+      user = FactoryBot.create(:user, name: 'mahiro', email: 'oyama306@onimai.com', password: 'password')
+      ^^^^
+spec/helpers/clothes_helper_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/helpers/main_helper_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/helpers/outfit_logs_helper_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/helpers/sessions_helper_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/helpers/static_pages_helper_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/helpers/users_helper_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/models/cloth_group_selection_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+spec/models/cloth_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+spec/models/cloth_spec.rb:20:1: C: Metrics/BlockLength: Block has too many lines. [39/25]
+RSpec.describe Cloth, type: :model do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/cloth_type_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+spec/models/cloth_type_spec.rb:22:1: C: Metrics/BlockLength: Block has too many lines. [28/25]
+RSpec.describe ClothType, type: :model do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/outfit_log_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+spec/models/outfit_logs_cloth_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+spec/models/outfit_selection_rule_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+spec/models/user_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# == Schema Information
+^
+spec/models/user_spec.rb:18:1: C: Metrics/BlockLength: Block has too many lines. [42/25]
+RSpec.describe User, type: :model do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/models/user_spec.rb:19:3: C: Metrics/BlockLength: Block has too many lines. [40/25]
+  describe 'validations' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/rails_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This file is copied to spec/ when you run 'rails generate rspec:install'
+^
+spec/rails_helper.rb:23:46: W: [Correctable] Lint/RedundantDirGlobSort: Remove redundant sort.
+Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |f| require f }
+                                             ^^^^
+spec/rails_helper.rb:38:25: C: [Correctable] Style/RedundantInterpolation: Prefer to_s over string interpolation.
+  config.fixture_path = "#{Rails.root.join('spec/fixtures')}"
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/clothes_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/requests/clothes_spec.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [55/25]
+RSpec.describe 'Clothes', type: :request do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/clothes_spec.rb:29:7: W: [Correctable] Lint/UselessAssignment: Useless assignment to variable - cloth.
+      cloth = FactoryBot.create(:cloth)
+      ^^^^^
+spec/requests/main_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/requests/outfit_logs_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/requests/sessions_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/requests/sessions_spec.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [34/25]
+RSpec.describe 'Sessions', type: :request do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/sessions_spec.rb:11:3: C: Metrics/BlockLength: Block has too many lines. [26/25]
+  describe 'POST /login' do ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/requests/static_pages_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/requests/users_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/spec_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This file was generated by the `rails generate rspec:install` command. Conventionally, all
+^
+spec/support/session_helpers.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# spec/support/session_helpers.rb
+^
+spec/views/clothes/index.html.erb_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/views/clothes/new.html.erb_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/views/main/new.html.erb_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/views/main/new.html.erb_spec.rb:3:1: W: Lint/EmptyBlock: Empty block detected.
+RSpec.describe 'main/new.html.erb', type: :view do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/views/sessions/new.html.erb_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/views/static_pages/home.html.erb_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/views/users/new.html.erb_spec.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+test/application_system_test_case.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'test_helper'
+^
+test/channels/application_cable/connection_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'test_helper'
+^
+test/controllers/sessions_controller_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'test_helper'
+^
+test/test_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+ENV['RAILS_ENV'] ||= 'test'
+^
+
+105 files inspected, 249 offenses detected, 70 offenses corrected, 121 more offenses can be corrected with `rubocop -A`
+
+Tip: Based on detected gems, the following RuboCop extension libraries might be helpful:
+  * rubocop-capybara (https://rubygems.org/gems/rubocop-capybara)
+  * rubocop-factory_bot (https://rubygems.org/gems/rubocop-factory_bot)
+  * rubocop-rails (https://rubygems.org/gems/rubocop-rails)
+  * rubocop-rspec (https://rubygems.org/gems/rubocop-rspec)
+
+You can opt out of this message by adding the following to your config (see https://docs.rubocop.org/rubocop/extensions.html#extension-suggestions for more options):
+  AllCops:
+    SuggestExtensions: false
