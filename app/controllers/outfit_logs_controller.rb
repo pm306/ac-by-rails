@@ -9,6 +9,6 @@ class OutfitLogsController < ApplicationController
   private
 
   def log_not_found
-    redirect_to root_url, alart: '服装のログが取得できませんでした。'
+    redirect_with_alert(I18n.t('flash.outfit_logs.not_found'), root_url)
   end
 end

@@ -33,6 +33,8 @@ ja:
       create_failure: '分類を追加できませんでした'
       success_detroy: '分類の削除に成功しました'
       not_found: '指定した分類が見つかりませんでした'
+    outfit_logs:
+      not_found: '服装のログが取得できませんでした。'
   activerecord:
     models:
       user: ユーザー
