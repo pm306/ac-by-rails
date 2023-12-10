@@ -24,7 +24,7 @@ class ClothesController < ApplicationController
     @cloth.user_id = current_user.id
     @cloth.last_worn_on = Date.parse('2000-01-01')
     if @cloth.save
-      redirect_with_notice(I18n.t('flash.clothes.create_success'), closet_add_url)
+      redirect_with_notice(I18n.t('flash.clothes.create_success'), new_cloth_url)
     else
       render_with_alert(I18n.t('flash.clothes.create_failure'), :new)
     end

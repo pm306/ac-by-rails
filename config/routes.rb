@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   get 'static_pages/home'
   get '/closet',        to: 'clothes#index',       as: 'closet'
-  get '/closet/add',    to: 'clothes#new',         as: 'closet_add'
-  post '/closet/add',   to: 'clothes#create',      as: 'create_cloth'
   post '/outfits',      to: 'outfit_selection_rules#select_outfit'
   get '/signup',        to: 'users#new',           as: 'signup'
   get '/login',         to: 'sessions#new',        as: 'login'
