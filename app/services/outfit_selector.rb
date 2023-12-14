@@ -23,13 +23,13 @@ class OutfitSelector
   # @return [Integer] 適用するルールのid
   def find_appropriate_rule_id(max_temp, min_temp)
     OutfitSelectionRule
-    .where('min_temperature_lower_bound IS NULL OR min_temperature_lower_bound <= ?', min_temp)
-    .where('min_temperature_upper_bound IS NULL OR min_temperature_upper_bound >= ?', min_temp)
-    .where('max_temperature_lower_bound IS NULL OR max_temperature_lower_bound <= ?', max_temp)
-    .where('max_temperature_upper_bound IS NULL OR max_temperature_upper_bound >= ?', max_temp)
-    .order(priority: :asc)
-    .limit(1)
-    .pluck(:id)
+      .where('min_temperature_lower_bound IS NULL OR min_temperature_lower_bound <= ?', min_temp)
+      .where('min_temperature_upper_bound IS NULL OR min_temperature_upper_bound >= ?', min_temp)
+      .where('max_temperature_lower_bound IS NULL OR max_temperature_lower_bound <= ?', max_temp)
+      .where('max_temperature_upper_bound IS NULL OR max_temperature_upper_bound >= ?', max_temp)
+      .order(priority: :asc)
+      .limit(1)
+      .pluck(:id)
   end
 
   # 与えられたルールIDに基づきClothGroupSelectionレコードを検索し、

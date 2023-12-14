@@ -24,6 +24,14 @@ gem 'bootsnap', require: false
 
 gem 'bcrypt'
 
+gem 'dartsass-rails', '~> 0.5.0'
+
+gem 'jsbundling-rails'
+
+gem 'pry'
+
+gem 'rails-i18n'
+
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]
 end
@@ -43,9 +51,3 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails'
 end
-gem 'dartsass-rails', '~> 0.5.0'
-gem 'jsbundling-rails'
-
-gem 'pry'
-
-gem 'rails-i18n'
